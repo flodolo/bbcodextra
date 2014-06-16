@@ -143,29 +143,20 @@
 				<menupopup>
 					<menuitem id="bbcodextra-markdown-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquoteclip' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('markdowncodeclip' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlistclip' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistordclip' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('markdownlistalphanomeclip' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('markdownurlselection' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('markdownurl' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurlclip' ,null);"/>
 				</menupopup>
 			</menu>
 			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
 				<menupopup>
 					<menuitem id="bbcodextra-markdown-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquote' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-lista" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlist' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistord' ,null);"/>
-					<menuitem id="bbcodextra-markdown-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('markdownlistalpha' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurltagname' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('markdowncomposeurl' ,null);"/>
 				</menupopup>
 			</menu>
 			<menuitem id="bbcodextra-markdown-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('markdownbold' ,null);"/>
 			<menuitem id="bbcodextra-markdown-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('markdownitalic' ,null);"/>
-			<menuitem id="bbcodextra-markdown-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('markdownunderline' ,null);"/>
 			<menuitem id="bbcodextra-markdown-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('markdownstrike' ,null);"/>
-			<menuitem id="bbcodextra-markdown-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('markdownurltag' ,null);"/>
 			<menuseparator/>
 			<menuitem id="bbcodextra-markdown-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('markdownmenu' ,null);"/>
 			<menuitem id="bbcodextra-markdown-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>

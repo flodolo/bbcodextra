@@ -502,7 +502,7 @@ if ("undefined" == typeof(bbcodextra)) {
 						if (author==="") {
 							bbcodextra.insertAtCursor("[quote]" + strClipboard + "[/quote]");
 						} else {
-							bbcodextra.insertAtCursor("[quote=\""+ author +"\"]" + strClipboard + "[/quote]");
+							bbcodextra.insertAtCursor("[quote=\"" + author + "\"]" + strClipboard + "[/quote]");
 						}
 					}
 				break;
@@ -513,7 +513,7 @@ if ("undefined" == typeof(bbcodextra)) {
 						if (author==="") {
 							bbcodextra.insertAtCursor("[quote]" + strSelected + "[/quote]");
 						} else {
-							bbcodextra.insertAtCursor("[quote=\""+ author +"\"]" + strSelected + "[/quote]");
+							bbcodextra.insertAtCursor("[quote=\"" + author + "\"]" + strSelected + "[/quote]");
 						}
 					}
 				break;
@@ -573,27 +573,27 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "list":
-					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strSelected,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
 				break;
 
 				case "listord":
-					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strSelected,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
 				break;
 
 				case "listalpha":
-					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strSelected,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
 				break;
 
 				case "listclip":
-					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strClipboard,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
 				break;
 
 				case "listclipord":
-					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strClipboard,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
 				break;
 
 				case "listclipalpha":
-					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strClipboard,"[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
 				break;
 
 				case "italic":
@@ -620,7 +620,7 @@ if ("undefined" == typeof(bbcodextra)) {
 					bbcodextra.insertAtCursor("[color=" + extraParam + "]" + strSelected + "[/color]");
 				break;
 
-				//VBULLETIN SECTION
+				// VBULLETIN SECTION
 
 				case "vbulthread":
 					strPrompt = null;
@@ -658,7 +658,7 @@ if ("undefined" == typeof(bbcodextra)) {
 					bbcodextra.insertAtCursor("[highlight]" + strSelected + "[/highlight]");
 				break;
 
-				//HTML SECTION
+				// HTML SECTION
 
 				case "htmlbold":
 					bbcodextra.insertAtCursor("<b>" + strSelected + "</b>");
@@ -685,7 +685,7 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 
-				//XHTML SECTION
+				// XHTML SECTION
 
 				case "xhtmlbold":
 					bbcodextra.insertAtCursor("<strong>" + strSelected + "</strong>");
@@ -711,7 +711,7 @@ if ("undefined" == typeof(bbcodextra)) {
 					bbcodextra.insertAtCursor("<del>" + strSelected + "</del>");
 				break;
 
-				//COMMON HTML/XHTML FUNCTIONS
+				// COMMON HTML/XHTML FUNCTIONS
 
 				case "xhtmlurltag":
 					bbcodextra.insertAtCursor("<a href=\"" + strSelected + "\">" + strSelected + "</a>");
@@ -737,12 +737,12 @@ if ("undefined" == typeof(bbcodextra)) {
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("<a href=\""+strClipboard+"\">" + strPrompt +"</a>");
+						bbcodextra.insertAtCursor("<a href=\"" + strClipboard+"\">" + strPrompt + "</a>");
 					}
 				break;
 
 				case "xhtmlurlselection":
-					bbcodextra.insertAtCursor("<a href=\""+strClipboard+"\">" + strSelected + "</a>");
+					bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strSelected + "</a>");
 				break;
 
 				case "xhtmlurltagname":
@@ -758,33 +758,89 @@ if ("undefined" == typeof(bbcodextra)) {
 					if (composeURLname!==null) {
 						composeURL = bbcodextra.promptWindow(strComposeURLStep2);
 						if (composeURL!==null) {
-							bbcodextra.insertAtCursor("<a href=\""+composeURL+"\">"+ composeURLname +"</a>");
+							bbcodextra.insertAtCursor("<a href=\"" + composeURL + "\">" + composeURLname + "</a>");
 						}
 					}
 				break;
 
 				case "xhtmllist":
-					bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strSelected,"[*]*") + "</li>\n</ul>");
+					bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ul>");
 				break;
 
 				case "xhtmllistord":
-					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strSelected,"[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ol>");
 				break;
 
 				case "xhtmllistalpha":
-					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strSelected,"[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ol>");
 				break;
 
 				case "xhtmllistclip":
-				bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard,"[*]*") + "</li>\n</ul>");
+				bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ul>");
 				break;
 
 				case "xhtmllistordclip":
-					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard,"[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ol>");
 				break;
 
 				case "xhtmllistalphaclip":
-					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard,"[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ol>");
+				break;
+
+				// MARKDOWN FUNCTIONS
+
+				case "markdownquoteclip":
+					bbcodextra.insertAtCursor("> " + strClipboard);
+				break;
+
+				case "markdowncodeclip":
+					bbcodextra.insertAtCursor("```" + strClipboard + "```");
+				break;
+
+				case "markdownurlselection":
+					bbcodextra.insertAtCursor("[" + strSelected + "](" + strClipboard + ")");
+				break;
+
+				case "markdownurlclip":
+					strPrompt = null;
+					strPrompt = bbcodextra.promptWindow(strInsLinkName);
+					if (strPrompt!==null) {
+						bbcodextra.insertAtCursor("[" + strClipboard + "](" + strPrompt + ")");
+					}
+				break;
+
+				case "markdownquote":
+					bbcodextra.insertAtCursor("> " + strSelected);
+				break;
+
+				case "markdowntagname":
+					strPrompt = null;
+					strPrompt = bbcodextra.promptWindow(strInsLinkName);
+					if (strPrompt!==null) {
+						bbcodextra.insertAtCursor("[" + strPrompt + "](" + strSelected + ")");
+					}
+				break;
+
+				case "markdowncomposeurl":
+					composeURLname = bbcodextra.promptWindow(strComposeURLStep1);
+					if (composeURLname!==null) {
+						composeURL = bbcodextra.promptWindow(strComposeURLStep2);
+						if (composeURL!==null) {
+							bbcodextra.insertAtCursor("[" + composeURLname + "](" + composeURL + ")");
+						}
+					}
+				break;
+
+				case "markdownbold":
+					bbcodextra.insertAtCursor("*" + strSelected + "*");
+				break;
+
+				case "markdownitalic":
+					bbcodextra.insertAtCursor("**" + strSelected + "**");
+				break;
+
+				case "markdownstrike":
+					bbcodextra.insertAtCursor("~~" + strSelected + "~~");
 				break;
 
 				default : alert("No function selected");
@@ -810,7 +866,7 @@ if ("undefined" == typeof(bbcodextra)) {
 		},
 
 
-		replace_CR: function(myText,replaceWith){
+		replace_CR: function(myText, replaceWith){
 			// Code reference for line ending: http://www.jennifermadden.com/162/examples/stringEscape.html
 			var OS;
 
@@ -885,7 +941,7 @@ if ("undefined" == typeof(bbcodextra)) {
 		},
 
 
-		htmlreplace_CR: function(myText,replaceWith){
+		htmlreplace_CR: function(myText, replaceWith){
 			// See replace_CR function for comments
 			var OS;
 
@@ -955,7 +1011,7 @@ if ("undefined" == typeof(bbcodextra)) {
 			}
 
 			return myText;
-		}
+		},
 	};
 } // if ("undefined" == typeof(bbcodextra))
 
