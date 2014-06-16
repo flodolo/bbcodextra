@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Etiquetas personalizadas">
 <!ENTITY bbcodextra.menu_accelcustomtags "o">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Activas submenu VBulletin">
 <!ENTITY bbcodextra.settings.menu.enablehtml "Activar menu HTML">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Activar menu XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Activar menu Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Activar menu Etiquetas personalizadas">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Etiquetas personalizadas disponíveis:">

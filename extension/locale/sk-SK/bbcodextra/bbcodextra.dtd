@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Vlastné značky">
 <!ENTITY bbcodextra.menu_accelcustomtags "z">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "zapnúť podponuku VBulletin">
 <!ENTITY bbcodextra.settings.menu.enablehtml "Zapnúť ponuku HTML">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Zapnúť ponuku XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Zapnúť ponuku Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Zapnúť ponuku Vlastné značky">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Dostupné vlastné značky:">

@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "自訂標籤">
 <!ENTITY bbcodextra.menu_accelcustomtags "u">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "啟用 VBulletin 子選單">
 <!ENTITY bbcodextra.settings.menu.enablehtml "啟用 HTML 選單">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "啟用 XHTML 選單">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "啟用 Markdown 選單">
 <!ENTITY bbcodextra.settings.menu.enablecustom "啟用 自訂標籤 選單">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "可用的自訂標籤:">

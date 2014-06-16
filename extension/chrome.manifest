@@ -22,18 +22,3 @@ locale	    bbcodextra	sk-SK         locale/sk-SK/bbcodextra/
 locale	    bbcodextra	sr-RS         locale/sr-RS/bbcodextra/
 locale	    bbcodextra	th-TH         locale/th-TH/bbcodextra/
 locale	    bbcodextra	zh-TW         locale/zh-TW/bbcodextra/
-
-# Localizations not ready for version 0.3.0
-# locale	    bbcodextra	ar         	  locale/ar/bbcodextra/
-# locale	    bbcodextra	be-BY         locale/be-BY/bbcodextra/
-# locale	    bbcodextra	ca-AD         locale/ca-AD/bbcodextra/
-# locale	    bbcodextra	da-DK         locale/da-DK/bbcodextra/
-# locale	    bbcodextra	el-GR         locale/el-GR/bbcodextra/
-# locale	    bbcodextra	es-CL         locale/es-CL/bbcodextra/
-# locale	    bbcodextra	he-IL         locale/he-IL/bbcodextra/
-# locale	    bbcodextra	hr-HR         locale/hr-HR/bbcodextra/
-# locale	    bbcodextra	nl-NL         locale/nl-NL/bbcodextra/
-# locale	    bbcodextra	sq-AL         locale/sq-AL/bbcodextra/
-# locale	    bbcodextra	tr-TR         locale/tr-TR/bbcodextra/
-# locale	    bbcodextra	uk-UA         locale/uk-UA/bbcodextra/
-# locale	    bbcodextra	zh-CN         locale/zh-CN/bbcodextra/

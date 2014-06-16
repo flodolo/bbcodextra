@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "х">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "е">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Прилагођене ознаке">
 <!ENTITY bbcodextra.menu_accelcustomtags "п">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Омогући VBulletin подмени">
 <!ENTITY bbcodextra.settings.menu.enablehtml "Омогући HTML мени">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Омогући XHTML мени">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Омогући Markdown мени">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Омогући мени прилагођених ознака">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Доступне прилагођене ознаке:">

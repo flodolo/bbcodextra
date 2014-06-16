@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Tag personalizzati">
 <!ENTITY bbcodextra.menu_accelcustomtags "z">
 
@@ -60,15 +62,16 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "attiva sottomenu VBulletin">
 <!ENTITY bbcodextra.settings.menu.enablehtml "Attiva menu HTML">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Attiva menu XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Attiva menu Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Attiva menu Tag personalizzati">
 
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Tag personalizzati presenti:">
 <!ENTITY bbcodextra.settings.customtags.btnadd "Aggiungi…">
 <!ENTITY bbcodextra.settings.customtags.btnedit "Modifica…">
-<!ENTITY bbcodextra.settings.customtags.btndelete "Elimina…"> 
-<!ENTITY bbcodextra.settings.customtags.moveUp "Sposta in alto"> 
-<!ENTITY bbcodextra.settings.customtags.moveDown "Sposta in basso"> 
+<!ENTITY bbcodextra.settings.customtags.btndelete "Elimina…">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Sposta in alto">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Sposta in basso">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "Ulteriori informazioni ed esempi">
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.pseudotecnico.org/blog/bbcodextra">

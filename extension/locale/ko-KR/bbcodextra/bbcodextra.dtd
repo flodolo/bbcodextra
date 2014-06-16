@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "사용자지정 태그">
 <!ENTITY bbcodextra.menu_accelcustomtags "u">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "VBulletin 하위메뉴 사용">
 <!ENTITY bbcodextra.settings.menu.enablehtml "HTML 메뉴 사용">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "XHTML 메뉴 사용">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Markdown 메뉴 사용">
 <!ENTITY bbcodextra.settings.menu.enablecustom "사용자지정 태그 사용">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "사용가능한 사용자지정 태그:">

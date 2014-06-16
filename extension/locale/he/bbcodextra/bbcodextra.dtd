@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "תוויות מותאמות">
 <!ENTITY bbcodextra.menu_accelcustomtags "ו">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "אפשור תת תפריט VBulletin">
 <!ENTITY bbcodextra.settings.menu.enablehtml "אפשור תפריט HTML">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "אפשור תפריט XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "אפשור תפריט Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "אפשור תפריט תוויות מותאמות">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "תוויות מותאמות זמינות:">

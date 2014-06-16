@@ -7,6 +7,8 @@
 <!ENTITY bbcodextra.menu_accelhtmlxtra "h">
 <!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
 <!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_markdown "Markdown">
+<!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Пользовательские теги">
 <!ENTITY bbcodextra.menu_accelcustomtags "о">
 <!-- Other menus -->
@@ -55,6 +57,7 @@
 <!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Включить подменю VBulletin">
 <!ENTITY bbcodextra.settings.menu.enablehtml "Включить меню HTML">
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Включить меню XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Включить меню Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Включить меню пользовательских тегов">
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Доступные пользовательские теги:">
