@@ -16,7 +16,7 @@
 			<label value="_selection_" class="varname" /><label value="&bbcodextra.settings.customtags.varselection;" />
 		</hbox>
 		<hbox>
-			<label value="_clipboard_" class="varname" /><label value="&bbcodextra.settings.customtags.varclipboard;" />							
+			<label value="_clipboard_" class="varname" /><label value="&bbcodextra.settings.customtags.varclipboard;" />
 		</hbox>
 	</groupbox>
    	<hbox>
@@ -26,5 +26,5 @@
 	<hbox>
     	<label class="labelCustom" value="&bbcodextra.settings.customtags.action;"/>
 		<textbox id="tagAction" multiline="true" cols="44" rows="4" />
-    </hbox>    
+    </hbox>
 </dialog>

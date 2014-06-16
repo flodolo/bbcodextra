@@ -1,44 +1,44 @@
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
 <?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
 <?xml-stylesheet href="chrome://bbcodextra/skin/bbcodextra.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://bbcodextra/locale/bbcodextra.dtd">
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="pickColor" 
-	title="&bbcodextra.pickcolor.title;"    
+	id="pickColor"
+	title="&bbcodextra.pickcolor.title;"
     buttons="accept, cancel"
     ondialogaccept="bbcodextra.saveColor();"
-	onload="bbcodextra.loadColor();"   
+	onload="bbcodextra.loadColor();"
     persist="screenX screenY width height">
 
-<script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />	
+<script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
 <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
-  
+
  <hbox>
-  <spacer width="2" flex="1"/>  
+  <spacer width="2" flex="1"/>
   <vbox>
     <hbox>
-       <image src="chrome://bbcodextra/skin/pickColor.png" width="48" height="48" />  
-       <spacer width="15"/>	 	 
-       <vbox>          
+       <image src="chrome://bbcodextra/skin/pickColor.png" width="48" height="48" />
+       <spacer width="15"/>
+       <vbox>
        	  <spacer height="15" />
-	  <description style="font-weight: bold;">&bbcodextra.pickcolor.title;</description>	 
-       </vbox>	
-    </hbox>    
+	  <description style="font-weight: bold;">&bbcodextra.pickcolor.title;</description>
+       </vbox>
+    </hbox>
     <spacer height="8"/>
-    <hbox>     
+    <hbox>
       <label value="&bbcodextra.pickcolor.description;"/>
-    </hbox>   
-    <hbox>     
+    </hbox>
+    <hbox>
       <label value="&bbcodextra.pickcolor.lastcolor; "/><hbox width="20" height="20" id="selectedColor" style="border: 1px solid black;"/>
-    </hbox>   
+    </hbox>
     <spacer height="8"/>
-    <hbox>      
-     <spacer width="10" flex="1"/>       
+    <hbox>
+     <spacer width="10" flex="1"/>
        <colorpicker type="list" id="colorSelector"/>
-     <spacer width="10" flex="1"/>   
-    </hbox>    
+     <spacer width="10" flex="1"/>
+    </hbox>
   </vbox>
-  <spacer width="2" flex="1"/>   
- </hbox> 
-</dialog> 
+  <spacer width="2" flex="1"/>
+ </hbox>
+</dialog>
