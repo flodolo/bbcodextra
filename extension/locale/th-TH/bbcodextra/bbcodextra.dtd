@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "ป้ายชื่อทำเอง">
+<!ENTITY bbcodextra.menu_accelcustomtags "า">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "คลิปบอร์ด">
+<!ENTITY bbcodextra.accelClipboard "C">
+<!ENTITY bbcodextra.accelColor "I">
+<!ENTITY bbcodextra.options "eXtra">
+<!ENTITY bbcodextra.accelOptions "X">
+<!ENTITY bbcodextra.quote "อ้างอิง">
+<!ENTITY bbcodextra.code "รหัส">
+<!ENTITY bbcodextra.list "รายชื่อ">
+<!ENTITY bbcodextra.listord "รายชื่อตามลำัดับ">
+<!ENTITY bbcodextra.listalf "รายชื่อตามตัวอักษร">
+<!ENTITY bbcodextra.img "รูปภาพ">
+<!ENTITY bbcodextra.urlselection "ทำยูอาร์แอลกดได้">
+<!ENTITY bbcodextra.url "ยูอาร์แอล">
+<!ENTITY bbcodextra.urlwithname "ยูอาร์แอลกับชื่อ">
+<!ENTITY bbcodextra.pickcolor "สีแบบอักษร">
+<!ENTITY bbcodextra.fontdim "ขนาดแบบอักษร">
+<!ENTITY bbcodextra.urlwizard "ตัวช่วยสร้างยูอาร์แอล">
+<!ENTITY bbcodextra.bold "ตัวหนา">
+<!ENTITY bbcodextra.italic "ตัวเอน">
+<!ENTITY bbcodextra.underline "ขีดเส้นใต้">
+<!ENTITY bbcodextra.strike "ขีดเส้นทับ">
+<!ENTITY bbcodextra.vbulthread "หัวข้อ">
+<!ENTITY bbcodextra.vbulpost "โพสต์">
+<!ENTITY bbcodextra.vbulright "ชิดขวา">
+<!ENTITY bbcodextra.vbulleft "ชิดซ้าย">
+<!ENTITY bbcodextra.vbulcenter "ตรงกลาง">
+<!ENTITY bbcodextra.vbulindent "ย่อหน้า">
+<!ENTITY bbcodextra.vbulhighlight "เน้น">
+<!ENTITY bbcodextra.settingsmenu "ตั้งค่า BBCodeXtra...">
+<!ENTITY bbcodextra.disablemenu "ปิดเมนูนี้">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "เลือกสี">
+<!ENTITY bbcodextra.pickcolor.description "เลือกสีแบบอักษรจากรายชื่อ">
+<!ENTITY bbcodextra.pickcolor.lastcolor "สีที่ใช้ล่าสุด:">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "ตั้งค่า BBCodeXtra">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "เมนู">
+<!ENTITY bbcodextra.settings.customtags "ป้ายชื่อทำเอง">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "เลือกวัตถุเพื่อแสดงผลในเมนูโดยรอบ">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "เปิดใช้งานเมนู bbcode">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "เปิดใช้งานเมนูย่อย VBulletin">
+<!ENTITY bbcodextra.settings.menu.enablehtml "เปิดใช้งานเมนู HTML">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "เปิดใช้งานเมนู XHTML">
+<!ENTITY bbcodextra.settings.menu.enablecustom "เปิดใช้งานเมนูป้ายชื่อทำเอง">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "ป้ายชื่อทำเองที่มี:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "เพิ่ม...">
+<!ENTITY bbcodextra.settings.customtags.btnedit "แก้ไข...">
+<!ENTITY bbcodextra.settings.customtags.btndelete "ลบ...">
+<!ENTITY bbcodextra.settings.customtags.moveUp "เลื่อนขึ้น">
+<!ENTITY bbcodextra.settings.customtags.moveDown "เลื่อนลง">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "ข้อมูลและตัวอย่างเพิ่มเติม">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "ตัวแปรที่ใช้งานได้">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "เนื้อหาคลิปบอร์ด">
+<!ENTITY bbcodextra.settings.customtags.varselection "ข้อความที่เลือก">
+<!ENTITY bbcodextra.settings.customtags.label "ชื่อวัตถุ:">
+<!ENTITY bbcodextra.settings.customtags.action "โค้ด:">

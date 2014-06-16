@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "Omat tagit">
+<!ENTITY bbcodextra.menu_accelcustomtags "O">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "Leikepöytä">
+<!ENTITY bbcodextra.accelClipboard "L">
+<!ENTITY bbcodextra.accelColor "l">
+<!ENTITY bbcodextra.options "eXtra">
+<!ENTITY bbcodextra.accelOptions "X">
+<!ENTITY bbcodextra.quote "Lainaus">
+<!ENTITY bbcodextra.code "Koodi">
+<!ENTITY bbcodextra.list "Lista">
+<!ENTITY bbcodextra.listord "Numerojärjestyksellinen lista">
+<!ENTITY bbcodextra.listalf "Aakkosjärjestyksellinen lista">
+<!ENTITY bbcodextra.img "Kuva">
+<!ENTITY bbcodextra.urlselection "Tee valinnasta linkki">
+<!ENTITY bbcodextra.url "Linkki">
+<!ENTITY bbcodextra.urlwithname "Linkki nimellä">
+<!ENTITY bbcodextra.pickcolor "Kirjaisimen väri">
+<!ENTITY bbcodextra.fontdim "Kirjaisimen koko">
+<!ENTITY bbcodextra.urlwizard "Linkinluoja">
+<!ENTITY bbcodextra.bold "Lihavoi">
+<!ENTITY bbcodextra.italic "Kursivoi">
+<!ENTITY bbcodextra.underline "Alleviivaa">
+<!ENTITY bbcodextra.strike "Yliviivaa">
+<!ENTITY bbcodextra.vbulthread "Keskusteluketju">
+<!ENTITY bbcodextra.vbulpost "Posti">
+<!ENTITY bbcodextra.vbulright "Tasaa oikealle">
+<!ENTITY bbcodextra.vbulleft "Tasaa vasemmalle">
+<!ENTITY bbcodextra.vbulcenter "Keskelle">
+<!ENTITY bbcodextra.vbulindent "Sisennä">
+<!ENTITY bbcodextra.vbulhighlight "Korosta">
+<!ENTITY bbcodextra.settingsmenu "BBCodeXtra - Asetukset...">
+<!ENTITY bbcodextra.disablemenu "Poista tämä valikko käytöstä">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "Valitse väri">
+<!ENTITY bbcodextra.pickcolor.description "Valitse kirjaisimen väri listasta">
+<!ENTITY bbcodextra.pickcolor.lastcolor "Viimeksi käytetty väri:">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "BBCodeXtra - Asetukset">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "Valikot">
+<!ENTITY bbcodextra.settings.customtags "Omat tagit">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "Valitse sisältövalikossa näkyvät osiot">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "bbcode-valikko">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "VBullettin-alivalikko">
+<!ENTITY bbcodextra.settings.menu.enablehtml "HTML-valikko">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "XHTML-valikko">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Omat tagit -valikko">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "Käytettävissä olevat omat tagit:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Lisää...">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Muokkaa...">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Poista...">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Siirrä ylös">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Siirrä alas">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "Lisätietoja ja esimerkkejä">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "Käytettävissä olevat muuttujat">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "leikepöydän sisältö">
+<!ENTITY bbcodextra.settings.customtags.varselection "valittu teksti">
+<!ENTITY bbcodextra.settings.customtags.label "Tagin nimi:">
+<!ENTITY bbcodextra.settings.customtags.action "Koodi:">

@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "v">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "Balises personnalisées">
+<!ENTITY bbcodextra.menu_accelcustomtags "r">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "Presse-papiers">
+<!ENTITY bbcodextra.accelClipboard "P">
+<!ENTITY bbcodextra.accelColor "l">
+<!ENTITY bbcodextra.options "eXtra">
+<!ENTITY bbcodextra.accelOptions "X">
+<!ENTITY bbcodextra.quote "Citation">
+<!ENTITY bbcodextra.code "Code">
+<!ENTITY bbcodextra.list "Liste">
+<!ENTITY bbcodextra.listord "Liste numérotée">
+<!ENTITY bbcodextra.listalf "Liste alphabétique">
+<!ENTITY bbcodextra.img "Image">
+<!ENTITY bbcodextra.urlselection "Transformer la sélection en URL">
+<!ENTITY bbcodextra.url "URL">
+<!ENTITY bbcodextra.urlwithname "Nommer l'URL">
+<!ENTITY bbcodextra.pickcolor "Couleur de la police">
+<!ENTITY bbcodextra.fontdim "Taille de la police">
+<!ENTITY bbcodextra.urlwizard "Créer URL avec nom">
+<!ENTITY bbcodextra.bold "Gras">
+<!ENTITY bbcodextra.italic "Italique">
+<!ENTITY bbcodextra.underline "Souligné">
+<!ENTITY bbcodextra.strike "Barré">
+<!ENTITY bbcodextra.vbulthread "Fil">
+<!ENTITY bbcodextra.vbulpost "Post">
+<!ENTITY bbcodextra.vbulright "Aligné à droite">
+<!ENTITY bbcodextra.vbulleft "Aligné à gauche">
+<!ENTITY bbcodextra.vbulcenter "Centré">
+<!ENTITY bbcodextra.vbulindent "Tabulation">
+<!ENTITY bbcodextra.vbulhighlight "Surligné">
+<!ENTITY bbcodextra.settingsmenu "Paramètres de BBCodeXtra...">
+<!ENTITY bbcodextra.disablemenu "Désactiver ce menu">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "Choisir une couleur">
+<!ENTITY bbcodextra.pickcolor.description "Sélectionnez la couleur de la police dans la liste">
+<!ENTITY bbcodextra.pickcolor.lastcolor "Dernier choix de couleur :">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "Paramètres de BBCodeXtra">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "Menus">
+<!ENTITY bbcodextra.settings.customtags "Balises personnalisées">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "Choisir les éléments à afficher dans le menu contextuel">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "Activer le menu bbcode">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "activer le menu VBulletin">
+<!ENTITY bbcodextra.settings.menu.enablehtml "Activer le menu HTML">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "Activer le menu XHTML">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Activer les balises personnalisées">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "Balises personnalisées disponibles :">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Ajouter…">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Éditer…">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Supprimer…">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Remonter">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Descendre">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "Davantage d'informations et des exemples">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "Variables disponibles">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "contenu du presse-papiers">
+<!ENTITY bbcodextra.settings.customtags.varselection "texte sélectionné">
+<!ENTITY bbcodextra.settings.customtags.label "Nom de l'élément">
+<!ENTITY bbcodextra.settings.customtags.action "Code :">

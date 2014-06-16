@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "BBCodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "B">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "HTMLXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "H">
+<!ENTITY bbcodextra.menu_xhtmlxtra "XHTMLXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "X">
+<!ENTITY bbcodextra.menu_customtags "Eigene Tags">
+<!ENTITY bbcodextra.menu_accelcustomtags "e">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "Zwischenablage">
+<!ENTITY bbcodextra.accelClipboard "Z">
+<!ENTITY bbcodextra.accelColor "f">
+<!ENTITY bbcodextra.options "eXtra">
+<!ENTITY bbcodextra.accelOptions "X">
+<!ENTITY bbcodextra.quote "Zitieren">
+<!ENTITY bbcodextra.code "Code">
+<!ENTITY bbcodextra.list "Liste">
+<!ENTITY bbcodextra.listord "Geordnete Liste">
+<!ENTITY bbcodextra.listalf "Alphabetische Liste">
+<!ENTITY bbcodextra.img "Grafik">
+<!ENTITY bbcodextra.urlselection "URL aus Markierung erzeugen">
+<!ENTITY bbcodextra.url "URL">
+<!ENTITY bbcodextra.urlwithname "Benannte URL">
+<!ENTITY bbcodextra.pickcolor "Schriftfarbe">
+<!ENTITY bbcodextra.fontdim "Schriftgröße">
+<!ENTITY bbcodextra.urlwizard "URL-Wizard">
+<!ENTITY bbcodextra.bold "Fett">
+<!ENTITY bbcodextra.italic "Kursiv">
+<!ENTITY bbcodextra.underline "Unterstrichen">
+<!ENTITY bbcodextra.strike "Durchgestrichen">
+<!ENTITY bbcodextra.vbulthread "Thread">
+<!ENTITY bbcodextra.vbulpost "Post">
+<!ENTITY bbcodextra.vbulright "Rechtsbündig">
+<!ENTITY bbcodextra.vbulleft "Linksbündig">
+<!ENTITY bbcodextra.vbulcenter "Zentrieren">
+<!ENTITY bbcodextra.vbulindent "Einrücken">
+<!ENTITY bbcodextra.vbulhighlight "Markieren">
+<!ENTITY bbcodextra.settingsmenu "BBCodeXtra - Einstellungen…">
+<!ENTITY bbcodextra.disablemenu "Dieses Menü deaktivieren">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "Farbe auswählen">
+<!ENTITY bbcodextra.pickcolor.description "Schriftfarbe aus der Liste wählen">
+<!ENTITY bbcodextra.pickcolor.lastcolor "Letzte verwendete Farbe :">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "BBCodeXtra - Einstellungen">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "Menüs">
+<!ENTITY bbcodextra.settings.customtags "Eigene Tags">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "Im Kontextmenü anzuzeigende Einträge auswählen">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "BBCode-Menü aktivieren">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "VBulletin-Untermenü aktivieren">
+<!ENTITY bbcodextra.settings.menu.enablehtml "HTML-Menü aktivieren">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "XHTML-Menü aktivieren">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Menü &quot;Eigene Tags&quot; aktivieren">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "Verfügbare eigene Tags:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Hinzufügen…">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Bearbeiten…">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Löschen…">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Nach oben">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Nach unten">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "Mehr Informationen und Beispiele">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "Verfügbare Variabeln">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "Inhalt der Zwischenablage">
+<!ENTITY bbcodextra.settings.customtags.varselection "Markierter Text">
+<!ENTITY bbcodextra.settings.customtags.label "Name des Eintrags:">
+<!ENTITY bbcodextra.settings.customtags.action "Code:">

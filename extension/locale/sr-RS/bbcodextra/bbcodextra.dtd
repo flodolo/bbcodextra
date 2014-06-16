@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "б">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "в">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "х">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "е">
+<!ENTITY bbcodextra.menu_customtags "Прилагођене ознаке">
+<!ENTITY bbcodextra.menu_accelcustomtags "п">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "Остава">
+<!ENTITY bbcodextra.accelClipboard "О">
+<!ENTITY bbcodextra.accelColor "Б">
+<!ENTITY bbcodextra.options "eXtra">
+<!ENTITY bbcodextra.accelOptions "Е">
+<!ENTITY bbcodextra.quote "Наводници">
+<!ENTITY bbcodextra.code "Кôд">
+<!ENTITY bbcodextra.list "Списак">
+<!ENTITY bbcodextra.listord "Уређен списак">
+<!ENTITY bbcodextra.listalf "Азбучни списак">
+<!ENTITY bbcodextra.img "Слика">
+<!ENTITY bbcodextra.urlselection "Нека одабрано постане URL">
+<!ENTITY bbcodextra.url "URL">
+<!ENTITY bbcodextra.urlwithname "URL са називом">
+<!ENTITY bbcodextra.pickcolor "Боја фонта">
+<!ENTITY bbcodextra.fontdim "Величина фонта">
+<!ENTITY bbcodextra.urlwizard "УРЛ чаробњак">
+<!ENTITY bbcodextra.bold "Подебљано">
+<!ENTITY bbcodextra.italic "Искошено">
+<!ENTITY bbcodextra.underline "Подвучено">
+<!ENTITY bbcodextra.strike "Прецртано">
+<!ENTITY bbcodextra.vbulthread "Тема">
+<!ENTITY bbcodextra.vbulpost "Одговор">
+<!ENTITY bbcodextra.vbulright "Лево поравнање">
+<!ENTITY bbcodextra.vbulleft "Десно поравнање">
+<!ENTITY bbcodextra.vbulcenter "Центрирано">
+<!ENTITY bbcodextra.vbulindent "Увлачење">
+<!ENTITY bbcodextra.vbulhighlight "Истицање">
+<!ENTITY bbcodextra.settingsmenu "Додатна подешавања...">
+<!ENTITY bbcodextra.disablemenu "Искључи овај мени">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "Изабери боју">
+<!ENTITY bbcodextra.pickcolor.description "Са списка изабери боју фонта">
+<!ENTITY bbcodextra.pickcolor.lastcolor "Последња коришћена боја:">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "Додатна подешавања...">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "Менији">
+<!ENTITY bbcodextra.settings.customtags "Прилагођене ознаке">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "Изаберите ставке које желите да видите у садржајном менију">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "Омогући bbcode мени">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Омогући VBulletin подмени">
+<!ENTITY bbcodextra.settings.menu.enablehtml "Омогући HTML мени">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "Омогући XHTML мени">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Омогући мени прилагођених ознака">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "Доступне прилагођене ознаке:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Додај...">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Уреди...">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Избриши...">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Помери нагоре">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Помери надоле">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "Више информација и примера">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "Доступне варијабле">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "садржај оставе">
+<!ENTITY bbcodextra.settings.customtags.varselection "одабрани текст">
+<!ENTITY bbcodextra.settings.customtags.label "Назив ставке:">
+<!ENTITY bbcodextra.settings.customtags.action "Кôд:">

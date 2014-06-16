@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "Custom Tags">
+<!ENTITY bbcodextra.menu_accelcustomtags "u">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "クリップボード">
+<!ENTITY bbcodextra.accelClipboard "C">
+<!ENTITY bbcodextra.accelColor "l">
+<!ENTITY bbcodextra.options "エクストラ">
+<!ENTITY bbcodextra.accelOptions "X">
+<!ENTITY bbcodextra.quote "引用">
+<!ENTITY bbcodextra.code "整形済みテキスト">
+<!ENTITY bbcodextra.list "リスト">
+<!ENTITY bbcodextra.listord "リスト(番号付き)">
+<!ENTITY bbcodextra.listalf "リスト(アルファベット付き)">
+<!ENTITY bbcodextra.img "画像">
+<!ENTITY bbcodextra.urlselection "選択した部分のリンクの作成">
+<!ENTITY bbcodextra.url "リンクの作成">
+<!ENTITY bbcodextra.urlwithname "リンクの作成(名前付き)">
+<!ENTITY bbcodextra.pickcolor "文字の色">
+<!ENTITY bbcodextra.fontdim "文字の大きさ">
+<!ENTITY bbcodextra.urlwizard "URL ウィザード">
+<!ENTITY bbcodextra.bold "太字">
+<!ENTITY bbcodextra.italic "斜体">
+<!ENTITY bbcodextra.underline "下線">
+<!ENTITY bbcodextra.strike "取り消し線">
+<!ENTITY bbcodextra.vbulthread "スレッド">
+<!ENTITY bbcodextra.vbulpost "ポスト">
+<!ENTITY bbcodextra.vbulright "右揃え">
+<!ENTITY bbcodextra.vbulleft "左揃え">
+<!ENTITY bbcodextra.vbulcenter "中央揃え">
+<!ENTITY bbcodextra.vbulindent "インデント">
+<!ENTITY bbcodextra.vbulhighlight "強調表示">
+<!ENTITY bbcodextra.settingsmenu "BBCodeXtra の設定…">
+<!ENTITY bbcodextra.disablemenu "このメニューを非表示">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "色の選択">
+<!ENTITY bbcodextra.pickcolor.description "使用したい文字の色をリストから選択してください。">
+<!ENTITY bbcodextra.pickcolor.lastcolor "最後に使用した色: ">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "BBCodeXtra の設定">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "メニュー">
+<!ENTITY bbcodextra.settings.customtags "カスタムタグ">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "選択した項目をコンテキストメニューに表示します">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "bbcode を表示">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "VBulletin サブメニューを表示">
+<!ENTITY bbcodextra.settings.menu.enablehtml "HTML を表示">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "XHTML を表示">
+<!ENTITY bbcodextra.settings.menu.enablecustom "カスタムタグを表示">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "使用できるカスタムタグ:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "追加…">
+<!ENTITY bbcodextra.settings.customtags.btnedit "編集…">
+<!ENTITY bbcodextra.settings.customtags.btndelete "削除…">
+<!ENTITY bbcodextra.settings.customtags.moveUp "上へ">
+<!ENTITY bbcodextra.settings.customtags.moveDown "下へ">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "詳細な情報とサンプル">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "使用できる変数">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "クリップボードの内容">
+<!ENTITY bbcodextra.settings.customtags.varselection "選択された文字列">
+<!ENTITY bbcodextra.settings.customtags.label "名前:">
+<!ENTITY bbcodextra.settings.customtags.action "コード:">

@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "Пользовательские теги">
+<!ENTITY bbcodextra.menu_accelcustomtags "о">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "Буфер обмена">
+<!ENTITY bbcodextra.accelClipboard "Б">
+<!ENTITY bbcodextra.accelColor "I">
+<!ENTITY bbcodextra.options "Дополнительно">
+<!ENTITY bbcodextra.accelOptions "Д">
+<!ENTITY bbcodextra.quote "Цитата">
+<!ENTITY bbcodextra.code "Код">
+<!ENTITY bbcodextra.list "Список">
+<!ENTITY bbcodextra.listord "Отсортированный список">
+<!ENTITY bbcodextra.listalf "Список по алфавиту">
+<!ENTITY bbcodextra.img "Изображение">
+<!ENTITY bbcodextra.urlselection "Сделайте выбор ссылки">
+<!ENTITY bbcodextra.url "Ссылка">
+<!ENTITY bbcodextra.urlwithname "Ссылка с именем">
+<!ENTITY bbcodextra.pickcolor "Цвет шрифта">
+<!ENTITY bbcodextra.fontdim "Кегль шрифта">
+<!ENTITY bbcodextra.urlwizard "Ссылка с помощником">
+<!ENTITY bbcodextra.bold "Полужирный">
+<!ENTITY bbcodextra.italic "Наклонный">
+<!ENTITY bbcodextra.underline "Подчёркнутый">
+<!ENTITY bbcodextra.strike "Зачёркнутый">
+<!ENTITY bbcodextra.vbulthread "Тема">
+<!ENTITY bbcodextra.vbulpost "Сообщение">
+<!ENTITY bbcodextra.vbulright "По правому краю">
+<!ENTITY bbcodextra.vbulleft "По левому краю">
+<!ENTITY bbcodextra.vbulcenter "По центру">
+<!ENTITY bbcodextra.vbulindent "Индент">
+<!ENTITY bbcodextra.vbulhighlight "Подсветить">
+<!ENTITY bbcodextra.settingsmenu "Настройки BBCodeXtra...">
+<!ENTITY bbcodextra.disablemenu "Отключить это меню">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "Выберите цвет">
+<!ENTITY bbcodextra.pickcolor.description "Выберите шрифт из списка">
+<!ENTITY bbcodextra.pickcolor.lastcolor "Последний использованный цвет">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "Настройки BBCodeXtra">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "Меню">
+<!ENTITY bbcodextra.settings.customtags "Пользовательские теги">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "Выберите пункты для их отображения в контекстном меню">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "Включить меню BBCode">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Включить подменю VBulletin">
+<!ENTITY bbcodextra.settings.menu.enablehtml "Включить меню HTML">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "Включить меню XHTML">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Включить меню пользовательских тегов">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "Доступные пользовательские теги:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Добавить...">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Редактировать...">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Удалить...">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Вверх">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Вниз">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "Информация и примеры">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "Доступные переменные">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "содержимое буфера">
+<!ENTITY bbcodextra.settings.customtags.varselection "выделенный текст">
+<!ENTITY bbcodextra.settings.customtags.label "Имя пункта:">
+<!ENTITY bbcodextra.settings.customtags.action "Код:">

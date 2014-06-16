@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://bbcodextra/skin/bbcodextra_prefs.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://bbcodextra/locale/bbcodextra.dtd">
+
+<dialog id="bbcodextraCustomDialog" title=""
+   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   buttons="accept,cancel"
+   ondialogaccept="return bbcodextra.customTagWindowConfirm();"
+   onload="bbcodextra.customTagWindowLoad();">
+
+ <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
+ 	<groupbox>
+		<caption label="&bbcodextra.settings.customtags.variables;" />
+		<hbox>
+			<label value="_selection_" class="varname" /><label value="&bbcodextra.settings.customtags.varselection;" />
+		</hbox>
+		<hbox>
+			<label value="_clipboard_" class="varname" /><label value="&bbcodextra.settings.customtags.varclipboard;" />							
+		</hbox>
+	</groupbox>
+   	<hbox>
+    	<label class="labelCustom" value="&bbcodextra.settings.customtags.label;"/>
+		<textbox id="tagLabel" maxlength="45" size="46" />
+    </hbox>
+	<hbox>
+    	<label class="labelCustom" value="&bbcodextra.settings.customtags.action;"/>
+		<textbox id="tagAction" multiline="true" cols="44" rows="4" />
+    </hbox>    
+</dialog>

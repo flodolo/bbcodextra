@@ -1,0 +1,64 @@
+/* Prefs and Custom Tag window */
+
+#bbcodextra-enable-vbulletin {
+	margin-left: 30px;
+}
+
+#bbcodextraPreferences radio[pane] {
+   	-moz-image-region: rect(0px, 32px, 36px, 0px);   
+	padding: 8px;
+}
+
+#bbcodextraPreferences radio[pane="bbcodextra-paneMenu"] {
+   list-style-image: url("chrome://bbcodextra/skin/pref_menu.png");   
+}
+
+#bbcodextraPreferences radio[pane="bbcodextra-paneCustomTags"] {
+   list-style-image: url("chrome://bbcodextra/skin/pref_customtags.png");   
+}
+
+#bbcodextraPreferences #listAvailableCustomTags {
+	width: 300px;
+}
+
+#bbcodextraPreferences button {
+	margin: 4px;
+}
+
+#bbcodextraPreferences .imgButtons {
+	height: 2.5em;
+	width: 150px;
+}
+
+#bbcodextraPreferences .imgButtons label {
+	padding-left: 5px;
+}
+
+#bbcodextraPreferences #btnAdd {
+	list-style-image: url('chrome://bbcodextra/skin/btnAdd.png');
+}
+
+#bbcodextraPreferences #btnEdit {
+	list-style-image: url('chrome://bbcodextra/skin/btnEdit.png');
+}
+
+#bbcodextraPreferences #btnDelete {
+	list-style-image: url('chrome://bbcodextra/skin/btnDelete.png');
+}
+
+#bbcodextraPreferences #btnMoveUp {
+	list-style-image: url('chrome://bbcodextra/skin/btnUp.png');
+}
+
+#bbcodextraPreferences #btnMoveDown {
+	list-style-image: url('chrome://bbcodextra/skin/btnDown.png');
+}
+
+#bbcodextraCustomDialog .varname {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+#bbcodextraCustomDialog .labelCustom {
+	width: 100px;
+}

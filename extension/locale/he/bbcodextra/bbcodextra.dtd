@@ -1,0 +1,74 @@
+<!-- Main level menus -->
+<!ENTITY bbcodextra.menu_bbcodextra "bbcodeXtra">
+<!ENTITY bbcodextra.menu_accelbbcodextra "b">
+<!ENTITY bbcodextra.menu_vbulletin "VBulletin3">
+<!ENTITY bbcodextra.menu_accelvbulletin "V">
+<!ENTITY bbcodextra.menu_htmlxtra "htmlXtra">
+<!ENTITY bbcodextra.menu_accelhtmlxtra "h">
+<!ENTITY bbcodextra.menu_xhtmlxtra "xhtmlXtra">
+<!ENTITY bbcodextra.menu_accelxhtmlxtra "x">
+<!ENTITY bbcodextra.menu_customtags "תוויות מותאמות">
+<!ENTITY bbcodextra.menu_accelcustomtags "ו">
+<!-- Other menus -->
+<!ENTITY bbcodextra.clipboard "לוח העריכה">
+<!ENTITY bbcodextra.accelClipboard "ל">
+<!ENTITY bbcodextra.accelColor "l">
+<!ENTITY bbcodextra.options "תוספת">
+<!ENTITY bbcodextra.accelOptions "ת">
+<!ENTITY bbcodextra.quote "ציטוט">
+<!ENTITY bbcodextra.code "קוד">
+<!ENTITY bbcodextra.list "רשימה">
+<!ENTITY bbcodextra.listord "רשימה מסודרת">
+<!ENTITY bbcodextra.listalf "רשימה אלפביתית">
+<!ENTITY bbcodextra.img "תמונה">
+<!ENTITY bbcodextra.urlselection "בחירת כתובת אינטרנט">
+<!ENTITY bbcodextra.url "כתובת אינטרנט">
+<!ENTITY bbcodextra.urlwithname "כתובת אינטרנט עם שם">
+<!ENTITY bbcodextra.pickcolor "צבע גופן">
+<!ENTITY bbcodextra.fontdim "גודל גופן">
+<!ENTITY bbcodextra.urlwizard "אשף כתובת אינטרנט">
+<!ENTITY bbcodextra.bold "בולט">
+<!ENTITY bbcodextra.italic "נטוי">
+<!ENTITY bbcodextra.underline "הדגשה (קו תחתון)">
+<!ENTITY bbcodextra.strike "פס - מוסיף קו על גבי הטקסט">
+<!ENTITY bbcodextra.vbulthread "שרשור">
+<!ENTITY bbcodextra.vbulpost "פרסום">
+<!ENTITY bbcodextra.vbulright "יישור לימין">
+<!ENTITY bbcodextra.vbulleft "יישור לשמאל">
+<!ENTITY bbcodextra.vbulcenter "אמצע">
+<!ENTITY bbcodextra.vbulindent "מרווח מפריד">
+<!ENTITY bbcodextra.vbulhighlight "מודגש">
+<!ENTITY bbcodextra.settingsmenu "הגדרות BBCodeXtra...">
+<!ENTITY bbcodextra.disablemenu "נטרול תפריט זה">
+<!-- Strings used in Pickcolor window -->
+<!ENTITY bbcodextra.pickcolor.title "בחירת צבע">
+<!ENTITY bbcodextra.pickcolor.description "בחירת צבע הגופן מהרשימה">
+<!ENTITY bbcodextra.pickcolor.lastcolor "הצבע האחרון בשימוש:">
+<!-- Strings used in Prefs window -->
+<!ENTITY bbcodextra.settings.title "הגדרות BBCodeXtra">
+<!-- Pane buttons -->
+<!ENTITY bbcodextra.settings.menu "תפריטים">
+<!ENTITY bbcodextra.settings.customtags "תוויות מותאמות">
+<!-- Menu pane -->
+<!ENTITY bbcodextra.settings.menu.description "בחירת פריטים להצגה בתפריט הלחצן הימני">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "אפשור תפריט bbcode">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "אפשור תת תפריט VBulletin">
+<!ENTITY bbcodextra.settings.menu.enablehtml "אפשור תפריט HTML">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "אפשור תפריט XHTML">
+<!ENTITY bbcodextra.settings.menu.enablecustom "אפשור תפריט תוויות מותאמות">
+<!-- Custom tags pane -->
+<!ENTITY bbcodextra.settings.customtags.totaltags "תוויות מותאמות זמינות:">
+<!ENTITY bbcodextra.settings.customtags.btnadd "הוספה...">
+<!ENTITY bbcodextra.settings.customtags.btnedit "עריכה...">
+<!ENTITY bbcodextra.settings.customtags.btndelete "מחיקה...">
+<!ENTITY bbcodextra.settings.customtags.moveUp "הזז מעלה">
+<!ENTITY bbcodextra.settings.customtags.moveDown "הזז מטה">
+<!ENTITY bbcodextra.settings.customtags.moreinfo "מידע נוסף ודוגמאות">
+<!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
+<!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+<!-- New custom tag window -->
+<!ENTITY bbcodextra.settings.customtags.variables "משתנים זמינים">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "תוכן לוח הכתיבה">
+<!ENTITY bbcodextra.settings.customtags.varselection "טקסט נבחר">
+<!ENTITY bbcodextra.settings.customtags.label "שם הפריט:">
+<!ENTITY bbcodextra.settings.customtags.action "קוד:">

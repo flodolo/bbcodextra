@@ -1,0 +1,17 @@
+/* menu icons */
+
+.icon-bbcodextra16 {
+	list-style-image: url("chrome://bbcodextra/skin/bbcodextra_16x16.png");
+}
+
+.icon-bbcodextraPrefs {
+  	list-style-image: url("chrome://bbcodextra/skin/bbcodextra_options.png");
+}
+
+.icon-bbcodextraDisable {
+  	list-style-image: url("chrome://bbcodextra/skin/bbcodextra_disable.png");
+}
+
+.icon-bbcodextraColor {
+  	list-style-image: url("chrome://bbcodextra/skin/bbcodextra_color.png");
+}
