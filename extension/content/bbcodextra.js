@@ -269,40 +269,47 @@ if ("undefined" == typeof(bbcodextra)) {
 			var enableBBCodeMenu, enableVBulletinMenu, enableHtmlMenu, enableXhtmlMenu, enableCustomMenu;
 
 			// Read pref values to determine which menus are enabled and should be displayed
-			enableBBCodeMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodemenu");
-			enableHtmlMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.htmlmenu");
-			enableXhtmlMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.xhtmlmenu");
+			enableBBCodeMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodemenu");
+			enableHtmlMenu      = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.htmlmenu");
+			enableXhtmlMenu     = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.xhtmlmenu");
 			enableVBulletinMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodevbulletinmenu");
-			enableCustomMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.custommenu");
+			enableMarkdownMenu  = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.markdownmenu");
+			enableCustomMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.custommenu");
 
-			if(enableBBCodeMenu){
+			if (enableBBCodeMenu) {
 				document.getElementById('context-bbcodextra-bbcode').hidden = document.getElementById('context-undo').hidden;
 				// VBulletin is displayed only if BBCode menu is enabled
-				if(enableVBulletinMenu){
-						document.getElementById('context-bbcodextra-vbulletinmenu').hidden = document.getElementById('context-undo').hidden;
-					}
-				else{
+				if (enableVBulletinMenu) {
+					document.getElementById('context-bbcodextra-vbulletinmenu').hidden = document.getElementById('context-undo').hidden;
+				}
+				else {
 					document.getElementById('context-bbcodextra-vbulletinmenu').hidden = true;
-					}
-			}else{
+				}
+			} else {
 				document.getElementById('context-bbcodextra-bbcode').hidden = true;
 			}
 
-			if(enableHtmlMenu){
+			if (enableHtmlMenu) {
 				document.getElementById('context-bbcodextra-html').hidden = document.getElementById('context-undo').hidden;
-			}else{
+			} else {
 				document.getElementById('context-bbcodextra-html').hidden = true;
 			}
 
-			if(enableXhtmlMenu){
+			if (enableXhtmlMenu) {
 				document.getElementById('context-bbcodextra-xhtml').hidden = document.getElementById('context-undo').hidden;
 			}else{
 				document.getElementById('context-bbcodextra-xhtml').hidden = true;
 			}
 
-			if(enableCustomMenu){
+			if (enableMarkdownMenu) {
+				document.getElementById('context-bbcodextra-markdown').hidden = document.getElementById('context-undo').hidden;
+			} else {
+				document.getElementById('context-bbcodextra-markdown').hidden = true;
+			}
+
+			if (enableCustomMenu) {
 				document.getElementById('context-bbcodextra-custom').hidden = document.getElementById('context-undo').hidden;
-			}else{
+			} else {
 				document.getElementById('context-bbcodextra-custom').hidden = true;
 			}
 		},

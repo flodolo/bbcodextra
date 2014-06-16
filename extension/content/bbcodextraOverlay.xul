@@ -11,135 +11,171 @@
 </stringbundleset>
 
 <popup id="contentAreaContextMenu">
-  <menu id="context-bbcodextra-bbcode" class="menuitem-iconic menu-iconic icon-bbcodextra16" position="1" label="&bbcodextra.menu_bbcodextra;" accesskey="&bbcodextra.menu_accelbbcodextra;" >
-        <menupopup>
-           <menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
-            <menupopup>
-             <menuitem id="bbcodextra-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('quoteclip',null);"/>
-	         <menuitem id="bbcodextra-context-codeclip" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('codeclip',null);"/>
-	         <menuitem id="bbcodextra-context-listclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('listclip',null);"/>
-	         <menuitem id="bbcodextra-context-listclipord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listclipord',null);"/>
-	         <menuitem id="bbcodextra-context-listclipalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listclipalpha',null);"/>
-             <menuitem id="bbcodextra-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('imgclip',null);"/>
-	         <menuitem id="bbcodextra-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('urlselection',null);"/>
-             <menuitem id="bbcodextra-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('url',null);"/>
-             <menuitem id="bbcodextra-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('urlclip',null);"/>
-            </menupopup>
-           </menu>
-           <menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
-	         <menupopup>
-              <menuitem id="bbcodextra-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('quote',null);"/>
-	          <menuitem id="bbcodextra-context-code"  label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('code',null);"/>
-	          <menuitem id="bbcodextra-context-list" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('list',null);"/>
-	          <menuitem id="bbcodextra-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listord',null);"/>
-	          <menuitem id="bbcodextra-context-listalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listalpha',null);"/>
-              <menuitem id="bbcodextra-context-pickcolor" class="menuitem-iconic menu-iconic icon-bbcodextraColor" label="&bbcodextra.pickcolor;" oncommand="bbcodextra.showColorPick();"/>
-	          <menuitem id="bbcodextra-context-size" label="&bbcodextra.fontdim;" oncommand="bbcodextra.bbcodextra('size',null);"/>
-	          <menuitem id="bbcodextra-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('urltagname',null);"/>
-	          <menuitem id="bbcodextra-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('composeurl',null);"/>
-	         </menupopup>
-	         </menu>
-	         <menu id="context-bbcodextra-vbulletinmenu" label="&bbcodextra.menu_vbulletin;" accesskey="&bbcodextra.menu_accelvbulletin;">
-	         <menupopup>
-	          <menuitem id="bbcodextra-context-vbulthread" label="&bbcodextra.vbulthread;" oncommand="bbcodextra.bbcodextra('vbulthread',null);"/>
-	          <menuitem id="bbcodextra-context-vbulpost" label="&bbcodextra.vbulpost;" oncommand="bbcodextra.bbcodextra('vbulpost',null);"/>
-	          <menuitem id="bbcodextra-context-vbulleft" label="&bbcodextra.vbulleft;" oncommand="bbcodextra.bbcodextra('vbulleft',null);"/>
-	          <menuitem id="bbcodextra-context-vbulright" label="&bbcodextra.vbulright;" oncommand="bbcodextra.bbcodextra('vbulright',null);"/>
-	          <menuitem id="bbcodextra-context-vbulcenter" label="&bbcodextra.vbulcenter;" oncommand="bbcodextra.bbcodextra('vbulcenter',null);"/>
-	          <menuitem id="bbcodextra-context-vbulindent" label="&bbcodextra.vbulindent;" oncommand="bbcodextra.bbcodextra('vbulindent',null);"/>
-	          <menuitem id="bbcodextra-context-vbulhighlight" label="&bbcodextra.vbulhighlight;" oncommand="bbcodextra.bbcodextra('vbulhighlight',null);"/>
-	          <menuseparator/>
-	          <menuitem id="bbcodextra-vbullettin-context-disable" class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('bbcodevbulletinmenu');"/>
-	          </menupopup>
-	         </menu>
-           <menuitem id="bbcodextra-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('bold',null);"/>
-           <menuitem id="bbcodextra-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('italic',null);"/>
-           <menuitem id="bbcodextra-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('underline',null);"/>
-	         <menuitem id="bbcodextra-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('img',null);"/>
-	         <menuitem id="bbcodextra-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('urltag',null);"/>
-	         <menuseparator/>
-	         <menuitem id="bbcodextra-context-disable" class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('bbcodemenu',null);"/>
-	         <menuitem id="bbcodextra-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
-        </menupopup>
-  </menu>
+	<menu id="context-bbcodextra-bbcode" class="menuitem-iconic menu-iconic icon-bbcodextra16" position="1" label="&bbcodextra.menu_bbcodextra;" accesskey="&bbcodextra.menu_accelbbcodextra;" >
+		<menupopup>
+			<menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
+				<menupopup>
+					<menuitem id="bbcodextra-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('quoteclip' ,null);"/>
+					<menuitem id="bbcodextra-context-codeclip" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('codeclip' ,null);"/>
+					<menuitem id="bbcodextra-context-listclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('listclip' ,null);"/>
+					<menuitem id="bbcodextra-context-listclipord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listclipord' ,null);"/>
+					<menuitem id="bbcodextra-context-listclipalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listclipalpha' ,null);"/>
+					<menuitem id="bbcodextra-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('imgclip' ,null);"/>
+					<menuitem id="bbcodextra-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('urlselection' ,null);"/>
+					<menuitem id="bbcodextra-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('url' ,null);"/>
+					<menuitem id="bbcodextra-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('urlclip' ,null);"/>
+				</menupopup>
+			</menu>
+			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
+				<menupopup>
+					<menuitem id="bbcodextra-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('quote' ,null);"/>
+					<menuitem id="bbcodextra-context-code"  label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('code' ,null);"/>
+					<menuitem id="bbcodextra-context-list" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('list' ,null);"/>
+					<menuitem id="bbcodextra-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listord' ,null);"/>
+					<menuitem id="bbcodextra-context-listalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listalpha' ,null);"/>
+					<menuitem id="bbcodextra-context-pickcolor" class="menuitem-iconic menu-iconic icon-bbcodextraColor" label="&bbcodextra.pickcolor;" oncommand="bbcodextra.showColorPick();"/>
+					<menuitem id="bbcodextra-context-size" label="&bbcodextra.fontdim;" oncommand="bbcodextra.bbcodextra('size' ,null);"/>
+					<menuitem id="bbcodextra-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('urltagname' ,null);"/>
+					<menuitem id="bbcodextra-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('composeurl' ,null);"/>
+				</menupopup>
+			</menu>
+			<menu id="context-bbcodextra-vbulletinmenu" label="&bbcodextra.menu_vbulletin;" accesskey="&bbcodextra.menu_accelvbulletin;">
+				<menupopup>
+					<menuitem id="bbcodextra-context-vbulthread" label="&bbcodextra.vbulthread;" oncommand="bbcodextra.bbcodextra('vbulthread' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulpost" label="&bbcodextra.vbulpost;" oncommand="bbcodextra.bbcodextra('vbulpost' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulleft" label="&bbcodextra.vbulleft;" oncommand="bbcodextra.bbcodextra('vbulleft' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulright" label="&bbcodextra.vbulright;" oncommand="bbcodextra.bbcodextra('vbulright' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulcenter" label="&bbcodextra.vbulcenter;" oncommand="bbcodextra.bbcodextra('vbulcenter' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulindent" label="&bbcodextra.vbulindent;" oncommand="bbcodextra.bbcodextra('vbulindent' ,null);"/>
+					<menuitem id="bbcodextra-context-vbulhighlight" label="&bbcodextra.vbulhighlight;" oncommand="bbcodextra.bbcodextra('vbulhighlight' ,null);"/>
+					<menuseparator/>
+					<menuitem id="bbcodextra-vbullettin-context-disable" class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('bbcodevbulletinmenu');"/>
+				</menupopup>
+			</menu>
+			<menuitem id="bbcodextra-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('bold' ,null);"/>
+			<menuitem id="bbcodextra-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('italic' ,null);"/>
+			<menuitem id="bbcodextra-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('underline' ,null);"/>
+			<menuitem id="bbcodextra-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('img' ,null);"/>
+			<menuitem id="bbcodextra-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('urltag' ,null);"/>
+			<menuseparator/>
+			<menuitem id="bbcodextra-context-disable" class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('bbcodemenu' ,null);"/>
+			<menuitem id="bbcodextra-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
+		</menupopup>
+	</menu>
 
-  <menu id="context-bbcodextra-html" position="2" insertafter="context-bbcodextra-bbcode" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_htmlxtra;" accesskey="&bbcodextra.menu_accelhtmlxtra;" >
-        <menupopup>
-           <menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
-            <menupopup>
-             <menuitem id="bbcodextra-html-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquoteclip',null);"/>
-             <menuitem id="bbcodextra-html-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('xhtmlcodeclip',null);"/>
-	           <menuitem id="bbcodextra-html-context-listclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllistclip',null);"/>
-	           <menuitem id="bbcodextra-html-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistordclip',null);"/>
-	           <menuitem id="bbcodextra-html-context-listalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalphaclip',null);"/>
-	           <menuitem id="bbcodextra-html-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('htmlimgclip',null);"/>
-	           <menuitem id="bbcodextra-html-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('xhtmlurlselection',null);"/>
-	           <menuitem id="bbcodextra-html-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurl',null);"/>
-	           <menuitem id="bbcodextra-html-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurlclip',null);"/>
-            </menupopup>
-	         </menu>
-           <menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
-	          <menupopup>
-             <menuitem id="bbcodextra-html-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquote',null);"/>
-	           <menuitem id="bbcodextra-html-context-list" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllist',null);"/>
-	           <menuitem id="bbcodextra-html-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistord',null);"/>
-	           <menuitem id="bbcodextra-html-context-listalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalpha',null);"/>
-	           <menuitem id="bbcodextra-html-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurltagname',null);"/>
-	           <menuitem id="bbcodextra-html-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('xhtmlcomposeurl',null);"/>
-            </menupopup>
-	         </menu>
-           <menuitem id="bbcodextra-html-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('htmlbold',null);"/>
-           <menuitem id="bbcodextra-html-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('htmlitalic',null);"/>
-           <menuitem id="bbcodextra-html-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('htmlunderline',null);"/>
-	         <menuitem id="bbcodextra-html-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('htmlstrike',null);"/>
-	         <menuitem id="bbcodextra-html-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('htmlimg',null);"/>
-	         <menuitem id="bbcodextra-html-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurltag',null);"/>
-	         <menuseparator/>
-	         <menuitem id="bbcodextra-html-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('htmlmenu',null);"/>
-	         <menuitem id="bbcodextra-html-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
-	       </menupopup>
-  </menu>
+	<menu id="context-bbcodextra-html" position="2" insertafter="context-bbcodextra-bbcode" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_htmlxtra;" accesskey="&bbcodextra.menu_accelhtmlxtra;" >
+		<menupopup>
+			<menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
+				<menupopup>
+					<menuitem id="bbcodextra-html-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquoteclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('xhtmlcodeclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-listclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllistclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistordclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-listalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalphaclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('htmlimgclip' ,null);"/>
+					<menuitem id="bbcodextra-html-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('xhtmlurlselection' ,null);"/>
+					<menuitem id="bbcodextra-html-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurl' ,null);"/>
+					<menuitem id="bbcodextra-html-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurlclip' ,null);"/>
+				</menupopup>
+			</menu>
+			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
+				<menupopup>
+					<menuitem id="bbcodextra-html-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquote' ,null);"/>
+					<menuitem id="bbcodextra-html-context-list" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllist' ,null);"/>
+					<menuitem id="bbcodextra-html-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistord' ,null);"/>
+					<menuitem id="bbcodextra-html-context-listalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalpha' ,null);"/>
+					<menuitem id="bbcodextra-html-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurltagname' ,null);"/>
+					<menuitem id="bbcodextra-html-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('xhtmlcomposeurl' ,null);"/>
+				</menupopup>
+			</menu>
+			<menuitem id="bbcodextra-html-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('htmlbold' ,null);"/>
+			<menuitem id="bbcodextra-html-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('htmlitalic' ,null);"/>
+			<menuitem id="bbcodextra-html-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('htmlunderline' ,null);"/>
+			<menuitem id="bbcodextra-html-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('htmlstrike' ,null);"/>
+			<menuitem id="bbcodextra-html-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('htmlimg' ,null);"/>
+			<menuitem id="bbcodextra-html-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurltag' ,null);"/>
+			<menuseparator/>
+			<menuitem id="bbcodextra-html-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('htmlmenu' ,null);"/>
+			<menuitem id="bbcodextra-html-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
+		</menupopup>
+	</menu>
 
-  <menu id="context-bbcodextra-xhtml" position="3" insertafter="context-bbcodextra-html" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_xhtmlxtra;" accesskey="&bbcodextra.menu_accelxhtmlxtra;" >
-         <menupopup>
-           <menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
-            <menupopup>
-             <menuitem id="bbcodextra-xhtml-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquoteclip',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('xhtmlcodeclip',null);"/>
-              <menuitem id="bbcodextra-xhtml-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllistclip',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistordclip',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalphanomeclip',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('xhtmlimgclip',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('xhtmlurlselection',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurl',null);"/>
-	          <menuitem id="bbcodextra-xhtml-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurlclip',null);"/>
-            </menupopup>
-	       </menu>
-           <menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
-	        <menupopup>
-             <menuitem id="bbcodextra-xhtml-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquote',null);"/>
-	         <menuitem id="bbcodextra-xhtml-context-lista" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllist',null);"/>
-	         <menuitem id="bbcodextra-xhtml-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistord',null);"/>
-	         <menuitem id="bbcodextra-xhtml-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalpha',null);"/>
-	         <menuitem id="bbcodextra-xhtml-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurltagname',null);"/>
-	         <menuitem id="bbcodextra-xhtml-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('xhtmlcomposeurl',null);"/>
-            </menupopup>
-	       </menu>
-           <menuitem id="bbcodextra-xhtml-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('xhtmlbold',null);"/>
-           <menuitem id="bbcodextra-xhtml-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('xhtmlitalic',null);"/>
-           <menuitem id="bbcodextra-xhtml-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('xhtmlunderline',null);"/>
-	       <menuitem id="bbcodextra-xhtml-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('xhtmlstrike',null);"/>
-	       <menuitem id="bbcodextra-xhtml-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('xhtmlimg',null);"/>
-	       <menuitem id="bbcodextra-xhtml-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurltag',null);"/>
-	       <menuseparator/>
-	       <menuitem id="bbcodextra-xhtml-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('xhtmlmenu',null);"/>
-	       <menuitem id="bbcodextra-xhtml-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
-	      </menupopup>
-  </menu>
+	<menu id="context-bbcodextra-xhtml" position="3" insertafter="context-bbcodextra-html" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_xhtmlxtra;" accesskey="&bbcodextra.menu_accelxhtmlxtra;" >
+		<menupopup>
+			<menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
+				<menupopup>
+					<menuitem id="bbcodextra-xhtml-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquoteclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('xhtmlcodeclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllistclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistordclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalphanomeclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('xhtmlimgclip' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('xhtmlurlselection' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurl' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurlclip' ,null);"/>
+				</menupopup>
+			</menu>
+			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
+				<menupopup>
+					<menuitem id="bbcodextra-xhtml-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('xhtmlquote' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-lista" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('xhtmllist' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('xhtmllistord' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('xhtmllistalpha' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('xhtmlurltagname' ,null);"/>
+					<menuitem id="bbcodextra-xhtml-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('xhtmlcomposeurl' ,null);"/>
+				</menupopup>
+			</menu>
+			<menuitem id="bbcodextra-xhtml-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('xhtmlbold' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('xhtmlitalic' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('xhtmlunderline' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('xhtmlstrike' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-img" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('xhtmlimg' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('xhtmlurltag' ,null);"/>
+			<menuseparator/>
+			<menuitem id="bbcodextra-xhtml-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('xhtmlmenu' ,null);"/>
+			<menuitem id="bbcodextra-xhtml-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
+		</menupopup>
+	</menu>
 
-  <menu id="context-bbcodextra-custom" position="4" insertafter="context-bbcodextra-xhtml" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_customtags;" accesskey="&bbcodextra.menu_accelcustomtags;" >
-		  <menupopup id="context-bbcodextra-custom-container" onpopupshowing="bbcodextra.displayCustomMenu();">
-	      </menupopup>
-  </menu>
+	<menu id="context-bbcodextra-markdown" position="4" insertafter="context-bbcodextra-xhtml" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_markdown;" accesskey="&bbcodextra.menu_accelmarkdown;" >
+		<menupopup>
+			<menu label="&bbcodextra.clipboard;" accesskey="&bbcodextra.accelClipboard;">
+				<menupopup>
+					<menuitem id="bbcodextra-markdown-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquoteclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('markdowncodeclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlistclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistordclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('markdownlistalphanomeclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('markdownurlselection' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('markdownurl' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurlclip' ,null);"/>
+				</menupopup>
+			</menu>
+			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
+				<menupopup>
+					<menuitem id="bbcodextra-markdown-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquote' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-lista" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlist' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistord' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaalf" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('markdownlistalpha' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurltagname' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('markdowncomposeurl' ,null);"/>
+				</menupopup>
+			</menu>
+			<menuitem id="bbcodextra-markdown-context-bold" style="font-weight: bold;" label="&bbcodextra.bold;" oncommand="bbcodextra.bbcodextra('markdownbold' ,null);"/>
+			<menuitem id="bbcodextra-markdown-context-italic" style="font-style: italic;" label="&bbcodextra.italic;" oncommand="bbcodextra.bbcodextra('markdownitalic' ,null);"/>
+			<menuitem id="bbcodextra-markdown-context-underline" style="text-decoration: underline;" label="&bbcodextra.underline;" oncommand="bbcodextra.bbcodextra('markdownunderline' ,null);"/>
+			<menuitem id="bbcodextra-markdown-context-strike" style="text-decoration: line-through;" label="&bbcodextra.strike;" oncommand="bbcodextra.bbcodextra('markdownstrike' ,null);"/>
+			<menuitem id="bbcodextra-markdown-context-urltag" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('markdownurltag' ,null);"/>
+			<menuseparator/>
+			<menuitem id="bbcodextra-markdown-context-disable"  class="menuitem-iconic menu-iconic icon-bbcodextraDisable" label="&bbcodextra.disablemenu;" oncommand="bbcodextra.disableMenu('markdownmenu' ,null);"/>
+			<menuitem id="bbcodextra-markdown-context-setting" class="menuitem-iconic menu-iconic icon-bbcodextraPrefs" label="&bbcodextra.settingsmenu;" oncommand="bbcodextra.showPreferences();"/>
+		</menupopup>
+	</menu>
+
+	<menu id="context-bbcodextra-custom" position="4" insertafter="context-bbcodextra-xhtml" class="menuitem-iconic menu-iconic icon-bbcodextra16" label="&bbcodextra.menu_customtags;" accesskey="&bbcodextra.menu_accelcustomtags;" >
+		<menupopup id="context-bbcodextra-custom-container" onpopupshowing="bbcodextra.displayCustomMenu();">
+		</menupopup>
+	</menu>
+
 </popup>
 </overlay>

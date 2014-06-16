@@ -21,6 +21,7 @@
 		<preference id="pref-vbulletin" name="extensions.bbcodextra.bbcodevbulletinmenu" type="bool" />
 		<preference id="pref-html" name="extensions.bbcodextra.htmlmenu" type="bool"/>
 		<preference id="pref-xhtml" name="extensions.bbcodextra.xhtmlmenu" type="bool"/>
+		<preference id="pref-markdown" name="extensions.bbcodextra.markdownmenu" type="bool"/>
 		<preference id="pref-custom" name="extensions.bbcodextra.custommenu" type="bool"/>
     </preferences>
   	<label value="&bbcodextra.settings.menu.description;" />
@@ -29,6 +30,7 @@
 		<checkbox id="bbcodextra-enable-vbulletin" preference="pref-vbulletin" label="&bbcodextra.settings.menu.enablebbcode.vbulletin;" />
 		<checkbox id="bbcodextra-enable-html" preference="pref-html" label="&bbcodextra.settings.menu.enablehtml;" />
         <checkbox id="bbcodextra-enable-xhtml" preference="pref-xhtml" label="&bbcodextra.settings.menu.enablexhtml;" />
+        <checkbox id="bbcodextra-enable-markdown" preference="pref-markdown" label="&bbcodextra.settings.menu.enablemarkdown;" />
 		<checkbox id="bbcodextra-enable-custom" preference="pref-custom" label="&bbcodextra.settings.menu.enablecustom;" />
     </groupbox>
   </prefpane>
