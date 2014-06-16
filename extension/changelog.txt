@@ -1,12 +1,16 @@
-Version 0.3.2 - 01.06.2010
+Version 0.3.3 - 201406
+* Added code to Github: https://github.com/flodolo/bbcodextra
+
+
+Version 0.3.2 - 20100601
 * Fixed "Color" command (broken in 0.3.1)
 * Renamed variable "prefs" to "bbcodextraPrefs" to avoid conflicts with extensions that declare public variables with that name
 * Added back Hebrew locale
 
-Version 0.3.1 - 05.06.2010
+Version 0.3.1 - 20100506
 * Removed global variables, moved all JavaScript code inside bbcodextra.js and inside "bbcodextra" namespace (as suggested during AMO's review on 0.3.0)
 
-Version 0.3.0 - 04.28.2010
+Version 0.3.0 - 20100428
 * New functionality: Custom Tags (see http://www.yetanothertechblog.com/bbcodextra/)
 * Using wrapper chrome://global/content/nsUserSettings.js for preferences management
 * General reorganization: moved code into specific .js files (bbcodextraPrefs.js, bbcodextraCustomTag.js), moved all images from content to skin
@@ -14,21 +18,19 @@ Version 0.3.0 - 04.28.2010
 * Moved Pref Windows to prefwindow instead of dialog
 * Moved global variable inside bbcodextra namespace (AMO's editor review)
 
-
-Version 0.2.6.1 - 04.05.2010
-* Fixed an error in chrome.manifest that caused an XML error on Firefox/SeaMonkey localized in Hebrew (reported by Tomer Cohen of mozilla.org.il). 
+Version 0.2.6.1 - 20100405
+* Fixed an error in chrome.manifest that caused an XML error on Firefox/SeaMonkey localized in Hebrew (reported by Tomer Cohen of mozilla.org.il).
 * Added l10n.ini file inside "locale" folder, used to do a compare-locales locally (ref: https://developer.mozilla.org/en/Compare-locales)
 * Removed unnecessary contents.rdf from all locales (ref: https://developer.mozilla.org/en/Chrome_Registration#Old-style_contents.rdf_manifests)
-* l10n: 
+* l10n:
 	** updated "he-IL" localization (fixed issues with escaping)
-	** moved French localization from "fr-FR" to "fr", 
+	** moved French localization from "fr-FR" to "fr",
 	** fixed wrong enconding for es-ES (bbcodextra.dtd from ISO-8859-1 to UTF-8, error found thanks to compare-locales)
 * Removed "code" class from css (used to change the aspect of "code" command using a green courier Font, not a great idea considering the number of themes/personas around nowadays and possible color/font conflicts)
 
-
-Version 0.2.6 - 03.28.2010
+Version 0.2.6 - 20100328
 * No new functionalities
-* Overall code clean up (translated comments and variable names in English, fixed duplicated XUL IDs and CSS) 
+* Overall code clean up (translated comments and variable names in English, fixed duplicated XUL IDs and CSS)
 * Fixed compatibility with SeaMonkey (missing overlay in chrome.manifest for navigator.xul)
 * Fixed compatibility with latest Minefield nightlies (switched preferences management from nsIPref to nsIPrefService)
 * Switch from jar structure to plain structure
