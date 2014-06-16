@@ -434,14 +434,16 @@ if ("undefined" == typeof(bbcodextra)) {
 				}
 
 				var theBox = document.commandDispatcher.focusedElement;
+				// Need to work also with HTML5 content editable elements
+				var availableText = theBox.value ? theBox.value : theBox.textContent;
+
 				var oPosition = theBox.scrollTop;
 				var oHeight = theBox.scrollHeight;
-
 
 				// Get selected text and store it in strSelected
 				var startPos = theBox.selectionStart;
 				var endPos = theBox.selectionEnd;
-				strSelected = theBox.value.substring(startPos, endPos);
+				strSelected = availableText.substring(startPos, endPos);
 
 				bbcodextra.insertAtCursorSetup(myCommand, strClipboard, strSelected, theBox, extraParam);
 				var nHeight = theBox.scrollHeight - oHeight;
