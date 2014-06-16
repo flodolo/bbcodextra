@@ -401,24 +401,24 @@ if ("undefined" == typeof(bbcodextra)) {
 			return result.value;
 		},
 
-		bbcodextra: function(myCommand,extraParam) {
+		bbcodextra: function(myCommand, extraParam) {
 				/*
-				Code reference for clipboard
-				http://www.expressnewsindia.com/site/jabalpur/8_4%20-%20Using%20the%20Clipboard.htm
+					Code reference for clipboard
+					https://developer.mozilla.org/en/docs/Using_the_Clipboard
 				*/
 				var widgetClipboard = Components.classes["@mozilla.org/widget/clipboard;1"].createInstance(Components.interfaces.nsIClipboard);
-				if (!widgetClipboard){
+				if (!widgetClipboard) {
 					return false;
 				}
 
 				var widgetTransferable = Components.classes["@mozilla.org/widget/transferable;1"].createInstance(Components.interfaces.nsITransferable);
-				if (!widgetTransferable){
+				if (!widgetTransferable) {
 					return false;
 				}
 
 				widgetTransferable.addDataFlavor("text/unicode");
-				try{
-					widgetClipboard.getData(widgetTransferable,widgetClipboard.kGlobalClipboard);
+				try {
+					widgetClipboard.getData(widgetTransferable, widgetClipboard.kGlobalClipboard);
 				} catch(e) {
 				}
 
@@ -426,17 +426,18 @@ if ("undefined" == typeof(bbcodextra)) {
 
 				var strSelected = null;
 				var strClipboard = {};
+				var strClipboardString;
 				var strLength = {};
-				try{
-					widgetTransferable.getTransferData("text/unicode",strClipboard,strLength);
+				try {
+					widgetTransferable.getTransferData("text/unicode", strClipboard, strLength);
 
 					if (strClipboard){
 						strClipboard = strClipboard.value.QueryInterface(Components.interfaces.nsISupportsString);
 					}
 					if (strClipboard){
-						var pastetext = strClipboard.data.substring(0,strLength.value / 2);
+						strClipboardString = strClipboard.data;
 					}
-				}catch (e){
+				} catch (e) {
 					//alert("No text in the clipboard, please copy something first.");
 				}
 
@@ -452,7 +453,7 @@ if ("undefined" == typeof(bbcodextra)) {
 				var endPos = theBox.selectionEnd;
 				strSelected = availableText.substring(startPos, endPos);
 
-				bbcodextra.insertAtCursorSetup(myCommand, strClipboard, strSelected, theBox, extraParam);
+				bbcodextra.insertAtCursorSetup(myCommand, strClipboardString, strSelected, theBox, extraParam);
 				var nHeight = theBox.scrollHeight - oHeight;
 				theBox.scrollTop = oPosition + nHeight;
 		},
@@ -573,27 +574,27 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "list":
-					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcode"));
 				break;
 
 				case "listord":
-					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcodeord"));
 				break;
 
 				case "listalpha":
-					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strSelected, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcodeordalf"));
 				break;
 
 				case "listclip":
-					bbcodextra.insertAtCursor("[list]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcode"));
 				break;
 
 				case "listclipord":
-					bbcodextra.insertAtCursor("[list=1]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcodeord"));
 				break;
 
 				case "listclipalpha":
-					bbcodextra.insertAtCursor("[list=a]\n[*]" + bbcodextra.replace_CR(strClipboard, "[*]*") + "\n[/list]");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcodeordalf"));
 				break;
 
 				case "italic":
@@ -730,14 +731,14 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "xhtmlurl":
-					bbcodextra.insertAtCursor("<a href=\""+strClipboard+"\">"+strClipboard +"</a>");
+					bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strClipboard + "</a>");
 				break;
 
 				case "xhtmlurlclip":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("<a href=\"" + strClipboard+"\">" + strPrompt + "</a>");
+						bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strPrompt + "</a>");
 					}
 				break;
 
@@ -764,27 +765,27 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "xhtmllist":
-					bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ul>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "html"));
 				break;
 
 				case "xhtmllistord":
-					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "htmlord"));
 				break;
 
 				case "xhtmllistalpha":
-					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strSelected, "[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "htmlordalf"));
 				break;
 
 				case "xhtmllistclip":
-				bbcodextra.insertAtCursor("<ul>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ul>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "html"));
 				break;
 
 				case "xhtmllistordclip":
-					bbcodextra.insertAtCursor("<ol>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "htmlord"));
 				break;
 
 				case "xhtmllistalphaclip":
-					bbcodextra.insertAtCursor("<ol type=a>\n<li>" + bbcodextra.htmlreplace_CR(strClipboard, "[*]*") + "</li>\n</ol>");
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "htmlordalf"));
 				break;
 
 				// MARKDOWN FUNCTIONS
@@ -795,6 +796,14 @@ if ("undefined" == typeof(bbcodextra)) {
 
 				case "markdowncodeclip":
 					bbcodextra.insertAtCursor("```" + strClipboard + "```");
+				break;
+
+				case "markdownlistclip":
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "markdown"));
+				break;
+
+				case "markdownlistordclip":
+					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "markdownord"));
 				break;
 
 				case "markdownurlselection":
@@ -811,6 +820,14 @@ if ("undefined" == typeof(bbcodextra)) {
 
 				case "markdownquote":
 					bbcodextra.insertAtCursor("> " + strSelected);
+				break;
+
+				case "markdownlist":
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "markdown"));
+				break;
+
+				case "markdownlistord":
+					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "markdownord"));
 				break;
 
 				case "markdowntagname":
@@ -843,10 +860,10 @@ if ("undefined" == typeof(bbcodextra)) {
 					bbcodextra.insertAtCursor("~~" + strSelected + "~~");
 				break;
 
-				default : alert("No function selected");
-				}//end switch
+				default :
+					alert("No function selected");
+				} //end switch
 		},
-
 
 		insertAtCursor: function(aText) {
 			// Code reference: http://kb.mozillazine.org/index.phtml?title=Dev_:_Tips_:_Inserting_text_at_cursor
@@ -865,153 +882,87 @@ if ("undefined" == typeof(bbcodextra)) {
 			}
 		},
 
+		createList: function(originalText, listType){
+			var startBlock, endBlock, startItem, endItem, formattedText;
 
-		replace_CR: function(myText, replaceWith){
-			// Code reference for line ending: http://www.jennifermadden.com/162/examples/stringEscape.html
-			var OS;
+			// Make sure only \n is used as line ending
+			originalText = originalText.replace(/[\r|\n|\r\n]/g, '\n');
+			// Split lines based on \n
+			lines = originalText.split("\n");
+			// Ignore empty lines
+			lines = lines.filter(function(n){
+				return n !== "";
+			});
 
-			while (myText.length > 0){
-				if (myText.charAt(0) == "\n") {
-					myText=myText.substr(1,myText.length);
-				}
-				else {
-					break;
-				}
+			switch (listType) {
+				case "bbcode":
+					startBlock = "[list]\n";
+					startItem = "[*]";
+					endItem = "\n";
+					endBlock = "[/list]";
+				break;
+				case "bbcodeord":
+					startBlock = "[list=1]\n";
+					startItem = "[*]";
+					endItem = "\n";
+					endBlock = "[/list]";
+				break;
+				case "bbcodeordalf":
+					startBlock = "[list=a]\n";
+					startItem = "[*]";
+					endItem = "\n";
+					endBlock = "[/list]";
+				break;
+				case "html":
+					startBlock = "<ul>\n";
+					startItem = "<li>";
+					endItem = "</li>\n";
+					endBlock = "</ul>";
+				break;
+				case "htmlord":
+					startBlock = "<ol>\n";
+					startItem = "<li>";
+					endItem = "</li>\n";
+					endBlock = "</ol>";
+				break;
+				case "htmlordalf":
+					startBlock = "<ol type=a>\n";
+					startItem = "<li>";
+					endItem = "</li>\n";
+					endBlock = "</ol>";
+				break;
+				case "markdown":
+					startBlock = endBlock = "";
+					startItem = "- ";
+					endItem = "\n";
+				break;
+				case "markdownord":
+					startBlock = endBlock = "";
+					startItem = "";
+					endItem = "\n";
+				break;
+				default:
+					startBlock = "";
+					startItem = "";
+					endItem = "\n";
+					endBlock = "";
+				break;
 			}
 
-			myText = escape(myText);
-			for (i=0; i<myText.length; i++) {
-				if (myText.indexOf("%0D%0A") > -1) {
-					// Windows encodes returns as \r\n hex
-					myText=myText.replace("%0D%0A",replaceWith);
-					OS="win";
-				} else if (myText.indexOf("%0A") > -1) {
-					// Unix encodes returns as \n hex
-					myText = myText.replace("%0A",replaceWith);
-					OS="unix";
-				} else if (myText.indexOf("%0D") > -1) {
-					// Machintosh encodes returns as \r hex
-					myText = myText.replace("%0D",replaceWith);
-					OS="mac";
-				}
-			}
-
-			// Improve readability of the resulting code
-			for(i=0; i<myText.length; i++) {
-				if (OS=="win") {
-					myText=myText.replace("[*]*","%0D%0A[*]");
-				} else if (OS=="unix") {
-					myText=myText.replace("[*]*","%0A[*]");
-				} else if (OS=="mac") {
-					myText=myText.replace("[*]*","%0D[*]");
-				}
-			}
-
-			myText = unescape(myText);
-			// Remove extra "\n[*]" if string comes from clipboard
-			while (myText.length > 0) {
-				if (myText.substr(0,4) == "\n[*]") {
-					myText=myText.substr(4,myText.length);
-				}
-				else {
-					break;
-				}
-			}
-
-			// Remove empty lines from list
-			while (myText.length > 0) {
-				if (myText.substr(myText.length-3,myText.length+1) == "[*]") {
-					myText=myText.substr(0,myText.length-4);
-				}
-				else {
-					break;
-				}
-			}
-
-			// Remove empty items
-			while (myText.length > 0) {
-				if (myText.indexOf("[*]\n") == -1) {
-					break; // no empty items
+			formattedText = startBlock;
+			for (var i = 0; i<lines.length; i++) {
+				if (listType == "markdownord") {
+					var linenumber = i + 1;
+					formattedText += linenumber + ". " + lines[i] + endItem;
 				} else {
-					// Copy string but not the "[*]\n"
-					myText = myText.substr(0,myText.indexOf("[*]\n")) + myText.substr(myText.indexOf("[*]\n")+4,myText.length);
+					formattedText += startItem + lines[i] + endItem;
 				}
 			}
-			return myText;
+			formattedText += endBlock;
+
+			return formattedText;
 		},
 
-
-		htmlreplace_CR: function(myText, replaceWith){
-			// See replace_CR function for comments
-			var OS;
-
-			while (myText.length > 0) {
-				if (myText.charAt(0) == "\n") {
-					myText=myText.substr(1,myText.length);
-				}
-				else {
-					break;
-				}
-			}
-
-			myText = escape(myText);
-
-			for (i=0; i<myText.length; i++) {
-				if (myText.indexOf("%0D%0A") > -1) {
-					// Windows encodes returns as \r\n hex
-					myText=myText.replace("%0D%0A",replaceWith);
-					OS="win";
-				} else if (myText.indexOf("%0A") > -1) {
-					// Unix encodes returns as \n hex
-					myText = myText.replace("%0A",replaceWith);
-					OS="unix";
-				} else if (myText.indexOf("%0D") > -1) {
-					// Machintosh encodes returns as \r hex
-					myText = myText.replace("%0D",replaceWith);
-					OS="mac";
-				}
-			}
-
-			for (i=0; i<myText.length; i++) {
-				if (OS=="win") {
-					myText=myText.replace("[*]*","</li>%0D%0A<li>");
-				} else if (OS=="unix") {
-					myText=myText.replace("[*]*","</li>%0A<li>");
-				} else if (OS=="mac") {
-					myText=myText.replace("[*]*","</li>%0D<li>");
-				}
-			}
-
-			myText = unescape(myText);
-
-			while (myText.length > 0) {
-				if (myText.substr(0,10) == "</li>\n<li>") {
-					myText=myText.substr(10,myText.length);
-				}
-				else {
-					break;
-				}
-			}
-
-			while (myText.length > 0) {
-				if (myText.substr(myText.length-4,myText.length+1) == "<li>") {
-					myText=myText.substr(0,myText.length-10);
-				}
-				else {
-					break;
-				}
-			}
-
-			while (myText.length > 0) {
-				if (myText.indexOf("<li></li>\n") == -1) {
-					break;
-				} else {
-					myText = myText.substr(0,myText.indexOf("<li></li>\n")) + myText.substr(myText.indexOf("<li></li>\n")+10,myText.length);
-				}
-			}
-
-			return myText;
-		},
 	};
 } // if ("undefined" == typeof(bbcodextra))
 

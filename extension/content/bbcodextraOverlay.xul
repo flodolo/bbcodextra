@@ -143,6 +143,8 @@
 				<menupopup>
 					<menuitem id="bbcodextra-markdown-context-quoteclip" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquoteclip' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-codeclip" class="icon-bbcodextraCode" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('markdowncodeclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlistclip' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistordclip' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('markdownurlselection' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurlclip' ,null);"/>
 				</menupopup>
@@ -150,6 +152,8 @@
 			<menu label="&bbcodextra.options;" accesskey="&bbcodextra.accelOptions;">
 				<menupopup>
 					<menuitem id="bbcodextra-markdown-context-quote" label="&bbcodextra.quote;" oncommand="bbcodextra.bbcodextra('markdownquote' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-lista" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlist' ,null);"/>
+					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistord' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurltagname' ,null);"/>
 					<menuitem id="bbcodextra-markdown-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('markdowncomposeurl' ,null);"/>
 				</menupopup>
