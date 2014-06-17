@@ -442,17 +442,18 @@ if ("undefined" == typeof(bbcodextra)) {
 				}
 
 				var theBox = document.commandDispatcher.focusedElement;
-				// Need to work also with HTML5 content editable elements
-				var availableText = theBox.value ? theBox.value : theBox.textContent;
-
 				var oPosition = theBox.scrollTop;
 				var oHeight = theBox.scrollHeight;
-
-				// Get selected text and store it in strSelected
-				var startPos = theBox.selectionStart;
-				var endPos = theBox.selectionEnd;
-				strSelected = availableText.substring(startPos, endPos);
-
+				if (theBox.value) {
+					// Get selected text and store it in strSelected
+					var startPos = theBox.selectionStart;
+					var endPos = theBox.selectionEnd;
+					strSelected = theBox.value.substring(startPos, endPos);
+				} else {
+					// For contenteditable elements
+					var focusedWindow = document.commandDispatcher.focusedWindow;
+					strSelected = focusedWindow.getSelection().toString();
+				}
 				bbcodextra.insertAtCursorSetup(myCommand, strClipboardString, strSelected, theBox, extraParam);
 				var nHeight = theBox.scrollHeight - oHeight;
 				theBox.scrollTop = oPosition + nHeight;
