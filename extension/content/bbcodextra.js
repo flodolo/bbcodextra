@@ -800,7 +800,7 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "markdowncodeclip":
-					bbcodextra.insertAtCursor("```" + strClipboard + "```");
+					bbcodextra.insertAtCursor(bbcodextra.markdownCode(strClipboard));
 				break;
 
 				case "markdownlistclip":
@@ -828,7 +828,7 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "markdowncode":
-					bbcodextra.insertAtCursor("```" + strSelected + "```");
+					bbcodextra.insertAtCursor(bbcodextra.markdownCode(strSelected));
 				break;
 
 				case "markdownlist":
@@ -891,7 +891,7 @@ if ("undefined" == typeof(bbcodextra)) {
 			}
 		},
 
-		createList: function(originalText, listType){
+		createList: function(originalText, listType) {
 			var startBlock, endBlock, startItem, endItem, formattedText;
 
 			// Make sure only \n is used as line ending
@@ -970,6 +970,20 @@ if ("undefined" == typeof(bbcodextra)) {
 			formattedText += endBlock;
 
 			return formattedText;
+		},
+
+		markdownCode: function(originalText) {
+			var codeblock = "";
+			var multiline = /[\r|\n|\r\n]/g;
+
+			if (multiline.test(originalText)) {
+				// Multiline
+				codeblock = "```\n" + originalText + "\n```\n";
+			} else {
+				codeblock = "```" + originalText + "```";
+			}
+
+			return codeblock;
 		},
 
 	};
