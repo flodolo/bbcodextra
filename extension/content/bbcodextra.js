@@ -731,6 +731,10 @@ if ("undefined" == typeof(bbcodextra)) {
 					bbcodextra.insertAtCursor("<blockquote>" + strSelected + "</blockquote>");
 				break;
 
+				case "xhtmlcode":
+					bbcodextra.insertAtCursor("<code>" + strSelected + "</code>");
+				break;
+
 				case "xhtmlurl":
 					bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strClipboard + "</a>");
 				break;
@@ -821,6 +825,10 @@ if ("undefined" == typeof(bbcodextra)) {
 
 				case "markdownquote":
 					bbcodextra.insertAtCursor("> " + strSelected);
+				break;
+
+				case "markdowncode":
+					bbcodextra.insertAtCursor("```" + strSelected + "```");
 				break;
 
 				case "markdownlist":
