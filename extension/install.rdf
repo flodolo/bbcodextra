@@ -27,9 +27,9 @@
 
     <em:name>BBCodeXtra</em:name>
     <em:description>Here is the place for the localized description (see  your locale/bbcodextra.properties)</em:description>
-    <em:creator>flod</em:creator>
+    <em:creator>flod (http://flod.org)</em:creator>
     <em:contributor>Babelzilla (localization)</em:contributor>
-    <em:homepageURL>http://bbcodextra.extenzilla.org</em:homepageURL>
+    <em:homepageURL>http://www.yetanothertechblog.com/bbcodextra/</em:homepageURL>
     <em:iconURL>chrome://bbcodextra/skin/bbcodextra_icon.png</em:iconURL>
     <em:optionsURL>chrome://bbcodextra/content/bbcodextraPrefs.xul</em:optionsURL>
 
