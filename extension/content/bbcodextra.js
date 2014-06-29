@@ -858,11 +858,11 @@ if ("undefined" == typeof(bbcodextra)) {
 				break;
 
 				case "markdownbold":
-					bbcodextra.insertAtCursor("*" + strSelected + "*");
+					bbcodextra.insertAtCursor("**" + strSelected + "**");
 				break;
 
 				case "markdownitalic":
-					bbcodextra.insertAtCursor("**" + strSelected + "**");
+					bbcodextra.insertAtCursor("*" + strSelected + "*");
 				break;
 
 				case "markdownstrike":
