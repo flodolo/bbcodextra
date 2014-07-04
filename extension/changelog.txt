@@ -1,8 +1,10 @@
-Version 0.3.3 - 201406
-* Published code to Github: https://github.com/flodolo/bbcodextra
-* Now add-on works with content editable HTML5 elements (error reported by rnicoletto, theBox.value is null)
-* Fixed linter errors in bbcodextra.js, remove unnecessary whitespaces in files
-* Added script to check locales based on compare-dirs
+Version 0.4.0 - 20140704
+* Added MarkDown basic support, especially useful for Github.
+* New icons. Source: https://github.com/iconic/open-iconic
+* Now add-on works with content editable HTML5 elements. Issue reported by rnicoletto ("theBox.value is null") with Disqus comments.
+* Fixed linter errors in bbcodextra.js, removed unnecessary whitespaces in files, heavily simplified code.
+* Added script to check locales based on compare-dirs and repack the add-on.
+* Published code on Github: https://github.com/flodolo/bbcodextra
 
 Version 0.3.2 - 20100601
 * Fixed "Color" command (broken in 0.3.1)
