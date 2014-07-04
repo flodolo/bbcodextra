@@ -437,22 +437,36 @@ if ("undefined" == typeof(bbcodextra)) {
 		bbcodextra: function(myCommand, extraParam) {
 				/*
 					Code reference for clipboard
-					https://developer.mozilla.org/en/docs/Using_the_Clipboard
+					https://developer.mozilla.org/it/docs/Using_the_Clipboard#Pasting_Clipboard_Contents
 				*/
-				var widgetClipboard = Components.classes["@mozilla.org/widget/clipboard;1"].createInstance(Components.interfaces.nsIClipboard);
-				if (!widgetClipboard) {
-					return false;
+
+				var nsTransferable = Components.Constructor(
+					"@mozilla.org/widget/transferable;1",
+					"nsITransferable"
+				);
+
+				function Transferable(source) {
+					var res = nsTransferable();
+					if ('init' in res) {
+						if (source instanceof Ci.nsIDOMWindow)
+							source = source.QueryInterface(Ci.nsIInterfaceRequestor)
+										.getInterface(Ci.nsIWebNavigation);
+						res.init(source);
+					}
+					return res;
 				}
 
-				var widgetTransferable = Components.classes["@mozilla.org/widget/transferable;1"].createInstance(Components.interfaces.nsITransferable);
-				if (!widgetTransferable) {
-					return false;
-				}
-
+				var widgetTransferable = Transferable();
 				widgetTransferable.addDataFlavor("text/unicode");
+
 				try {
-					widgetClipboard.getData(widgetTransferable, widgetClipboard.kGlobalClipboard);
+					Services.clipboard.getData(
+						widgetTransferable,
+						Services.clipboard.kGlobalClipboard
+					);
 				} catch(e) {
+					console.log("Error getting content from clipboard: " + e);
+					return false;
 				}
 
 				// At this point widgetTransferable contains clipboard's content
