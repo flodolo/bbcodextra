@@ -1,8 +1,10 @@
+/* jshint loopfunc:true */
+
 if ("undefined" == typeof(bbcodextra)) {
 	var bbcodextra = {
-		/*************************
-			Init and Quit function
-		 *************************/
+		/*
+		 * Init and Quit function
+		 */
 
 		bbcodextraPrefs : null,
 		localizedStrings : null,
@@ -30,9 +32,9 @@ if ("undefined" == typeof(bbcodextra)) {
 			}
 		},
 
-		/*************************
-			Color functions used in bbcodextraPickColor.xul
-		 *************************/
+		/*
+		 *	Color functions used in bbcodextraPickColor.xul
+		 */
 
 		loadColor: function(){
 			var colorPrefs = nsPreferences;
@@ -48,10 +50,9 @@ if ("undefined" == typeof(bbcodextra)) {
 			returnValues.selectedColor = "ok";
 		},
 
-
-		/**********************
-		Preferences window
-		***********************/
+		/*
+		 * Preferences window
+		 */
 
 		prefWindowEnableButtons: function(){
 			// Enable Edit and Delete buttons only if an item is selected
@@ -60,7 +61,7 @@ if ("undefined" == typeof(bbcodextra)) {
 
 			var listAvailableCustomTags = document.getElementById("listAvailableCustomTags");
 			if (listAvailableCustomTags.currentIndex===0) {
-			// The first item is selected, "Move up" is not allowed
+				// The first item is selected, "Move up" is not allowed
 				document.getElementById("btnMoveUp").setAttribute("disabled", true);
 			} else {
 				document.getElementById("btnMoveUp").setAttribute("disabled", false);
@@ -76,16 +77,24 @@ if ("undefined" == typeof(bbcodextra)) {
 
 		prefWindowAddTag: function(){
 			var availableCustomTags = document.getElementById("pref-numcustomtags").value;
-			var nextTagIndex = availableCustomTags+1;
+			var nextTagIndex = availableCustomTags + 1;
 
-			var params = {inn:{tagLabel:"", tagAction:"", windowTitle:localizedStrings.getString("WINDOWTITLE_NEWCUSTOMTAG")}, out:null};
+			var params = {
+				inn: {
+					tagLabel: "",
+					tagAction: "",
+					windowTitle: localizedStrings.getString("WINDOWTITLE_NEWCUSTOMTAG")
+				},
+				out: null
+			};
+
 			window.openDialog("chrome://bbcodextra/content/bbcodextraCustomTag.xul", "",
 			"chrome, dialog, modal, resizable=yes", params).focus();
 
 			if (params.out) {
 				// Create pref using values passed from dialog
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+nextTagIndex+'.label',params.out.tagLabel);
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+nextTagIndex+'.action',params.out.tagAction);
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.label', params.out.tagLabel);
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTagIndex +'.action', params.out.tagAction);
 
 				// Increment available customtags. No need to update the label, since I will call prefWindowRefreshCustomPane() at the end;
 				bbcodextraPrefs.setIntPref('extensions.bbcodextra.customtags', availableCustomTags+1);
@@ -98,17 +107,25 @@ if ("undefined" == typeof(bbcodextra)) {
 		prefWindowEditTag: function(){
 			// I need to read pref values for this custom tag
 			var currentTag = document.getElementById("listAvailableCustomTags").currentIndex+1;
-			var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label'));
-			var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action'));
+			var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label'));
+			var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action'));
 
-			var params = {inn:{tagLabel:itemLabel, tagAction:itemAction, windowTitle:localizedStrings.getString("WINDOWTITLE_EDITCUSTOMTAG")}, out:null};
+			var params = {
+				inn: {
+					tagLabel: itemLabel,
+					tagAction: itemAction,
+					windowTitle: localizedStrings.getString("WINDOWTITLE_EDITCUSTOMTAG")
+				},
+				out:null
+			};
+
 			window.openDialog("chrome://bbcodextra/content/bbcodextraCustomTag.xul", "",
 			"chrome, dialog, modal, resizable=yes", params).focus();
 
 			if (params.out) {
 				// Change existing pref using values passed for dialog
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label',params.out.tagLabel);
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action',params.out.tagAction);
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', params.out.tagLabel);
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', params.out.tagAction);
 
 				// Update displayed information
 				bbcodextra.prefWindowRefreshCustomPane();
@@ -117,14 +134,14 @@ if ("undefined" == typeof(bbcodextra)) {
 
 		prefWindowDeleteTag: function(){
 			var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-			.getService(Components.interfaces.nsIPromptService);
+							.getService(Components.interfaces.nsIPromptService);
 			var check = {value: false};
 			var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_NO + prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_YES;
 			var button = prompts.confirmEx(null, "BBCodeXtra", localizedStrings.getString("DELETE_CUSTOMTAG"),
-			flags, "", "", "", null, check);
+											flags, "", "", "", null, check);
 			if (button == 1) {
 				// Remove two preferences about selected tag
-				var currentTag = document.getElementById("listAvailableCustomTags").currentIndex+1;
+				var currentTag = document.getElementById("listAvailableCustomTags").currentIndex + 1;
 
 				var prefsToDelete=Components.classes["@mozilla.org/preferences-service;1"].
 				getService(Components.interfaces.nsIPrefService).
@@ -138,7 +155,7 @@ if ("undefined" == typeof(bbcodextra)) {
 				}
 
 				// Decrease available customtags. No need to update the label, since I will call prefWindowRefreshCustomPane() at the end;
-				bbcodextraPrefs.setIntPref('extensions.bbcodextra.customtags', availableCustomTags-1);
+				bbcodextraPrefs.setIntPref('extensions.bbcodextra.customtags', availableCustomTags - 1);
 
 				// Update info displayed
 				bbcodextra.prefWindowRefreshCustomPane();
@@ -151,8 +168,10 @@ if ("undefined" == typeof(bbcodextra)) {
 			for (var i=startingPoint; i<availableCustomTags; i++) {
 				// Moving up preferences ==> pref[n]=pref[n+1]
 				nextTagIndex=i+1;
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+i+'.label',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+nextTagIndex+'.label')));
-				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+i+'.action',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+nextTagIndex+'.action')));
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i +'.label',
+												unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.label')));
+				bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i +'.action',
+												unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.action')));
 			}
 			// Still need to remove the last one (i)
 			var prefsToDelete=Components.classes["@mozilla.org/preferences-service;1"].
@@ -164,20 +183,22 @@ if ("undefined" == typeof(bbcodextra)) {
 		prefWindowMoveUp: function(){
 			// Move up: exchange tag[n] with tag[n-1]
 
-			var currentTag = document.getElementById("listAvailableCustomTags").currentIndex+1;
-			var previousTag = currentTag-1;
+			var currentTag = document.getElementById("listAvailableCustomTags").currentIndex + 1;
+			var previousTag = currentTag - 1;
 
 			//  Store tag[n] before overwriting
-			var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+previousTag+'.label'));
-			var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+previousTag+'.action'));
+			var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + previousTag + '.label'));
+			var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + previousTag + '.action'));
 
 			// tag[n-1]=tag[n]
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+previousTag+'.label',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label')));
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+previousTag+'.action',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action')));
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + previousTag + '.label',
+											unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label')));
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + previousTag + '.action',
+											unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action')));
 
 			// tag[n]=stored values
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label',existingLabel);
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action',existingAction);
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', existingLabel);
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', existingAction);
 
 			// Update displayed info
 			bbcodextra.prefWindowRefreshCustomPane();
@@ -190,16 +211,18 @@ if ("undefined" == typeof(bbcodextra)) {
 			var nextTag = currentTag+1;
 
 			//  Store tag[n] before overwriting
-			var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+nextTag+'.label'));
-			var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+nextTag+'.action'));
+			var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTag + '.label'));
+			var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTag + '.action'));
 
 			// tag[n+1]=tag[n]
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+nextTag+'.label',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label')));
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+nextTag+'.action',unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action')));
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTag + '.label',
+											unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label')));
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTag + '.action',
+											unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action')));
 
 			// tag[n]=stored values
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.label',existingLabel);
-			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom'+currentTag+'.action',existingAction);
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', existingLabel);
+			bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', existingAction);
 
 			// Update displayed info
 			bbcodextra.prefWindowRefreshCustomPane();
@@ -220,8 +243,8 @@ if ("undefined" == typeof(bbcodextra)) {
 			if (availableCustomTags > 0) {
 				// Add custom tags to the listbox
 				for (var i=1; i<=availableCustomTags; i++) {
-					var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom'+i+'.label'));
-					var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom'+i+'.action'));
+					var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.label'));
+					var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.action'));
 
 					var listItem = document.createElement("listitem");
 					listItem.setAttribute("label", itemLabel);
@@ -243,9 +266,9 @@ if ("undefined" == typeof(bbcodextra)) {
 			document.getElementById("bbcodextra-enable-vbulletin").disabled = document.getElementById("bbcodextra-enable-bbcode").checked;
 		},
 
-		/**********************
-		Custom tag window
-		***********************/
+		/*
+		 * Custom tags window
+		 */
 
 		customTagWindowLoad: function(){
 			// If I'm changing an existing custom tag, I need to load existing values
@@ -256,25 +279,25 @@ if ("undefined" == typeof(bbcodextra)) {
 		},
 
 		customTagWindowConfirm: function(){
-			window.arguments[0].out = {tagLabel:document.getElementById("tagLabel").value,
-			tagAction:document.getElementById("tagAction").value};
+			window.arguments[0].out = {
+				tagLabel: document.getElementById("tagLabel").value,
+				tagAction: document.getElementById("tagAction").value
+			};
 			return true;
 		},
 
-		/*************************
-			Menu functions
-		 *************************/
+		/*
+		 * Menu functions
+		 */
 
 		showHide: function() {
-			var enableBBCodeMenu, enableVBulletinMenu, enableHtmlMenu, enableXhtmlMenu, enableCustomMenu;
-
 			// Read pref values to determine which menus are enabled and should be displayed
-			enableBBCodeMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodemenu");
-			enableHtmlMenu      = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.htmlmenu");
-			enableXhtmlMenu     = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.xhtmlmenu");
-			enableVBulletinMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodevbulletinmenu");
-			enableMarkdownMenu  = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.markdownmenu");
-			enableCustomMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.custommenu");
+			var enableBBCodeMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodemenu");
+			var enableHtmlMenu      = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.htmlmenu");
+			var enableXhtmlMenu     = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.xhtmlmenu");
+			var enableVBulletinMenu = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.bbcodevbulletinmenu");
+			var enableMarkdownMenu  = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.markdownmenu");
+			var enableCustomMenu    = bbcodextraPrefs.getBoolPref("extensions.bbcodextra.custommenu");
 
 			if (enableBBCodeMenu) {
 				document.getElementById('context-bbcodextra-bbcode').hidden = document.getElementById('context-undo').hidden;
@@ -316,37 +339,43 @@ if ("undefined" == typeof(bbcodextra)) {
 
 		disableMenu: function (idPref) {
 			// Set idPref to false
-			bbcodextraPrefs.setBoolPref("extensions.bbcodextra."+idPref,false);
+			bbcodextraPrefs.setBoolPref("extensions.bbcodextra." + idPref, false);
 		},
 
 		displayCustomMenu: function () {
 			var availableCustomTags = bbcodextraPrefs.getIntPref('extensions.bbcodextra.customtags');
 			var containerMenu = document.getElementById("context-bbcodextra-custom-container");
 
+			// Remove existing elements in the menu
 			while (containerMenu.hasChildNodes()) {
 				containerMenu.removeChild(containerMenu.firstChild);
 			}
 
-			var menuItem = document.createElement("menuitem");
+			var menuItem;
 			var i;
 			if (availableCustomTags > 0) {
 				// Add custom tags
 				for (i=1; i<=availableCustomTags; i++) {
-					var menuLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+i+'.label'));
-					var menuAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom'+i+'.action'));
-
-					menuItem.setAttribute("label", menuLabel);
-					menuItem.setAttribute("id", "bbcodextra-custom-item" + i);
-					menuItem.setAttribute("index", i);
-					menuItem.setAttribute("oncommand", "bbcodextra.bbcodextra('custom','"+escape(menuAction)+"');");
-					containerMenu.appendChild(menuItem);
+					(function(i) {
+						// Need to avoid scope problems with menuAction in event listener
+						var menuLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + i + '.label'));
+						var menuAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + i + '.action'));
+						menuItem = document.createElement("menuitem");
+						menuItem.setAttribute("label", menuLabel);
+						menuItem.setAttribute("id", "bbcodextra-custom-item" + i);
+						menuItem.setAttribute("index", i);
+						menuItem.addEventListener("command", function() {
+							bbcodextra.bbcodextra('custom', menuAction);
+						}, false);
+						containerMenu.appendChild(menuItem);
+					}(i));
 				}
 			} else {
 				// No custom tags defined
-				i=2;
+				menuItem = document.createElement("menuitem");
 				menuItem.setAttribute("label", localizedStrings.getString("MENU_NO_CUSTOM_TAGS"));
 				menuItem.setAttribute("id", "bbcodextra-custom-item-empty");
-				menuItem.setAttribute("index", i);
+				menuItem.setAttribute("index", 2);
 				menuItem.setAttribute("disabled", "true");
 				containerMenu.appendChild(menuItem);
 			}
@@ -359,7 +388,9 @@ if ("undefined" == typeof(bbcodextra)) {
 			menuItem.setAttribute("label", localizedStrings.getString("MENU_DISABLE"));
 			menuItem.setAttribute("class", "menuitem-iconic menu-iconic icon-bbcodextraDisable");
 			menuItem.setAttribute("id", "bbcodextra--custom-context-disable");
-			menuItem.setAttribute("oncommand", "bbcodextra.disableMenu('custommenu',null);");
+			menuItem.addEventListener("command", function() {
+				bbcodextra.disableMenu('custommenu', null);
+			}, false);
 			menuItem.setAttribute("index", ++i);
 			containerMenu.appendChild(menuItem);
 
@@ -367,7 +398,9 @@ if ("undefined" == typeof(bbcodextra)) {
 			menuItem.setAttribute("label", localizedStrings.getString("MENU_SETTINGS"));
 			menuItem.setAttribute("class", "menuitem-iconic menu-iconic icon-bbcodextraPrefs");
 			menuItem.setAttribute("id", "&bbcodextra.settingsmenu;");
-			menuItem.setAttribute("oncommand", "bbcodextra.showPreferences();");
+			menuItem.addEventListener("command", function() {
+				bbcodextra.showPreferences();
+			}, false);
 			menuItem.setAttribute("index", ++i);
 			containerMenu.appendChild(menuItem);
 
@@ -458,7 +491,6 @@ if ("undefined" == typeof(bbcodextra)) {
 				var nHeight = theBox.scrollHeight - oHeight;
 				theBox.scrollTop = oPosition + nHeight;
 		},
-
 
 		insertAtCursorSetup: function(myCommand, strClipboard, strSelected, theBox, extraParam) {
 			/*
