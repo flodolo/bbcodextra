@@ -1,4 +1,4 @@
-Version 0.4.0 - 20140704
+Version 0.4.0 - 20140705
 * Added MarkDown basic support, especially useful for Github.
 * New icons. Source: https://github.com/iconic/open-iconic
 * Now add-on works with content editable HTML5 elements. Issue reported by rnicoletto ("theBox.value is null") with Disqus comments.
