@@ -448,9 +448,9 @@ if ("undefined" == typeof(bbcodextra)) {
 				function Transferable(source) {
 					var res = nsTransferable();
 					if ('init' in res) {
-						if (source instanceof Ci.nsIDOMWindow)
-							source = source.QueryInterface(Ci.nsIInterfaceRequestor)
-										.getInterface(Ci.nsIWebNavigation);
+						if (source instanceof Components.interfaces.nsIDOMWindow)
+							source = source.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+										.getInterface(Components.interfaces.nsIWebNavigation);
 						res.init(source);
 					}
 					return res;
