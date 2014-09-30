@@ -1,3 +1,6 @@
+Version 0.4.1 - 20140930
+* Fixed problem with SeaMonkey (Ci undefined, add-on was not working)
+
 Version 0.4.0 - 20140705
 * Added MarkDown basic support, especially useful for Github.
 * New icons. Source: https://github.com/iconic/open-iconic
