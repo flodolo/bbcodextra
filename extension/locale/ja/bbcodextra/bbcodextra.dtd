@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.listord "リスト(番号付き)">
 <!ENTITY bbcodextra.listalf "リスト(アルファベット付き)">
 <!ENTITY bbcodextra.img "画像">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "選択した部分のリンクの作成">
 <!ENTITY bbcodextra.url "リンクの作成">
 <!ENTITY bbcodextra.urlwithname "リンクの作成(名前付き)">

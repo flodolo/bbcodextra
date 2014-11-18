@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.listord "編號清單 (數字)">
 <!ENTITY bbcodextra.listalf "編號清單 (字母)">
 <!ENTITY bbcodextra.img "圖片">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "鏈結 (插入為選取區的網址)">
 <!ENTITY bbcodextra.url "鏈結">
 <!ENTITY bbcodextra.urlwithname "鏈結 (指定名稱)">

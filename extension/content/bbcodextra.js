@@ -18,10 +18,12 @@ if ("undefined" == typeof(bbcodextra)) {
 			}
 
 			this.localizedStrings = document.getElementById("localizedStrings");
-
 			if ("undefined" == typeof(bbcodextraPrefs)) {
 				this.bbcodextraPrefs = nsPreferences;
 			}
+            var mm = window.messageManager;
+            mm.loadFrameScript("chrome://bbcodextra/content/frame-script.js", true);
+            mm.addMessageListener("bbcodextra:interpret-command", bbcodextra.interpretCommand);
 		},
 
 		quit: function() {
@@ -434,84 +436,77 @@ if ("undefined" == typeof(bbcodextra)) {
 			return result.value;
 		},
 
-		bbcodextra: function(myCommand, extraParam) {
-				/*
-					Code reference for clipboard
-					https://developer.mozilla.org/it/docs/Using_the_Clipboard#Pasting_Clipboard_Contents
-				*/
+        getClipboardContent: function() {
+            /*
+                Code reference for clipboard
+                https://developer.mozilla.org/docs/Using_the_Clipboard#Pasting_Clipboard_Contents
+            */
 
-				var nsTransferable = Components.Constructor(
-					"@mozilla.org/widget/transferable;1",
-					"nsITransferable"
-				);
+            var nsTransferable = Components.Constructor(
+                "@mozilla.org/widget/transferable;1",
+                "nsITransferable"
+            );
 
-				function Transferable(source) {
-					var res = nsTransferable();
-					if ('init' in res) {
-						if (source instanceof Components.interfaces.nsIDOMWindow)
-							source = source.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
-										.getInterface(Components.interfaces.nsIWebNavigation);
-						res.init(source);
-					}
-					return res;
-				}
+            function Transferable(source) {
+                var res = nsTransferable();
+                if ('init' in res) {
+                    if (source instanceof Components.interfaces.nsIDOMWindow)
+                        source = source.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                                    .getInterface(Components.interfaces.nsIWebNavigation);
+                    res.init(source);
+                }
+                return res;
+            }
 
-				var widgetTransferable = Transferable();
-				widgetTransferable.addDataFlavor("text/unicode");
+            var widgetTransferable = Transferable();
+            widgetTransferable.addDataFlavor("text/unicode");
+            try {
+                Services.clipboard.getData(
+                    widgetTransferable,
+                    Services.clipboard.kGlobalClipboard
+                );
+            } catch(e) {
+                console.log("Error getting content from clipboard: " + e);
+                return false;
+            }
 
-				try {
-					Services.clipboard.getData(
-						widgetTransferable,
-						Services.clipboard.kGlobalClipboard
-					);
-				} catch(e) {
-					console.log("Error getting content from clipboard: " + e);
-					return false;
-				}
+            var strClipboard = {};
+            var strClipboardString;
+            var strLength = {};
+            try {
+                widgetTransferable.getTransferData("text/unicode", strClipboard, strLength);
 
-				// At this point widgetTransferable contains clipboard's content
+                if (strClipboard){
+                    strClipboard = strClipboard.value.QueryInterface(Components.interfaces.nsISupportsString);
+                }
+                if (strClipboard){
+                    strClipboardString = strClipboard.data;
+                }
+            } catch (e) {
+                //alert("No text in the clipboard, please copy something first.");
+            }
 
-				var strSelected = null;
-				var strClipboard = {};
-				var strClipboardString;
-				var strLength = {};
-				try {
-					widgetTransferable.getTransferData("text/unicode", strClipboard, strLength);
+            return strClipboardString;
+        },
 
-					if (strClipboard){
-						strClipboard = strClipboard.value.QueryInterface(Components.interfaces.nsISupportsString);
-					}
-					if (strClipboard){
-						strClipboardString = strClipboard.data;
-					}
-				} catch (e) {
-					//alert("No text in the clipboard, please copy something first.");
-				}
-
-				var theBox = document.commandDispatcher.focusedElement;
-				var oPosition = theBox.scrollTop;
-				var oHeight = theBox.scrollHeight;
-				if (theBox.value) {
-					// Get selected text and store it in strSelected
-					var startPos = theBox.selectionStart;
-					var endPos = theBox.selectionEnd;
-					strSelected = theBox.value.substring(startPos, endPos);
-				} else {
-					// For contenteditable elements
-					var focusedWindow = document.commandDispatcher.focusedWindow;
-					strSelected = focusedWindow.getSelection().toString();
-				}
-				bbcodextra.insertAtCursorSetup(myCommand, strClipboardString, strSelected, theBox, extraParam);
-				var nHeight = theBox.scrollHeight - oHeight;
-				theBox.scrollTop = oPosition + nHeight;
+		bbcodextra: function(myCommand, extraParams) {
+            var browserMM = gBrowser.selectedBrowser.messageManager;
+            browserMM.sendAsyncMessage(
+                "bbcodextra:update-text",
+                {
+                    command: myCommand,
+                    extraParams: extraParams
+                }
+            );
 		},
 
-		insertAtCursorSetup: function(myCommand, strClipboard, strSelected, theBox, extraParam) {
-			/*
-			Function taken from http://www.alexking.org/blog/2003/06/02/inserting-at-the-cursor-using-javascript/
-			Modified to return cursor to correct place
-			extraParam is used only for color function
-			*/
+        interpretCommand: function(message) {
+            var myCommand = message.data.command;
+            var strClipboard = bbcodextra.getClipboardContent();
+            var strSelected = message.data.selectedText;
+            var extraParam = message.data.extraParams;
+
+            var elaboratedText = null;
 
 			// Variables for wizards
 			var composeURL = null;
@@ -541,16 +536,16 @@ if ("undefined" == typeof(bbcodextra)) {
 					// Replace globally _selection_ with strSelected
 					customAction=customAction.replace(/_selection_/g, strSelected);
 					// Insert string
-					bbcodextra.insertAtCursor(customAction);
+					elaboratedText = customAction;
 				break;
 
 				case "quoteclip":
 				author = bbcodextra.promptWindow(strInsAuthor);
 					if (author!==null) {
 						if (author==="") {
-							bbcodextra.insertAtCursor("[quote]" + strClipboard + "[/quote]");
+							elaboratedText = "[quote]" + strClipboard + "[/quote]";
 						} else {
-							bbcodextra.insertAtCursor("[quote=\"" + author + "\"]" + strClipboard + "[/quote]");
+							elaboratedText = "[quote=\"" + author + "\"]" + strClipboard + "[/quote]";
 						}
 					}
 				break;
@@ -559,51 +554,51 @@ if ("undefined" == typeof(bbcodextra)) {
 					author = bbcodextra.promptWindow(strInsAuthor);
 					if (author!==null) {
 						if (author==="") {
-							bbcodextra.insertAtCursor("[quote]" + strSelected + "[/quote]");
+							elaboratedText = "[quote]" + strSelected + "[/quote]";
 						} else {
-							bbcodextra.insertAtCursor("[quote=\"" + author + "\"]" + strSelected + "[/quote]");
+							elaboratedText = "[quote=\"" + author + "\"]" + strSelected + "[/quote]";
 						}
 					}
 				break;
 
 				case "img":
-					bbcodextra.insertAtCursor("[img]" + strSelected + "[/img]");
+					elaboratedText = "[img]" + strSelected + "[/img]";
 				break;
 
 				case "imgclip":
-					bbcodextra.insertAtCursor("[img]" + strClipboard + "[/img]");
+					elaboratedText = "[img]" + strClipboard + "[/img]";
 				break;
 
 				case "codeclip":
-					bbcodextra.insertAtCursor("[code]" + strClipboard + "[/code]");
+					elaboratedText = "[code]" + strClipboard + "[/code]";
 				break;
 
 				case "urltag":
-					bbcodextra.insertAtCursor("[url]" + strSelected + "[/url]");
+					elaboratedText = "[url]" + strSelected + "[/url]";
 				break;
 
 				case "urltagname":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[url=" + strSelected + "]" + strPrompt + "[/url]");
+						elaboratedText = "[url=" + strSelected + "]" + strPrompt + "[/url]";
 					}
 				break;
 
 				case "url":
-					bbcodextra.insertAtCursor("[url]" + strClipboard + "[/url]");
+					elaboratedText = "[url]" + strClipboard + "[/url]";
 				break;
 
 				case "urlclip":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[url=" + strClipboard + "]" + strPrompt + "[/url]");
+						elaboratedText = "[url=" + strClipboard + "]" + strPrompt + "[/url]";
 					}
 				break;
 
 				case "urlselection":
-					bbcodextra.insertAtCursor("[url=" + strClipboard + "]" + strSelected + "[/url]");
+					elaboratedText = "[url=" + strClipboard + "]" + strSelected + "[/url]";
 				break;
 
 				case "composeurl":
@@ -611,61 +606,61 @@ if ("undefined" == typeof(bbcodextra)) {
 				if (composeURLname!==null) {
 					composeURL = bbcodextra.promptWindow(strComposeURLStep2);
 					if (composeURL!==null) {
-						bbcodextra.insertAtCursor("[url=" + composeURL + "]" + composeURLname + "[/url]");
+						elaboratedText = "[url=" + composeURL + "]" + composeURLname + "[/url]";
 					}
 				}
 				break;
 
 				case "bold":
-					bbcodextra.insertAtCursor("[b]" + strSelected + "[/b]");
+					elaboratedText = "[b]" + strSelected + "[/b]";
 				break;
 
 				case "list":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcode"));
+					elaboratedText = bbcodextra.createList(strSelected, "bbcode");
 				break;
 
 				case "listord":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcodeord"));
+					elaboratedText = bbcodextra.createList(strSelected, "bbcodeord");
 				break;
 
 				case "listalpha":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "bbcodeordalf"));
+					elaboratedText = bbcodextra.createList(strSelected, "bbcodeordalf");
 				break;
 
 				case "listclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcode"));
+					elaboratedText = bbcodextra.createList(strClipboard, "bbcode");
 				break;
 
 				case "listclipord":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcodeord"));
+					elaboratedText = bbcodextra.createList(strClipboard, "bbcodeord");
 				break;
 
 				case "listclipalpha":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "bbcodeordalf"));
+					elaboratedText = bbcodextra.createList(strClipboard, "bbcodeordalf");
 				break;
 
 				case "italic":
-					bbcodextra.insertAtCursor("[i]" + strSelected + "[/i]");
+					elaboratedText = "[i]" + strSelected + "[/i]";
 				break;
 
 				case "underline":
-					bbcodextra.insertAtCursor("[u]" + strSelected + "[/u]");
+					elaboratedText = "[u]" + strSelected + "[/u]";
 				break;
 
 				case "code":
-					bbcodextra.insertAtCursor("[code]" + strSelected + "[/code]");
+					elaboratedText = "[code]" + strSelected + "[/code]";
 				break;
 
 				case "size":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsFontSize);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[size=" + strPrompt + "]" + strSelected + "[/size]");
+						elaboratedText = "[size=" + strPrompt + "]" + strSelected + "[/size]";
 					}
 				break;
 
 				case "color":
-					bbcodextra.insertAtCursor("[color=" + extraParam + "]" + strSelected + "[/color]");
+					elaboratedText = "[color=" + extraParam + "]" + strSelected + "[/color]";
 				break;
 
 				// VBULLETIN SECTION
@@ -674,7 +669,7 @@ if ("undefined" == typeof(bbcodextra)) {
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsThreadNum);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[thread=" + strPrompt + "]" + strSelected + "[/thread]");
+						elaboratedText = "[thread=" + strPrompt + "]" + strSelected + "[/thread]";
 					}
 				break;
 
@@ -682,126 +677,126 @@ if ("undefined" == typeof(bbcodextra)) {
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsPostNum);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[post=" + strPrompt + "]" + strSelected + "[/post]");
+						elaboratedText = "[post=" + strPrompt + "]" + strSelected + "[/post]";
 					}
 				break;
 
 				case "vbulleft":
-					bbcodextra.insertAtCursor("[left]" + strSelected + "[/left]");
+					elaboratedText = "[left]" + strSelected + "[/left]";
 				break;
 
 				case "vbulright":
-					bbcodextra.insertAtCursor("[right]" + strSelected + "[/right]");
+					elaboratedText = "[right]" + strSelected + "[/right]";
 				break;
 
 				case "vbulcenter":
-					bbcodextra.insertAtCursor("[center]" + strSelected + "[/center]");
+					elaboratedText = "[center]" + strSelected + "[/center]";
 				break;
 
 				case "vbulindent":
-					bbcodextra.insertAtCursor("[indent]" + strSelected + "[/indent]");
+					elaboratedText = "[indent]" + strSelected + "[/indent]";
 				break;
 
 				case "vbulhighlight":
-					bbcodextra.insertAtCursor("[highlight]" + strSelected + "[/highlight]");
+					elaboratedText = "[highlight]" + strSelected + "[/highlight]";
 				break;
 
 				// HTML SECTION
 
 				case "htmlbold":
-					bbcodextra.insertAtCursor("<b>" + strSelected + "</b>");
+					elaboratedText = "<b>" + strSelected + "</b>";
 				break;
 
 				case "htmlitalic":
-					bbcodextra.insertAtCursor("<i>" + strSelected + "</i>");
+					elaboratedText = "<i>" + strSelected + "</i>";
 				break;
 
 				case "htmlunderline":
-					bbcodextra.insertAtCursor("<u>" + strSelected + "</u>");
+					elaboratedText = "<u>" + strSelected + "</u>";
 				break;
 
 				case "htmlimg":
-					bbcodextra.insertAtCursor("<img src=\"" + strSelected + "\">");
+					elaboratedText = "<img src=\"" + strSelected + "\">";
 				break;
 
 				case "htmlimgclip":
-					bbcodextra.insertAtCursor("<img src=\"" + strClipboard + "\">");
+					elaboratedText = "<img src=\"" + strClipboard + "\">";
 				break;
 
 				case "htmlstrike":
-					bbcodextra.insertAtCursor("<s>" + strSelected + "</s>");
+					elaboratedText = "<s>" + strSelected + "</s>";
 				break;
 
 
 				// XHTML SECTION
 
 				case "xhtmlbold":
-					bbcodextra.insertAtCursor("<strong>" + strSelected + "</strong>");
+					elaboratedText = "<strong>" + strSelected + "</strong>";
 				break;
 
 				case "xhtmlitalic":
-					bbcodextra.insertAtCursor("<em>" + strSelected + "</em>");
+					elaboratedText = "<em>" + strSelected + "</em>";
 				break;
 
 				case "xhtmlunderline":
-					bbcodextra.insertAtCursor("<ins>" + strSelected + "</ins>");
+					elaboratedText = "<ins>" + strSelected + "</ins>";
 				break;
 
 				case "xhtmlimg":
-					bbcodextra.insertAtCursor("<img src=\"" + strSelected + "\" />");
+					elaboratedText = "<img src=\"" + strSelected + "\" />";
 				break;
 
 				case "xhtmlimgclip":
-					bbcodextra.insertAtCursor("<img src=\"" + strClipboard + "\" />");
+					elaboratedText = "<img src=\"" + strClipboard + "\" />";
 				break;
 
 				case "xhtmlstrike":
-					bbcodextra.insertAtCursor("<del>" + strSelected + "</del>");
+					elaboratedText = "<del>" + strSelected + "</del>";
 				break;
 
 				// COMMON HTML/XHTML FUNCTIONS
 
 				case "xhtmlurltag":
-					bbcodextra.insertAtCursor("<a href=\"" + strSelected + "\">" + strSelected + "</a>");
+					elaboratedText = "<a href=\"" + strSelected + "\">" + strSelected + "</a>";
 				break;
 
 				case "xhtmlquoteclip":
-					bbcodextra.insertAtCursor("<blockquote>" + strClipboard + "</blockquote>");
+					elaboratedText = "<blockquote>" + strClipboard + "</blockquote>";
 				break;
 
 				case "xhtmlcodeclip":
-					bbcodextra.insertAtCursor("<code>" + strClipboard + "</code>");
+					elaboratedText = "<code>" + strClipboard + "</code>";
 				break;
 
 				case "xhtmlquote":
-					bbcodextra.insertAtCursor("<blockquote>" + strSelected + "</blockquote>");
+					elaboratedText = "<blockquote>" + strSelected + "</blockquote>";
 				break;
 
 				case "xhtmlcode":
-					bbcodextra.insertAtCursor("<code>" + strSelected + "</code>");
+					elaboratedText = "<code>" + strSelected + "</code>";
 				break;
 
 				case "xhtmlurl":
-					bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strClipboard + "</a>");
+					elaboratedText = "<a href=\"" + strClipboard + "\">" + strClipboard + "</a>";
 				break;
 
 				case "xhtmlurlclip":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strPrompt + "</a>");
+						elaboratedText = "<a href=\"" + strClipboard + "\">" + strPrompt + "</a>";
 					}
 				break;
 
 				case "xhtmlurlselection":
-					bbcodextra.insertAtCursor("<a href=\"" + strClipboard + "\">" + strSelected + "</a>");
+					elaboratedText = "<a href=\"" + strClipboard + "\">" + strSelected + "</a>";
 				break;
 
 				case "xhtmlurltagname":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("<a href=\"" + strSelected + "\">" + strPrompt + "</a>");
+						elaboratedText = "<a href=\"" + strSelected + "\">" + strPrompt + "</a>";
 					}
 				break;
 
@@ -810,86 +805,90 @@ if ("undefined" == typeof(bbcodextra)) {
 					if (composeURLname!==null) {
 						composeURL = bbcodextra.promptWindow(strComposeURLStep2);
 						if (composeURL!==null) {
-							bbcodextra.insertAtCursor("<a href=\"" + composeURL + "\">" + composeURLname + "</a>");
+							elaboratedText = "<a href=\"" + composeURL + "\">" + composeURLname + "</a>";
 						}
 					}
 				break;
 
 				case "xhtmllist":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "html"));
+					elaboratedText = bbcodextra.createList(strSelected, "html");
 				break;
 
 				case "xhtmllistord":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "htmlord"));
+					elaboratedText = bbcodextra.createList(strSelected, "htmlord");
 				break;
 
 				case "xhtmllistalpha":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "htmlordalf"));
+					elaboratedText = bbcodextra.createList(strSelected, "htmlordalf");
 				break;
 
 				case "xhtmllistclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "html"));
+					elaboratedText = bbcodextra.createList(strClipboard, "html");
 				break;
 
 				case "xhtmllistordclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "htmlord"));
+					elaboratedText = bbcodextra.createList(strClipboard, "htmlord");
 				break;
 
 				case "xhtmllistalphaclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "htmlordalf"));
+					elaboratedText = bbcodextra.createList(strClipboard, "htmlordalf");
 				break;
 
 				// MARKDOWN FUNCTIONS
 
 				case "markdownquoteclip":
-					bbcodextra.insertAtCursor("> " + strClipboard);
+					elaboratedText = "> " + strClipboard;
 				break;
 
 				case "markdowncodeclip":
-					bbcodextra.insertAtCursor(bbcodextra.markdownCode(strClipboard));
+					elaboratedText = bbcodextra.markdownCode(strClipboard);
 				break;
 
 				case "markdownlistclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "markdown"));
+					elaboratedText = bbcodextra.createList(strClipboard, "markdown");
 				break;
 
 				case "markdownlistordclip":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strClipboard, "markdownord"));
+					elaboratedText = bbcodextra.createList(strClipboard, "markdownord");
 				break;
 
 				case "markdownurlselection":
-					bbcodextra.insertAtCursor("[" + strSelected + "](" + strClipboard + ")");
+					elaboratedText = "[" + strSelected + "](" + strClipboard + ")";
+				break;
+
+				case "markdownimgselection":
+					elaboratedText = "![" + strSelected + "](" + strClipboard + ")";
 				break;
 
 				case "markdownurlclip":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[" + strClipboard + "](" + strPrompt + ")");
+						elaboratedText = "[" + strClipboard + "](" + strPrompt + ")";
 					}
 				break;
 
 				case "markdownquote":
-					bbcodextra.insertAtCursor("> " + strSelected);
+					elaboratedText = "> " + strSelected;
 				break;
 
 				case "markdowncode":
-					bbcodextra.insertAtCursor(bbcodextra.markdownCode(strSelected));
+					elaboratedText = bbcodextra.markdownCode(strSelected);
 				break;
 
 				case "markdownlist":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "markdown"));
+					elaboratedText = bbcodextra.createList(strSelected, "markdown");
 				break;
 
 				case "markdownlistord":
-					bbcodextra.insertAtCursor(bbcodextra.createList(strSelected, "markdownord"));
+					elaboratedText = bbcodextra.createList(strSelected, "markdownord");
 				break;
 
 				case "markdowntagname":
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt!==null) {
-						bbcodextra.insertAtCursor("[" + strPrompt + "](" + strSelected + ")");
+						elaboratedText = "[" + strPrompt + "](" + strSelected + ")";
 					}
 				break;
 
@@ -898,43 +897,28 @@ if ("undefined" == typeof(bbcodextra)) {
 					if (composeURLname!==null) {
 						composeURL = bbcodextra.promptWindow(strComposeURLStep2);
 						if (composeURL!==null) {
-							bbcodextra.insertAtCursor("[" + composeURLname + "](" + composeURL + ")");
+							elaboratedText = "[" + composeURLname + "](" + composeURL + ")";
 						}
 					}
 				break;
 
 				case "markdownbold":
-					bbcodextra.insertAtCursor("**" + strSelected + "**");
+					elaboratedText = "**" + strSelected + "**";
 				break;
 
 				case "markdownitalic":
-					bbcodextra.insertAtCursor("*" + strSelected + "*");
+					elaboratedText = "*" + strSelected + "*";
 				break;
 
 				case "markdownstrike":
-					bbcodextra.insertAtCursor("~~" + strSelected + "~~");
+					elaboratedText = "~~" + strSelected + "~~";
 				break;
 
 				default :
 					alert("No function selected");
-				} //end switch
-		},
+			} //end switch
 
-		insertAtCursor: function(aText) {
-			// Code reference: http://kb.mozillazine.org/index.phtml?title=Dev_:_Tips_:_Inserting_text_at_cursor
-			try {
-				var command = "cmd_insertText";
-				var controller = document.commandDispatcher.getControllerForCommand(command);
-				if (controller && controller.isCommandEnabled(command)) {
-					controller = controller.QueryInterface(Components.interfaces.nsICommandController);
-					var params = Components.classes["@mozilla.org/embedcomp/command-params;1"];
-					params = params.createInstance(Components.interfaces.nsICommandParams);
-					params.setStringValue("state_data", aText);
-					controller.doCommandWithParams(command, params);
-				}
-			} catch (e) {
-				alert("Error: "+e);
-			}
+            return elaboratedText;
 		},
 
 		createList: function(originalText, listType) {

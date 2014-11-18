@@ -1,3 +1,7 @@
+Version 0.5.0 - 2015
+* Refactored code to make the add-on compatible with e10s
+* Add "Make image from selection" to Markdown menu
+
 Version 0.4.1 - 20140930
 * Fixed problem with SeaMonkey (Ci undefined, add-on was not working)
 

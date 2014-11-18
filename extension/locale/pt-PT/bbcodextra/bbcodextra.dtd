@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.listord "Lista ordenada">
 <!ENTITY bbcodextra.listalf "Lista alfabética">
 <!ENTITY bbcodextra.img "Imagem">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "Fazer URL da selecção">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL com nome">

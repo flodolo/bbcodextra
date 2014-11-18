@@ -24,7 +24,8 @@
 <!ENTITY bbcodextra.listord "Ordered list">
 <!ENTITY bbcodextra.listalf "Alphabetic list">
 <!ENTITY bbcodextra.img "Image">
-<!ENTITY bbcodextra.urlselection "Make selection URL">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
+<!ENTITY bbcodextra.urlselection "Make URL from selection">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL with name">
 <!ENTITY bbcodextra.pickcolor "Font Color">

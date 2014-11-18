@@ -24,6 +24,7 @@
 <!ENTITY bbcodextra.listord "Elenco numerato">
 <!ENTITY bbcodextra.listalf "Elenco alfabetico">
 <!ENTITY bbcodextra.img "Immagine">
+<!ENTITY bbcodextra.imgselection "Trasforma selezione in immagine">
 <!ENTITY bbcodextra.urlselection "Trasforma selezione in URL">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL con nome">
