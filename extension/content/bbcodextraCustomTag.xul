@@ -8,8 +8,8 @@
    buttons="accept,cancel"
    ondialogaccept="return bbcodextra.customTagWindowConfirm();"
    onload="bbcodextra.customTagWindowLoad();">
-
- <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
+ <script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
+ <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js" />
  	<groupbox>
 		<caption label="&bbcodextra.settings.customtags.variables;" />
 		<hbox>

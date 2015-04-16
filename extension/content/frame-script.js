@@ -18,17 +18,18 @@ var bbcodextraContent = {
         }
 
         var response = {
-            command: message.data.command,
-            extraParams: message.data.extraParams,
+            command:      message.data.command,
+            extraParams:  message.data.extraParams,
             selectedText: strSelected
         };
 
-        var results = sendSyncMessage("bbcodextra:interpret-command", response);
+        var results = sendSyncMessage('bbcodextra:interpret-command', response);
         var elaboratedText = results[0];
 
+        // Inserted elaboarated text in the content
         if (textElement.contentDocument) {
             // For contenteditable elements
-            textElement.contentDocument.execCommand("insertText", false, elaboratedText);
+            textElement.contentDocument.execCommand('insertText', false, elaboratedText);
         } else {
             // For input/text areas
             var oPosition = textElement.scrollTop;
@@ -47,4 +48,4 @@ var bbcodextraContent = {
     }
 };
 
-addMessageListener("bbcodextra:update-text", bbcodextraContent.updateText);
+addMessageListener('bbcodextra:update-text', bbcodextraContent.updateText);

@@ -1,22 +1,21 @@
 <?xml version="1.0"?>
-
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-
   <Description about="urn:mozilla:install-manifest">
     <em:id>{af79f858-4b25-4ca4-822b-b5db1be628fc}</em:id>
     <em:version>0.5.0</em:version>
     <em:type>2</em:type>
-
+    <!-- Enable for testing purposes
+    <em:unpack>true</em:unpack>
+    -->
     <!-- Firefox -->
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>17.0</em:minVersion>
-        <em:maxVersion>36.0</em:maxVersion>
+        <em:maxVersion>40.0</em:maxVersion>
       </Description>
     </em:targetApplication>
-
     <!--SeaMonkey -->
     <em:targetApplication>
       <Description>
@@ -25,7 +24,6 @@
         <em:maxVersion>2.33</em:maxVersion>
       </Description>
     </em:targetApplication>
-
     <em:name>BBCodeXtra</em:name>
     <em:description>Here is the place for the localized description (see  your locale/bbcodextra.properties)</em:description>
     <em:creator>flod (http://flod.org)</em:creator>
@@ -33,6 +31,5 @@
     <em:homepageURL>http://www.yetanothertechblog.com/bbcodextra/</em:homepageURL>
     <em:iconURL>chrome://bbcodextra/skin/bbcodextra_icon.png</em:iconURL>
     <em:optionsURL>chrome://bbcodextra/content/bbcodextraPrefs.xul</em:optionsURL>
-
   </Description>
 </RDF>
