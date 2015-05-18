@@ -1,3 +1,10 @@
+Version 0.5.0 - 20150518
+* Refactored code to make the add-on compatible with e10s.
+* Settings: Added import/export functionality.
+* Settings: Added command to reorder custom tags alphabetically.
+* Commands: "Make image from selection" to Markdown menu.
+* Updated locales code dropping region codes where unnecessary (e.g. 'pl-PL' -> 'pl').
+
 Version 0.4.1 - 20140930
 * Fixed problem with SeaMonkey (Ci undefined, add-on was not working)
 

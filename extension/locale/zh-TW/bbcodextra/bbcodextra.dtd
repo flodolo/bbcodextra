@@ -11,6 +11,7 @@
 <!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "自訂標籤">
 <!ENTITY bbcodextra.menu_accelcustomtags "u">
+
 <!-- Other menus -->
 <!ENTITY bbcodextra.clipboard "剪貼簿內容貼成">
 <!ENTITY bbcodextra.accelClipboard "C">
@@ -23,6 +24,7 @@
 <!ENTITY bbcodextra.listord "編號清單 (數字)">
 <!ENTITY bbcodextra.listalf "編號清單 (字母)">
 <!ENTITY bbcodextra.img "圖片">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "鏈結 (插入為選取區的網址)">
 <!ENTITY bbcodextra.url "鏈結">
 <!ENTITY bbcodextra.urlwithname "鏈結 (指定名稱)">
@@ -42,15 +44,20 @@
 <!ENTITY bbcodextra.vbulhighlight "高亮度標示">
 <!ENTITY bbcodextra.settingsmenu "BBCodeXtra 設定...">
 <!ENTITY bbcodextra.disablemenu "停用此選單">
+
 <!-- Strings used in Pickcolor window -->
 <!ENTITY bbcodextra.pickcolor.title "選擇一種顏色">
 <!ENTITY bbcodextra.pickcolor.description "從顏色清單中選擇字型顏色">
 <!ENTITY bbcodextra.pickcolor.lastcolor "上次使用的顏色 :">
+
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "BBCodeXtra 設定">
+<!ENTITY bbcodextra.settings.width "38em;">
+
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "選單">
 <!ENTITY bbcodextra.settings.customtags "自訂標籤">
+
 <!-- Menu pane -->
 <!ENTITY bbcodextra.settings.menu.description "選擇在右鍵選單中要顯示的項目">
 <!ENTITY bbcodextra.settings.menu.enablebbcode "啟用 bbcode 選單">
@@ -59,6 +66,11 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "啟用 XHTML 選單">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "啟用 Markdown 選單">
 <!ENTITY bbcodextra.settings.menu.enablecustom "啟用 自訂標籤 選單">
+<!ENTITY bbcodextra.settings.managesettings "Manage settings">
+<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
+<!ENTITY bbcodextra.settings.btnimport "Import settings…">
+<!ENTITY bbcodextra.settings.btnexport "Export settings…">
+
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "可用的自訂標籤:">
 <!ENTITY bbcodextra.settings.customtags.btnadd "新增…">
@@ -66,9 +78,12 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "刪除…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "上移">
 <!ENTITY bbcodextra.settings.customtags.moveDown "下移">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "更多資訊與範例">
+
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://jackbin.blogspot.com/2010/04/bbcodextra.html">
+
 <!-- New custom tag window -->
 <!ENTITY bbcodextra.settings.customtags.variables "可用的變數">
 <!ENTITY bbcodextra.settings.customtags.varclipboard "剪貼簿內容">

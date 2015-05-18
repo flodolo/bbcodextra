@@ -24,6 +24,7 @@
 <!ENTITY bbcodextra.listord "Elenco numerato">
 <!ENTITY bbcodextra.listalf "Elenco alfabetico">
 <!ENTITY bbcodextra.img "Immagine">
+<!ENTITY bbcodextra.imgselection "Trasforma selezione in immagine">
 <!ENTITY bbcodextra.urlselection "Trasforma selezione in URL">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL con nome">
@@ -51,6 +52,7 @@
 
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "Preferenze di BBCodeXtra">
+<!ENTITY bbcodextra.settings.width "38em;">
 
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "Menu">
@@ -64,6 +66,10 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Attiva menu XHTML">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "Attiva menu Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Attiva menu Tag personalizzati">
+<!ENTITY bbcodextra.settings.managesettings "Gestione impostazioni">
+<!ENTITY bbcodextra.settings.backupdescription "ATTENZIONE: l’importazione sovrascrive tutte impostazioni esistenti.">
+<!ENTITY bbcodextra.settings.btnimport "Importa impostazioni…">
+<!ENTITY bbcodextra.settings.btnexport "Esporta impostazioni…">
 
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Tag personalizzati presenti:">
@@ -72,6 +78,7 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "Elimina…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "Sposta in alto">
 <!ENTITY bbcodextra.settings.customtags.moveDown "Sposta in basso">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Ordina alfabeticamente">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "Ulteriori informazioni ed esempi">
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.pseudotecnico.org/blog/bbcodextra">

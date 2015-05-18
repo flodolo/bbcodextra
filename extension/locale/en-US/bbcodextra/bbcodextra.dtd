@@ -24,7 +24,8 @@
 <!ENTITY bbcodextra.listord "Ordered list">
 <!ENTITY bbcodextra.listalf "Alphabetic list">
 <!ENTITY bbcodextra.img "Image">
-<!ENTITY bbcodextra.urlselection "Make selection URL">
+<!ENTITY bbcodextra.imgselection "Make image from selection">
+<!ENTITY bbcodextra.urlselection "Make URL from selection">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL with name">
 <!ENTITY bbcodextra.pickcolor "Font Color">
@@ -51,6 +52,7 @@
 
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "BBCodeXtra Settings">
+<!ENTITY bbcodextra.settings.width "38em;">
 
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "Menus">
@@ -64,6 +66,10 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Enable XHTML menu">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "Enable Markdown menu">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Enable Custom Tags menu">
+<!ENTITY bbcodextra.settings.managesettings "Manage settings">
+<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
+<!ENTITY bbcodextra.settings.btnimport "Import settings…">
+<!ENTITY bbcodextra.settings.btnexport "Export settings…">
 
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Available Custom Tags:">
@@ -72,6 +78,7 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "Delete…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "Move Up">
 <!ENTITY bbcodextra.settings.customtags.moveDown "Move Down">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "More info and examples">
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">

@@ -4,59 +4,82 @@
 <!DOCTYPE overlay SYSTEM "chrome://bbcodextra/locale/bbcodextra.dtd">
 
 <prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="bbcodextraPreferences"
-	title="&bbcodextra.settings.title;"
-	persist="lastSelected" >
+    id="bbcodextraPreferences"
+    title="&bbcodextra.settings.title;"
+    persist="lastSelected"
+    onload="bbcodextra.resizePrefs();"
+    style="width: &bbcodextra.settings.width;;">
 
 <script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
 <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
 
 <stringbundleset id="stringbundleset">
-	<stringbundle src="chrome://bbcodextra/locale/bbcodextra.properties" id="localizedStrings"/>
+    <stringbundle src="chrome://bbcodextra/locale/bbcodextra.properties" id="localizedStrings"/>
 </stringbundleset>
 
 <prefpane label="&bbcodextra.settings.menu;" id="bbcodextra-paneMenu">
-	<preferences id="menuSettingsPreferences">
-		<preference id="pref-bbcode" name="extensions.bbcodextra.bbcodemenu" type="bool"/>
-		<preference id="pref-vbulletin" name="extensions.bbcodextra.bbcodevbulletinmenu" type="bool" />
-		<preference id="pref-html" name="extensions.bbcodextra.htmlmenu" type="bool"/>
-		<preference id="pref-xhtml" name="extensions.bbcodextra.xhtmlmenu" type="bool"/>
-		<preference id="pref-markdown" name="extensions.bbcodextra.markdownmenu" type="bool"/>
-		<preference id="pref-custom" name="extensions.bbcodextra.custommenu" type="bool"/>
-	</preferences>
-	<label value="&bbcodextra.settings.menu.description;" />
-	<groupbox flex="1" orient="vertical">
-		<checkbox id="bbcodextra-enable-bbcode" preference="pref-bbcode" label="&bbcodextra.settings.menu.enablebbcode;" onclick="bbcodextra.prefWindowSetVBulletinStatus();"/>
-		<checkbox id="bbcodextra-enable-vbulletin" preference="pref-vbulletin" label="&bbcodextra.settings.menu.enablebbcode.vbulletin;" />
-		<checkbox id="bbcodextra-enable-html" preference="pref-html" label="&bbcodextra.settings.menu.enablehtml;" />
-		<checkbox id="bbcodextra-enable-xhtml" preference="pref-xhtml" label="&bbcodextra.settings.menu.enablexhtml;" />
-		<checkbox id="bbcodextra-enable-markdown" preference="pref-markdown" label="&bbcodextra.settings.menu.enablemarkdown;" />
-		<checkbox id="bbcodextra-enable-custom" preference="pref-custom" label="&bbcodextra.settings.menu.enablecustom;" />
-	</groupbox>
+    <preferences id="menuSettingsPreferences">
+        <preference id="pref-bbcode" name="extensions.bbcodextra.bbcodemenu" type="bool"/>
+        <preference id="pref-vbulletin" name="extensions.bbcodextra.bbcodevbulletinmenu" type="bool" />
+        <preference id="pref-html" name="extensions.bbcodextra.htmlmenu" type="bool"/>
+        <preference id="pref-xhtml" name="extensions.bbcodextra.xhtmlmenu" type="bool"/>
+        <preference id="pref-markdown" name="extensions.bbcodextra.markdownmenu" type="bool"/>
+        <preference id="pref-custom" name="extensions.bbcodextra.custommenu" type="bool"/>
+    </preferences>
+    <description>&bbcodextra.settings.menu.description;</description>
+    <groupbox flex="1" orient="vertical">
+        <checkbox id="bbcodextra-enable-bbcode" preference="pref-bbcode" label="&bbcodextra.settings.menu.enablebbcode;" onclick="bbcodextra.prefWindowSetVBulletinStatus();"/>
+        <checkbox id="bbcodextra-enable-vbulletin" preference="pref-vbulletin" label="&bbcodextra.settings.menu.enablebbcode.vbulletin;" />
+        <checkbox id="bbcodextra-enable-html" preference="pref-html" label="&bbcodextra.settings.menu.enablehtml;" />
+        <checkbox id="bbcodextra-enable-xhtml" preference="pref-xhtml" label="&bbcodextra.settings.menu.enablexhtml;" />
+        <checkbox id="bbcodextra-enable-markdown" preference="pref-markdown" label="&bbcodextra.settings.menu.enablemarkdown;" />
+        <checkbox id="bbcodextra-enable-custom" preference="pref-custom" label="&bbcodextra.settings.menu.enablecustom;" />
+    </groupbox>
+    <groupbox flex="1" orient="vertical">
+        <caption label="&bbcodextra.settings.managesettings;" />
+        <description style="display: block;">&bbcodextra.settings.backupdescription;</description>
+        <hbox>
+            <button label="&bbcodextra.settings.btnimport;" id="btnImport" oncommand="bbcodextra.prefImportSettings();" />
+            <button label="&bbcodextra.settings.btnexport;" id="btnExport" oncommand="bbcodextra.prefExportSettings();" />
+        </hbox>
+    </groupbox>
 </prefpane>
 
 <prefpane label="&bbcodextra.settings.customtags;" id="bbcodextra-paneCustomTags" onpaneload="bbcodextra.prefWindowRefreshCustomPane();">
-	<preferences id="customTagPreferences">
-		<preference id="pref-numcustomtags" name="extensions.bbcodextra.customtags" type="int"/>
-	</preferences>
-	<hbox>
-		<label value="&bbcodextra.settings.customtags.totaltags;" />
-		<label id="availableCustomTags" />
-	</hbox>
-	<hbox>
-		<listbox id="listAvailableCustomTags" onselect="bbcodextra.prefWindowEnableButtons();" ondblclick="bbcodextra.prefWindowEditTag();">
-		</listbox>
-		<vbox>
-			<button label="&bbcodextra.settings.customtags.btnadd;" id="btnAdd" class="imgButtons" oncommand="bbcodextra.prefWindowAddTag();" />
-			<button label="&bbcodextra.settings.customtags.btnedit;" id="btnEdit" class="imgButtons" oncommand="bbcodextra.prefWindowEditTag();" />
-			<button label="&bbcodextra.settings.customtags.btndelete;" id="btnDelete" class="imgButtons" oncommand="bbcodextra.prefWindowDeleteTag();" />
-			<button label="&bbcodextra.settings.customtags.moveUp;" id="btnMoveUp" class="imgButtons" oncommand="bbcodextra.prefWindowMoveUp();" />
-			<button label="&bbcodextra.settings.customtags.moveDown;" id="btnMoveDown" class="imgButtons" oncommand="bbcodextra.prefWindowMoveDown();" />
-		</vbox>
-	</hbox>
-	<hbox>
-		<label class="text-link" href="&bbcodextra.settings.customtags.moreinfolink;" value="&bbcodextra.settings.customtags.moreinfo;" />
-	</hbox>
+    <preferences id="customTagPreferences">
+        <preference id="pref-numcustomtags" name="extensions.bbcodextra.customtags" type="int"/>
+    </preferences>
+    <hbox>
+        <label value="&bbcodextra.settings.customtags.totaltags;" />
+        <label id="availableCustomTags" />
+    </hbox>
+    <hbox>
+        <listbox id="listAvailableCustomTags" onselect="bbcodextra.prefWindowEnableButtons();" ondblclick="bbcodextra.prefWindowEditTag();">
+        </listbox>
+        <vbox id="buttonlist">
+            <button id="btnAdd" class="imgButtons" oncommand="bbcodextra.prefWindowAddTag();">
+                &bbcodextra.settings.customtags.btnadd;
+            </button>
+            <button id="btnEdit" class="imgButtons" oncommand="bbcodextra.prefWindowEditTag();">
+                &bbcodextra.settings.customtags.btnedit;
+            </button>
+            <button id="btnDelete" class="imgButtons" oncommand="bbcodextra.prefWindowDeleteTag();">
+                &bbcodextra.settings.customtags.btndelete;
+            </button>
+            <button id="btnMoveUp" class="imgButtons" oncommand="bbcodextra.prefWindowMoveUp();">
+                &bbcodextra.settings.customtags.moveUp;
+            </button>
+            <button id="btnMoveDown" class="imgButtons" oncommand="bbcodextra.prefWindowMoveDown();">
+                &bbcodextra.settings.customtags.moveDown;
+            </button>
+            <button id="btnSortAlpha" class="imgButtons" oncommand="bbcodextra.prefSortTags();">
+                &bbcodextra.settings.customtags.sortAlpha;
+            </button>
+        </vbox>
+    </hbox>
+    <hbox>
+        <label class="text-link" href="&bbcodextra.settings.customtags.moreinfolink;" value="&bbcodextra.settings.customtags.moreinfo;" />
+    </hbox>
 </prefpane>
 
 </prefwindow>

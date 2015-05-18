@@ -6,8 +6,8 @@
 </RDF:Seq>
 
   <RDF:Description about="urn:mozilla:package:bbcodextra"
-        chrome:displayName="BBCodeXtra 0.3.0"
-        chrome:author="eXtenZilla"
+        chrome:displayName="BBCodeXtra 0.5.0"
+        chrome:author="Francesco Lodolo (flod)"
         chrome:authorURL="http://yetanothertechblog.com/bbcodextra"
         chrome:name="bbcodextra"
         chrome:extension="true"

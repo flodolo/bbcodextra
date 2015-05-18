@@ -148,6 +148,7 @@
 					<menuitem id="bbcodextra-markdown-context-listaclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('markdownlistclip', null);"/>
 					<menuitem id="bbcodextra-markdown-context-listaord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('markdownlistordclip', null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('markdownurlselection', null);"/>
+					<menuitem id="bbcodextra-markdown-context-imgselection" label="&bbcodextra.imgselection;" oncommand="bbcodextra.bbcodextra('markdownimgselection', null);"/>
 					<menuitem id="bbcodextra-markdown-context-urlclip" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('markdownurlclip', null);"/>
 				</menupopup>
 			</menu>
