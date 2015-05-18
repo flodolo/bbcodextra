@@ -56,6 +56,16 @@ if ('undefined' == typeof(bbcodextra)) {
 		 * Preferences window
 		 */
 
+        resizePrefs: function () {
+            /* If localization has particularly long button labels, prefWindow
+             * fails to resize correctly and cut off the button at the end.
+             */
+            sizeToContent();
+            var vbox = document.getElementById('buttonlist');
+            vbox.height = vbox.boxObject.height;
+            sizeToContent();
+        },
+
 		prefWindowEnableButtons: function () {
 			// Enable Edit and Delete buttons only if an item is selected
 			document.getElementById('btnEdit').setAttribute('disabled', false);

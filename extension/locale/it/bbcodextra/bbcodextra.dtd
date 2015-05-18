@@ -78,7 +78,7 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "Elimina…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "Sposta in alto">
 <!ENTITY bbcodextra.settings.customtags.moveDown "Sposta in basso">
-<!ENTITY bbcodextra.settings.customtags.sortAlpha "Ordine alfabetico">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Ordina alfabeticamente">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "Ulteriori informazioni ed esempi">
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.pseudotecnico.org/blog/bbcodextra">

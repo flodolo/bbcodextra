@@ -7,6 +7,7 @@
     id="bbcodextraPreferences"
     title="&bbcodextra.settings.title;"
     persist="lastSelected"
+    onload="bbcodextra.resizePrefs();"
     style="width: &bbcodextra.settings.width;;">
 
 <script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
@@ -55,13 +56,25 @@
     <hbox>
         <listbox id="listAvailableCustomTags" onselect="bbcodextra.prefWindowEnableButtons();" ondblclick="bbcodextra.prefWindowEditTag();">
         </listbox>
-        <vbox>
-            <button label="&bbcodextra.settings.customtags.btnadd;" id="btnAdd" class="imgButtons" oncommand="bbcodextra.prefWindowAddTag();" />
-            <button label="&bbcodextra.settings.customtags.btnedit;" id="btnEdit" class="imgButtons" oncommand="bbcodextra.prefWindowEditTag();" />
-            <button label="&bbcodextra.settings.customtags.btndelete;" id="btnDelete" class="imgButtons" oncommand="bbcodextra.prefWindowDeleteTag();" />
-            <button label="&bbcodextra.settings.customtags.moveUp;" id="btnMoveUp" class="imgButtons" oncommand="bbcodextra.prefWindowMoveUp();" />
-            <button label="&bbcodextra.settings.customtags.moveDown;" id="btnMoveDown" class="imgButtons" oncommand="bbcodextra.prefWindowMoveDown();" />
-            <button label="&bbcodextra.settings.customtags.sortAlpha;" id="btnSortAlpha" class="imgButtons" oncommand="bbcodextra.prefSortTags();" />
+        <vbox id="buttonlist">
+            <button id="btnAdd" class="imgButtons" oncommand="bbcodextra.prefWindowAddTag();">
+                &bbcodextra.settings.customtags.btnadd;
+            </button>
+            <button id="btnEdit" class="imgButtons" oncommand="bbcodextra.prefWindowEditTag();">
+                &bbcodextra.settings.customtags.btnedit;
+            </button>
+            <button id="btnDelete" class="imgButtons" oncommand="bbcodextra.prefWindowDeleteTag();">
+                &bbcodextra.settings.customtags.btndelete;
+            </button>
+            <button id="btnMoveUp" class="imgButtons" oncommand="bbcodextra.prefWindowMoveUp();">
+                &bbcodextra.settings.customtags.moveUp;
+            </button>
+            <button id="btnMoveDown" class="imgButtons" oncommand="bbcodextra.prefWindowMoveDown();">
+                &bbcodextra.settings.customtags.moveDown;
+            </button>
+            <button id="btnSortAlpha" class="imgButtons" oncommand="bbcodextra.prefSortTags();">
+                &bbcodextra.settings.customtags.sortAlpha;
+            </button>
         </vbox>
     </hbox>
     <hbox>
