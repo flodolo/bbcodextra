@@ -1,4 +1,4 @@
-Version 0.5.0 - 20150518
+Version 0.5.1 - 20150518
 * Refactored code to make the add-on compatible with e10s.
 * Settings: Added import/export functionality.
 * Settings: Added command to reorder custom tags alphabetically.

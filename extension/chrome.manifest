@@ -20,5 +20,5 @@ locale	    bbcodextra	pt-PT         locale/pt-PT/bbcodextra/
 locale	    bbcodextra	ru            locale/ru/bbcodextra/
 locale	    bbcodextra	sk            locale/sk/bbcodextra/
 locale	    bbcodextra	sr            locale/sr/bbcodextra/
-locale	    bbcodextra	th            locale/th-TH/bbcodextra/
+locale	    bbcodextra	th            locale/th/bbcodextra/
 locale	    bbcodextra	zh-TW         locale/zh-TW/bbcodextra/
