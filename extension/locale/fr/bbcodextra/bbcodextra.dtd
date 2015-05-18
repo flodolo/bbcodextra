@@ -11,6 +11,7 @@
 <!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Balises personnalisées">
 <!ENTITY bbcodextra.menu_accelcustomtags "r">
+
 <!-- Other menus -->
 <!ENTITY bbcodextra.clipboard "Presse-papiers">
 <!ENTITY bbcodextra.accelClipboard "P">
@@ -43,15 +44,20 @@
 <!ENTITY bbcodextra.vbulhighlight "Surligné">
 <!ENTITY bbcodextra.settingsmenu "Paramètres de BBCodeXtra...">
 <!ENTITY bbcodextra.disablemenu "Désactiver ce menu">
+
 <!-- Strings used in Pickcolor window -->
 <!ENTITY bbcodextra.pickcolor.title "Choisir une couleur">
 <!ENTITY bbcodextra.pickcolor.description "Sélectionnez la couleur de la police dans la liste">
 <!ENTITY bbcodextra.pickcolor.lastcolor "Dernier choix de couleur :">
+
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "Paramètres de BBCodeXtra">
+<!ENTITY bbcodextra.settings.width "38em;">
+
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "Menus">
 <!ENTITY bbcodextra.settings.customtags "Balises personnalisées">
+
 <!-- Menu pane -->
 <!ENTITY bbcodextra.settings.menu.description "Choisir les éléments à afficher dans le menu contextuel">
 <!ENTITY bbcodextra.settings.menu.enablebbcode "Activer le menu bbcode">
@@ -60,6 +66,11 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "Activer le menu XHTML">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "Activer le menu menu">
 <!ENTITY bbcodextra.settings.menu.enablecustom "Activer les balises personnalisées">
+<!ENTITY bbcodextra.settings.managesettings "Manage settings">
+<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
+<!ENTITY bbcodextra.settings.btnimport "Import settings…">
+<!ENTITY bbcodextra.settings.btnexport "Export settings…">
+
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Balises personnalisées disponibles :">
 <!ENTITY bbcodextra.settings.customtags.btnadd "Ajouter…">
@@ -67,9 +78,12 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "Supprimer…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "Remonter">
 <!ENTITY bbcodextra.settings.customtags.moveDown "Descendre">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "Davantage d'informations et des exemples">
+
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+
 <!-- New custom tag window -->
 <!ENTITY bbcodextra.settings.customtags.variables "Variables disponibles">
 <!ENTITY bbcodextra.settings.customtags.varclipboard "contenu du presse-papiers">

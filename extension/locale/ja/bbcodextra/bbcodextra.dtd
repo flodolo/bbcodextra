@@ -11,6 +11,7 @@
 <!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "Custom Tags">
 <!ENTITY bbcodextra.menu_accelcustomtags "u">
+
 <!-- Other menus -->
 <!ENTITY bbcodextra.clipboard "クリップボード">
 <!ENTITY bbcodextra.accelClipboard "C">
@@ -43,15 +44,20 @@
 <!ENTITY bbcodextra.vbulhighlight "強調表示">
 <!ENTITY bbcodextra.settingsmenu "BBCodeXtra の設定…">
 <!ENTITY bbcodextra.disablemenu "このメニューを非表示">
+
 <!-- Strings used in Pickcolor window -->
 <!ENTITY bbcodextra.pickcolor.title "色の選択">
 <!ENTITY bbcodextra.pickcolor.description "使用したい文字の色をリストから選択してください。">
 <!ENTITY bbcodextra.pickcolor.lastcolor "最後に使用した色: ">
+
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "BBCodeXtra の設定">
+<!ENTITY bbcodextra.settings.width "38em;">
+
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "メニュー">
 <!ENTITY bbcodextra.settings.customtags "カスタムタグ">
+
 <!-- Menu pane -->
 <!ENTITY bbcodextra.settings.menu.description "選択した項目をコンテキストメニューに表示します">
 <!ENTITY bbcodextra.settings.menu.enablebbcode "bbcode を表示">
@@ -60,6 +66,11 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "XHTML を表示">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "Markdown を表示">
 <!ENTITY bbcodextra.settings.menu.enablecustom "カスタムタグを表示">
+<!ENTITY bbcodextra.settings.managesettings "Manage settings">
+<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
+<!ENTITY bbcodextra.settings.btnimport "Import settings…">
+<!ENTITY bbcodextra.settings.btnexport "Export settings…">
+
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "使用できるカスタムタグ:">
 <!ENTITY bbcodextra.settings.customtags.btnadd "追加…">
@@ -67,9 +78,12 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "削除…">
 <!ENTITY bbcodextra.settings.customtags.moveUp "上へ">
 <!ENTITY bbcodextra.settings.customtags.moveDown "下へ">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "詳細な情報とサンプル">
+
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+
 <!-- New custom tag window -->
 <!ENTITY bbcodextra.settings.customtags.variables "使用できる変数">
 <!ENTITY bbcodextra.settings.customtags.varclipboard "クリップボードの内容">

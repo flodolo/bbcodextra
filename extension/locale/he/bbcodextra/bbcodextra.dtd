@@ -11,6 +11,7 @@
 <!ENTITY bbcodextra.menu_accelmarkdown "w">
 <!ENTITY bbcodextra.menu_customtags "תוויות מותאמות">
 <!ENTITY bbcodextra.menu_accelcustomtags "ו">
+
 <!-- Other menus -->
 <!ENTITY bbcodextra.clipboard "לוח העריכה">
 <!ENTITY bbcodextra.accelClipboard "ל">
@@ -43,15 +44,20 @@
 <!ENTITY bbcodextra.vbulhighlight "מודגש">
 <!ENTITY bbcodextra.settingsmenu "הגדרות BBCodeXtra...">
 <!ENTITY bbcodextra.disablemenu "נטרול תפריט זה">
+
 <!-- Strings used in Pickcolor window -->
 <!ENTITY bbcodextra.pickcolor.title "בחירת צבע">
 <!ENTITY bbcodextra.pickcolor.description "בחירת צבע הגופן מהרשימה">
 <!ENTITY bbcodextra.pickcolor.lastcolor "הצבע האחרון בשימוש:">
+
 <!-- Strings used in Prefs window -->
 <!ENTITY bbcodextra.settings.title "הגדרות BBCodeXtra">
+<!ENTITY bbcodextra.settings.width "38em;">
+
 <!-- Pane buttons -->
 <!ENTITY bbcodextra.settings.menu "תפריטים">
 <!ENTITY bbcodextra.settings.customtags "תוויות מותאמות">
+
 <!-- Menu pane -->
 <!ENTITY bbcodextra.settings.menu.description "בחירת פריטים להצגה בתפריט הלחצן הימני">
 <!ENTITY bbcodextra.settings.menu.enablebbcode "אפשור תפריט bbcode">
@@ -60,6 +66,11 @@
 <!ENTITY bbcodextra.settings.menu.enablexhtml "אפשור תפריט XHTML">
 <!ENTITY bbcodextra.settings.menu.enablemarkdown "אפשור תפריט Markdown">
 <!ENTITY bbcodextra.settings.menu.enablecustom "אפשור תפריט תוויות מותאמות">
+<!ENTITY bbcodextra.settings.managesettings "Manage settings">
+<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
+<!ENTITY bbcodextra.settings.btnimport "Import settings…">
+<!ENTITY bbcodextra.settings.btnexport "Export settings…">
+
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "תוויות מותאמות זמינות:">
 <!ENTITY bbcodextra.settings.customtags.btnadd "הוספה...">
@@ -67,9 +78,12 @@
 <!ENTITY bbcodextra.settings.customtags.btndelete "מחיקה...">
 <!ENTITY bbcodextra.settings.customtags.moveUp "הזז מעלה">
 <!ENTITY bbcodextra.settings.customtags.moveDown "הזז מטה">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "מידע נוסף ודוגמאות">
+
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
 <!ENTITY bbcodextra.settings.customtags.moreinfolink "http://www.yetanothertechblog.com/bbcodextra">
+
 <!-- New custom tag window -->
 <!ENTITY bbcodextra.settings.customtags.variables "משתנים זמינים">
 <!ENTITY bbcodextra.settings.customtags.varclipboard "תוכן לוח הכתיבה">
