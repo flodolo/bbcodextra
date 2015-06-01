@@ -1085,7 +1085,7 @@ if ('undefined' == typeof(bbcodextra)) {
 					elaboratedText = bbcodextra.createList(strSelected, 'markdownord');
 				break;
 
-				case 'markdowntagname':
+				case 'markdownurltagname':
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt !== null) {
