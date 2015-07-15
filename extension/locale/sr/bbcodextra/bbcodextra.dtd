@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "Списак">
 <!ENTITY bbcodextra.listord "Уређен списак">
 <!ENTITY bbcodextra.listalf "Азбучни списак">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Слика">
 <!ENTITY bbcodextra.imgselection "Нека одабрано постане слика">
 <!ENTITY bbcodextra.urlselection "Нека одабрано постане URL">

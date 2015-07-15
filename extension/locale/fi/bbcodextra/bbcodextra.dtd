@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "Lista">
 <!ENTITY bbcodextra.listord "Numerojärjestyksellinen lista">
 <!ENTITY bbcodextra.listalf "Aakkosjärjestyksellinen lista">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Kuva">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "Tee valinnasta linkki">

@@ -14,31 +14,31 @@
 <script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
 <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
 
- <hbox>
-  <spacer width="2" flex="1"/>
-  <vbox>
     <hbox>
-       <image src="chrome://bbcodextra/skin/pickColor.png" width="48" height="48" />
-       <spacer width="15"/>
-       <vbox>
-       	  <spacer height="15" />
-	  <description style="font-weight: bold;">&bbcodextra.pickcolor.title;</description>
-       </vbox>
+        <spacer width="2" flex="1"/>
+        <vbox>
+            <hbox>
+                <image src="chrome://bbcodextra/skin/pickColor.png" width="48" height="48" />
+                <spacer width="15"/>
+                <vbox>
+                    <spacer height="15" />
+                    <description style="font-weight: bold;">&bbcodextra.pickcolor.title;</description>
+                </vbox>
+            </hbox>
+            <spacer height="8"/>
+            <hbox>
+                <label value="&bbcodextra.pickcolor.description;"/>
+            </hbox>
+            <hbox>
+                <label value="&bbcodextra.pickcolor.lastcolor; "/><hbox width="20" height="20" id="selectedColor" style="border: 1px solid black;"/>
+            </hbox>
+            <spacer height="8"/>
+            <hbox>
+                <spacer width="10" flex="1"/>
+                <colorpicker type="list" id="colorSelector"/>
+                <spacer width="10" flex="1"/>
+            </hbox>
+        </vbox>
+        <spacer width="2" flex="1"/>
     </hbox>
-    <spacer height="8"/>
-    <hbox>
-      <label value="&bbcodextra.pickcolor.description;"/>
-    </hbox>
-    <hbox>
-      <label value="&bbcodextra.pickcolor.lastcolor; "/><hbox width="20" height="20" id="selectedColor" style="border: 1px solid black;"/>
-    </hbox>
-    <spacer height="8"/>
-    <hbox>
-     <spacer width="10" flex="1"/>
-       <colorpicker type="list" id="colorSelector"/>
-     <spacer width="10" flex="1"/>
-    </hbox>
-  </vbox>
-  <spacer width="2" flex="1"/>
- </hbox>
 </dialog>

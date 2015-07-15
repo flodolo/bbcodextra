@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "Lista">
 <!ENTITY bbcodextra.listord "Lista numerowana">
 <!ENTITY bbcodextra.listalf "Lista alfabetyczna">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Obrazek">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "Odnośnik z nazwą zaznaczenia">

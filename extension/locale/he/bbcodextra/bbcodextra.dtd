@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "רשימה">
 <!ENTITY bbcodextra.listord "רשימה מסודרת">
 <!ENTITY bbcodextra.listalf "רשימה אלפביתית">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "תמונה">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "בחירת כתובת אינטרנט">

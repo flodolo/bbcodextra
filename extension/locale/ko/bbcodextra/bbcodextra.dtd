@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "목록">
 <!ENTITY bbcodextra.listord "순차 목록">
 <!ENTITY bbcodextra.listalf "알파벳순 목록">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "이미지">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "선택 URL 제작">

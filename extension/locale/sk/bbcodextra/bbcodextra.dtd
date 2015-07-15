@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "Zoznam">
 <!ENTITY bbcodextra.listord "Usporiadaný zoznam">
 <!ENTITY bbcodextra.listalf "Abecedný zoznam">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Obrázok">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "Vytvoriť výberové URL">
