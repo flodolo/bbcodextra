@@ -1,5 +1,6 @@
-Version 0.5.2 - 2015
-* Fixed Markdown - URL with name
+Version 0.5.2 - 201507
+* Use double quotes for HTML code since single quotes break on some forums.
+* Fixed Markdown - URL with name.
 
 Version 0.5.1 - 20150518
 * Refactored code to make the add-on compatible with e10s.

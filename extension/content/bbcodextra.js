@@ -746,7 +746,7 @@ if ('undefined' == typeof(bbcodextra)) {
 						if (author === '') {
 							elaboratedText = '[quote]' + strClipboard + '[/quote]';
 						} else {
-							elaboratedText = '[quote=\'' + author + '\']' + strClipboard + '[/quote]';
+							elaboratedText = '[quote="' + author + '"]' + strClipboard + '[/quote]';
 						}
 					}
 				break;
@@ -757,7 +757,7 @@ if ('undefined' == typeof(bbcodextra)) {
 						if (author === '') {
 							elaboratedText = '[quote]' + strSelected + '[/quote]';
 						} else {
-							elaboratedText = '[quote=\'' + author + '\']' + strSelected + '[/quote]';
+							elaboratedText = '[quote="' + author + '"]' + strSelected + '[/quote]';
 						}
 					}
 				break;
@@ -917,11 +917,11 @@ if ('undefined' == typeof(bbcodextra)) {
 				break;
 
 				case 'htmlimg':
-					elaboratedText = '<img src=\'' + strSelected + '\'>';
+					elaboratedText = '<img src="' + strSelected + '">';
 				break;
 
 				case 'htmlimgclip':
-					elaboratedText = '<img src=\'' + strClipboard + '\'>';
+					elaboratedText = '<img src="' + strClipboard + '">';
 				break;
 
 				case 'htmlstrike':
@@ -944,11 +944,11 @@ if ('undefined' == typeof(bbcodextra)) {
 				break;
 
 				case 'xhtmlimg':
-					elaboratedText = '<img src=\'' + strSelected + '\' />';
+					elaboratedText = '<img src="' + strSelected + '" />';
 				break;
 
 				case 'xhtmlimgclip':
-					elaboratedText = '<img src=\'' + strClipboard + '\' />';
+					elaboratedText = '<img src="' + strClipboard + '" />';
 				break;
 
 				case 'xhtmlstrike':
@@ -958,7 +958,7 @@ if ('undefined' == typeof(bbcodextra)) {
 				// COMMON HTML/XHTML FUNCTIONS
 
 				case 'xhtmlurltag':
-					elaboratedText = '<a href=\'' + strSelected + '\'>' + strSelected + '</a>';
+					elaboratedText = '<a href="' + strSelected + '">' + strSelected + '</a>';
 				break;
 
 				case 'xhtmlquoteclip':
@@ -978,26 +978,26 @@ if ('undefined' == typeof(bbcodextra)) {
 				break;
 
 				case 'xhtmlurl':
-					elaboratedText = '<a href=\'' + strClipboard + '\'>' + strClipboard + '</a>';
+					elaboratedText = '<a href="' + strClipboard + '">' + strClipboard + '</a>';
 				break;
 
 				case 'xhtmlurlclip':
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt !== null) {
-						elaboratedText = '<a href=\'' + strClipboard + '\'>' + strPrompt + '</a>';
+						elaboratedText = '<a href="' + strClipboard + '">' + strPrompt + '</a>';
 					}
 				break;
 
 				case 'xhtmlurlselection':
-					elaboratedText = '<a href=\'' + strClipboard + '\'>' + strSelected + '</a>';
+					elaboratedText = '<a href="' + strClipboard + '">' + strSelected + '</a>';
 				break;
 
 				case 'xhtmlurltagname':
 					strPrompt = null;
 					strPrompt = bbcodextra.promptWindow(strInsLinkName);
 					if (strPrompt !== null) {
-						elaboratedText = '<a href=\'' + strSelected + '\'>' + strPrompt + '</a>';
+						elaboratedText = '<a href="' + strSelected + '">' + strPrompt + '</a>';
 					}
 				break;
 
@@ -1006,7 +1006,7 @@ if ('undefined' == typeof(bbcodextra)) {
 					if (composeURLname !== null) {
 						composeURL = bbcodextra.promptWindow(strComposeURLStep2);
 						if (composeURL !== null) {
-							elaboratedText = '<a href=\'' + composeURL + '\'>' + composeURLname + '</a>';
+							elaboratedText = '<a href="' + composeURL + '">' + composeURLname + '</a>';
 						}
 					}
 				break;
