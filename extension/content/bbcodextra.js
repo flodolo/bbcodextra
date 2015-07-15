@@ -828,6 +828,10 @@ if ('undefined' == typeof(bbcodextra)) {
 					elaboratedText = bbcodextra.createList(strSelected, 'bbcodeordalf');
 				break;
 
+                case 'spoiler':
+                    elaboratedText = '[spoiler]' + strSelected + '[/spoiler]';
+                break;
+
 				case 'listclip':
 					elaboratedText = bbcodextra.createList(strClipboard, 'bbcode');
 				break;
@@ -839,6 +843,10 @@ if ('undefined' == typeof(bbcodextra)) {
 				case 'listclipalpha':
 					elaboratedText = bbcodextra.createList(strClipboard, 'bbcodeordalf');
 				break;
+
+                case 'spoilerclip':
+                    elaboratedText = '[spoiler]' + strClipboard + '[/spoiler]';
+                break;
 
 				case 'italic':
 					elaboratedText = '[i]' + strSelected + '[/i]';

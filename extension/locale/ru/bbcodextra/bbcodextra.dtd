@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "Список">
 <!ENTITY bbcodextra.listord "Отсортированный список">
 <!ENTITY bbcodextra.listalf "Список по алфавиту">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Изображение">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "Сделайте выбор ссылки">

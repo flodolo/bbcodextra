@@ -19,7 +19,8 @@
 					<menuitem id="bbcodextra-context-codeclip" label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('codeclip', null);"/>
 					<menuitem id="bbcodextra-context-listclip" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('listclip', null);"/>
 					<menuitem id="bbcodextra-context-listclipord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listclipord', null);"/>
-					<menuitem id="bbcodextra-context-listclipalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listclipalpha', null);"/>
+                    <menuitem id="bbcodextra-context-listclipalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listclipalpha', null);"/>
+                    <menuitem id="bbcodextra-context-spoilerclip" label="&bbcodextra.spoiler;" oncommand="bbcodextra.bbcodextra('spoilerclip', null);"/>
 					<menuitem id="bbcodextra-context-imgclip" label="&bbcodextra.img;" oncommand="bbcodextra.bbcodextra('imgclip', null);"/>
 					<menuitem id="bbcodextra-context-urlselection" label="&bbcodextra.urlselection;" oncommand="bbcodextra.bbcodextra('urlselection', null);"/>
 					<menuitem id="bbcodextra-context-url" label="&bbcodextra.url;" oncommand="bbcodextra.bbcodextra('url', null);"/>
@@ -32,8 +33,9 @@
 					<menuitem id="bbcodextra-context-code"  label="&bbcodextra.code;" oncommand="bbcodextra.bbcodextra('code', null);"/>
 					<menuitem id="bbcodextra-context-list" label="&bbcodextra.list;" oncommand="bbcodextra.bbcodextra('list', null);"/>
 					<menuitem id="bbcodextra-context-listord" label="&bbcodextra.listord;" oncommand="bbcodextra.bbcodextra('listord', null);"/>
-					<menuitem id="bbcodextra-context-listalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listalpha', null);"/>
-					<menuitem id="bbcodextra-context-pickcolor" class="menuitem-iconic menu-iconic icon-bbcodextraColor" label="&bbcodextra.pickcolor;" oncommand="bbcodextra.showColorPick();"/>
+                    <menuitem id="bbcodextra-context-listalpha" label="&bbcodextra.listalf;" oncommand="bbcodextra.bbcodextra('listalpha', null);"/>
+                    <menuitem id="bbcodextra-context-spoiler" label="&bbcodextra.spoiler;" oncommand="bbcodextra.bbcodextra('spoiler', null);"/>
+                    <menuitem id="bbcodextra-context-pickcolor" class="menuitem-iconic menu-iconic icon-bbcodextraColor" label="&bbcodextra.pickcolor;" oncommand="bbcodextra.showColorPick();"/>
 					<menuitem id="bbcodextra-context-size" label="&bbcodextra.fontdim;" oncommand="bbcodextra.bbcodextra('size', null);"/>
 					<menuitem id="bbcodextra-context-urltagname" label="&bbcodextra.urlwithname;" oncommand="bbcodextra.bbcodextra('urltagname', null);"/>
 					<menuitem id="bbcodextra-context-composeurl" label="&bbcodextra.urlwizard;" oncommand="bbcodextra.bbcodextra('composeurl', null);"/>

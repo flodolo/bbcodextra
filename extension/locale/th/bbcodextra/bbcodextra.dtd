@@ -23,6 +23,7 @@
 <!ENTITY bbcodextra.list "รายชื่อ">
 <!ENTITY bbcodextra.listord "รายชื่อตามลำัดับ">
 <!ENTITY bbcodextra.listalf "รายชื่อตามตัวอักษร">
+<!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "รูปภาพ">
 <!ENTITY bbcodextra.imgselection "Make image from selection">
 <!ENTITY bbcodextra.urlselection "ทำยูอาร์แอลกดได้">
