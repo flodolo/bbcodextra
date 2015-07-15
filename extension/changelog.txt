@@ -1,4 +1,4 @@
-Version 0.5.2 - 201507
+Version 0.5.2 - 20150715
 * Added [spoiler][/spoiler] tag in BBCode menu.
 * Use double quotes for HTML code since single quotes break on some forums.
 * Fixed Markdown - URL with name.
