@@ -10,21 +10,21 @@
    onload="bbcodextra.customTagWindowLoad();">
  <script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
  <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js" />
- 	<groupbox>
-		<caption label="&bbcodextra.settings.customtags.variables;" />
-		<hbox>
-			<label value="_selection_" class="varname" /><label value="&bbcodextra.settings.customtags.varselection;" />
-		</hbox>
-		<hbox>
-			<label value="_clipboard_" class="varname" /><label value="&bbcodextra.settings.customtags.varclipboard;" />
-		</hbox>
-	</groupbox>
-   	<hbox>
-    	<label class="labelCustom" value="&bbcodextra.settings.customtags.label;"/>
-		<textbox id="tagLabel" maxlength="45" size="46" />
+    <groupbox>
+        <caption label="&bbcodextra.settings.customtags.variables;" />
+        <hbox>
+            <label value="_selection_" class="varname" /><label value="&bbcodextra.settings.customtags.varselection;" />
+        </hbox>
+        <hbox>
+            <label value="_clipboard_" class="varname" /><label value="&bbcodextra.settings.customtags.varclipboard;" />
+        </hbox>
+    </groupbox>
+    <hbox>
+        <label class="labelCustom" value="&bbcodextra.settings.customtags.label;"/>
+        <textbox id="tagLabel" maxlength="45" size="46" />
     </hbox>
-	<hbox>
-    	<label class="labelCustom" value="&bbcodextra.settings.customtags.action;"/>
-		<textbox id="tagAction" multiline="true" cols="44" rows="4" />
+    <hbox>
+        <label class="labelCustom" value="&bbcodextra.settings.customtags.action;"/>
+        <textbox id="tagAction" multiline="true" cols="44" rows="4" />
     </hbox>
 </dialog>
