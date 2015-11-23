@@ -1,3 +1,6 @@
+Version 0.5.3 - 20151123
+* Make add-on explicitly compatible with e10s
+
 Version 0.5.2 - 20150715
 * Added [spoiler][/spoiler] tag in BBCode menu.
 * Use double quotes for HTML code since single quotes break on some forums.
