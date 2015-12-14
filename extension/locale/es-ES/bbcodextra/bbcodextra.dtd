@@ -25,7 +25,7 @@
 <!ENTITY bbcodextra.listalf "Lista ordenada alfabéticamente">
 <!ENTITY bbcodextra.spoiler "Spoiler">
 <!ENTITY bbcodextra.img "Imagen">
-<!ENTITY bbcodextra.imgselection "Make image from selection">
+<!ENTITY bbcodextra.imgselection "Crear imagen a partir de selección">
 <!ENTITY bbcodextra.urlselection "URL de selección">
 <!ENTITY bbcodextra.url "URL">
 <!ENTITY bbcodextra.urlwithname "URL con nombre">
@@ -38,12 +38,12 @@
 <!ENTITY bbcodextra.strike "Tachado">
 <!ENTITY bbcodextra.vbulthread "Cadena">
 <!ENTITY bbcodextra.vbulpost "Mensaje">
-<!ENTITY bbcodextra.vbulright "Alineado a la derecha">
-<!ENTITY bbcodextra.vbulleft "Alineado a la izquierda">
+<!ENTITY bbcodextra.vbulright "Alinear a la derecha">
+<!ENTITY bbcodextra.vbulleft "Alinear a la izquierda">
 <!ENTITY bbcodextra.vbulcenter "Centrado">
 <!ENTITY bbcodextra.vbulindent "Sangrado">
 <!ENTITY bbcodextra.vbulhighlight "Resaltado">
-<!ENTITY bbcodextra.settingsmenu "BBCodeXtra Ajustes...">
+<!ENTITY bbcodextra.settingsmenu "Configuración de BBCodeXtra…">
 <!ENTITY bbcodextra.disablemenu "Ocultar este menú">
 
 <!-- Strings used in Pickcolor window -->
@@ -52,7 +52,7 @@
 <!ENTITY bbcodextra.pickcolor.lastcolor "Último color usado:">
 
 <!-- Strings used in Prefs window -->
-<!ENTITY bbcodextra.settings.title "BBCodeXtra Preferencias">
+<!ENTITY bbcodextra.settings.title "Configuración de BBCodeXtra">
 <!ENTITY bbcodextra.settings.width "38em;">
 
 <!-- Pane buttons -->
@@ -60,26 +60,26 @@
 <!ENTITY bbcodextra.settings.customtags "Etiquetas">
 
 <!-- Menu pane -->
-<!ENTITY bbcodextra.settings.menu.description "Seleccione elementos a mostrar en el menú contextual">
-<!ENTITY bbcodextra.settings.menu.enablebbcode "Habilitar el menú bbcode">
-<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Habilitar el submenú Vbulletin">
-<!ENTITY bbcodextra.settings.menu.enablehtml "Habilitar el menú HTML">
-<!ENTITY bbcodextra.settings.menu.enablexhtml "Habilitar el menú XHTML">
-<!ENTITY bbcodextra.settings.menu.enablemarkdown "Habilitar el menú Markdown">
-<!ENTITY bbcodextra.settings.menu.enablecustom "Habilitar el menú de Etiquetas Personalizadas">
-<!ENTITY bbcodextra.settings.managesettings "Manage settings">
-<!ENTITY bbcodextra.settings.backupdescription "WARNING: importing settings will overwrite all existing settings.">
-<!ENTITY bbcodextra.settings.btnimport "Import settings…">
-<!ENTITY bbcodextra.settings.btnexport "Export settings…">
+<!ENTITY bbcodextra.settings.menu.description "Seleccione elementos que mostrar en el menú contextual">
+<!ENTITY bbcodextra.settings.menu.enablebbcode "Activar el menú de BBCode">
+<!ENTITY bbcodextra.settings.menu.enablebbcode.vbulletin "Activar el submenú de vBulletin">
+<!ENTITY bbcodextra.settings.menu.enablehtml "Activar el menú de HTML">
+<!ENTITY bbcodextra.settings.menu.enablexhtml "Activar el menú de XHTML">
+<!ENTITY bbcodextra.settings.menu.enablemarkdown "Activar el menú de Markdown">
+<!ENTITY bbcodextra.settings.menu.enablecustom "Activar el menú de etiquetas personalizadas">
+<!ENTITY bbcodextra.settings.managesettings "Gestionar configuración">
+<!ENTITY bbcodextra.settings.backupdescription "AVISO: al importar una configuración se sobrescribirán las preferencias existentes.">
+<!ENTITY bbcodextra.settings.btnimport "Importar configuración…">
+<!ENTITY bbcodextra.settings.btnexport "Exportar configuración…">
 
 <!-- Custom tags pane -->
 <!ENTITY bbcodextra.settings.customtags.totaltags "Etiquetas disponibles">
-<!ENTITY bbcodextra.settings.customtags.btnadd "Añadir...">
-<!ENTITY bbcodextra.settings.customtags.btnedit "Editar...">
-<!ENTITY bbcodextra.settings.customtags.btndelete "Borrar...">
-<!ENTITY bbcodextra.settings.customtags.moveUp "Subir...">
-<!ENTITY bbcodextra.settings.customtags.moveDown "Bajar...">
-<!ENTITY bbcodextra.settings.customtags.sortAlpha "Sort alphabetically">
+<!ENTITY bbcodextra.settings.customtags.btnadd "Añadir…">
+<!ENTITY bbcodextra.settings.customtags.btnedit "Editar…">
+<!ENTITY bbcodextra.settings.customtags.btndelete "Eliminar…">
+<!ENTITY bbcodextra.settings.customtags.moveUp "Subir…">
+<!ENTITY bbcodextra.settings.customtags.moveDown "Bajar…">
+<!ENTITY bbcodextra.settings.customtags.sortAlpha "Ordenar alfabéticamente">
 <!ENTITY bbcodextra.settings.customtags.moreinfo "Más información y ejemplos">
 
 <!-- Change this link only if you want to create documentation about custom tags localized in your language. -->
@@ -87,7 +87,7 @@
 
 <!-- New custom tag window -->
 <!ENTITY bbcodextra.settings.customtags.variables "Variables disponibles">
-<!ENTITY bbcodextra.settings.customtags.varclipboard "contenido del Portapapeles">
+<!ENTITY bbcodextra.settings.customtags.varclipboard "contenido del portapapeles">
 <!ENTITY bbcodextra.settings.customtags.varselection "texto seleccionado">
 <!ENTITY bbcodextra.settings.customtags.label "Nombre del elemento:">
 <!ENTITY bbcodextra.settings.customtags.action "Código:">
