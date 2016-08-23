@@ -7,18 +7,19 @@ overlay		chrome://navigator/content/navigator.xul	chrome://bbcodextra/content/bb
 style       chrome://browser/content/browser.xul 		chrome://bbcodextra/skin/bbcodextra.css
 
 locale	    bbcodextra	en-US         locale/en-US/bbcodextra/
-locale	    bbcodextra	de	          locale/de/bbcodextra/
+locale	    bbcodextra	de         locale/de/bbcodextra/
 locale	    bbcodextra	es-ES         locale/es-ES/bbcodextra/
-locale	    bbcodextra	fi            locale/fi/bbcodextra/
-locale	    bbcodextra	fr		      locale/fr/bbcodextra/
-locale	    bbcodextra	it  	      locale/it/bbcodextra/
-locale	    bbcodextra	ja            locale/ja/bbcodextra/
-locale	    bbcodextra	ko            locale/ko/bbcodextra/
-locale	    bbcodextra	pl            locale/pl/bbcodextra/
+locale	    bbcodextra	fi         locale/fi/bbcodextra/
+locale	    bbcodextra	fr         locale/fr/bbcodextra/
+locale	    bbcodextra	he         locale/he/bbcodextra/
+locale	    bbcodextra	it         locale/it/bbcodextra/
+locale	    bbcodextra	ja         locale/ja/bbcodextra/
+locale	    bbcodextra	ko         locale/ko/bbcodextra/
+locale	    bbcodextra	pl         locale/pl/bbcodextra/
 locale	    bbcodextra	pt-BR         locale/pt-BR/bbcodextra/
 locale	    bbcodextra	pt-PT         locale/pt-PT/bbcodextra/
-locale	    bbcodextra	ru            locale/ru/bbcodextra/
-locale	    bbcodextra	sk            locale/sk/bbcodextra/
-locale	    bbcodextra	sr            locale/sr/bbcodextra/
-locale	    bbcodextra	th            locale/th/bbcodextra/
+locale	    bbcodextra	ru         locale/ru/bbcodextra/
+locale	    bbcodextra	sk         locale/sk/bbcodextra/
+locale	    bbcodextra	sr         locale/sr/bbcodextra/
+locale	    bbcodextra	th         locale/th/bbcodextra/
 locale	    bbcodextra	zh-TW         locale/zh-TW/bbcodextra/

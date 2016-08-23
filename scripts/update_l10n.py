@@ -38,6 +38,7 @@ def main():
     # All paths in l10n.ini are relative to the file itself
     locale_path = os.path.abspath(os.path.join(script_folder, parser.get('config', 'locale_path')))
     reference_locale = parser.get('config', 'reference_locale')
+    manifest_path = os.path.abspath(os.path.join(script_folder, parser.get('config', 'manifest_path')))
 
     # Create a list of reference (en-US) files
     reference_files = []
@@ -47,8 +48,7 @@ def main():
             if os.path.isfile(os.path.join(path, name)) and not name.startswith('.'):
                 reference_files.append(os.path.join(path, name))
 
-    # Create a list of reference files, and store reference data only once.
-    # Object has the following structure:
+    # Store reference data only once. Object has the following structure:
     #
     # {
     #     'filename1': {
@@ -75,6 +75,7 @@ def main():
 
     # Analyze locales
     complete_locales = []
+    incomplete_locales = []
     for locale in locales:
         missing_strings = []
         errors = []
@@ -104,9 +105,29 @@ def main():
             print '----\nLocale {0} is incomplete. Missing strings:'.format(locale)
             print '\n'.join(missing_strings)
             print '----\n'
+            incomplete_locales.append(locale)
 
-    print 'Complete locales'
-    print '\n'.join(complete_locales)
+    # Read the existing complete chrome.manifest file
+    print 'Updating manifest...'
+    with open(manifest_path, 'r') as f:
+        lines = f.readlines()
+
+    # Remove all locale declarations, store the en-US line as template
+    for line in lines[:]:
+        if line.strip().startswith('locale'):
+            if reference_locale in line:
+                declaration_template = line
+            lines.remove(line)
+
+    # Append reference and all complete locales
+    lines.append(declaration_template)
+    for locale in complete_locales:
+        lines.append(declaration_template.replace(reference_locale, locale))
+
+    # Write back updated manifest
+    with open(manifest_path, 'w') as f:
+        f.writelines(lines)
+
 
 if __name__ == '__main__':
     main()
