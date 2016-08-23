@@ -1,3 +1,2 @@
-compare-locales
 ez_setup
 silme
