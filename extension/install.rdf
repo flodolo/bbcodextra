@@ -3,7 +3,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>{af79f858-4b25-4ca4-822b-b5db1be628fc}</em:id>
-    <em:version>0.5.3</em:version>
+    <em:version>0.5.4</em:version>
     <em:type>2</em:type>
     <!-- Enable for testing purposes
     <em:unpack>true</em:unpack>
@@ -13,7 +13,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>17.0</em:minVersion>
-        <em:maxVersion>46.0</em:maxVersion>
+        <em:maxVersion>52.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!--SeaMonkey -->
@@ -26,7 +26,7 @@
     </em:targetApplication>
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
     <em:name>BBCodeXtra</em:name>
-    <em:description>Here is the place for the localized description (see  your locale/bbcodextra.properties)</em:description>
+    <em:description>Here is the place for the localized description (see your locale/bbcodextra.properties)</em:description>
     <em:creator>flod (http://flod.org)</em:creator>
     <em:contributor>Babelzilla (localization)</em:contributor>
     <em:homepageURL>http://www.yetanothertechblog.com/bbcodextra/</em:homepageURL>

@@ -10,7 +10,6 @@
     onload="bbcodextra.resizePrefs();"
     style="width: &bbcodextra.settings.width;;">
 
-<script type="application/x-javascript" src="chrome://global/content/nsUserSettings.js" />
 <script type="application/x-javascript" src="chrome://bbcodextra/content/bbcodextra.js"/>
 
 <stringbundleset id="stringbundleset">
