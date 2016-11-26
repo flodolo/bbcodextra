@@ -10,7 +10,7 @@ if ('undefined' == typeof(bbcodextra)) {
         localizedStrings : null,
 
         init: function () {
-            var menu = document.getElementById('contentAreaContextMenu');
+            let menu = document.getElementById('contentAreaContextMenu');
             try {
                 menu.addEventListener('popupshowing', bbcodextra.showHide, false);
             }
@@ -19,9 +19,11 @@ if ('undefined' == typeof(bbcodextra)) {
 
             this.localizedStrings = document.getElementById('localizedStrings');
             if ('undefined' == typeof(bbcodextraPrefs)) {
-                this.bbcodextraPrefs = nsPreferences;
+                let prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                                .getService(Components.interfaces.nsIPrefService);
+                this.bbcodextraPrefs = prefs.getBranch('extensions.bbcodextra.');
             }
-            var mm = window.messageManager;
+            let mm = window.messageManager;
             mm.loadFrameScript('chrome://bbcodextra/content/frame-script.js', true);
             mm.addMessageListener('bbcodextra:interpret-command', bbcodextra.interpretCommand);
         },
@@ -34,21 +36,42 @@ if ('undefined' == typeof(bbcodextra)) {
             }
         },
 
+        // Functions to set and get Unicode preferences
+        getUnicodePref: function (pref_name) {
+            return bbcodextraPrefs.getComplexValue(pref_name,
+                Components.interfaces.nsISupportsString).data;
+        },
+
+        setUnicodePref: function (pref_name, pref_value) {
+            let str = Components.classes["@mozilla.org/supports-string;1"]
+                .createInstance(Components.interfaces.nsISupportsString);
+            str.data = pref_value;
+            bbcodextraPrefs.setComplexValue(pref_name,
+                Components.interfaces.nsISupportsString, str);
+        },
+
         /*
          *    Color functions used in bbcodextraPickColor.xul
          */
 
         loadColor: function () {
-            var colorPrefs = nsPreferences;
             // Set color to last used value
-            document.getElementById('colorSelector').color = colorPrefs.copyUnicharPref('extensions.bbcodextra.bbcodecolor');
-            document.getElementById('selectedColor').style.backgroundColor = colorPrefs.copyUnicharPref('extensions.bbcodextra.bbcodecolor');
+            let prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                            .getService(Components.interfaces.nsIPrefService)
+                            .getBranch('extensions.bbcodextra.');
+            let color = prefs.getCharPref('bbcodecolor');
+            document.getElementById('colorSelector').color = color;
+            document.getElementById('selectedColor').style.backgroundColor = color;
         },
 
         saveColor: function () {
             // Save selected color in a preference
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.bbcodecolor', document.getElementById('colorSelector').color);
-            var returnValues = window.arguments[0];
+            let prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                            .getService(Components.interfaces.nsIPrefService)
+                            .getBranch('extensions.bbcodextra.');
+            let returnValues = window.arguments[0];
+
+            prefs.setCharPref('bbcodecolor', document.getElementById('colorSelector').color);
             returnValues.selectedColor = 'ok';
         },
 
@@ -107,11 +130,11 @@ if ('undefined' == typeof(bbcodextra)) {
 
             if (params.out) {
                 // Create pref using values passed from dialog
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.label', params.out.tagLabel);
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.action', params.out.tagAction);
+                bbcodextra.setUnicodePref('custom' + nextTagIndex + '.label', params.out.tagLabel);
+                bbcodextra.setUnicodePref('custom' + nextTagIndex + '.action', params.out.tagAction);
 
                 // Increment available customtags. No need to update the label, since I will call prefWindowRefreshCustomPane() at the end
-                bbcodextraPrefs.setIntPref('extensions.bbcodextra.customtags', availableCustomTags + 1);
+                bbcodextraPrefs.setIntPref('customtags', availableCustomTags + 1);
 
                 // Update displayed information
                 bbcodextra.prefWindowRefreshCustomPane();
@@ -137,8 +160,8 @@ if ('undefined' == typeof(bbcodextra)) {
                 if (availableCustomTags > 0) {
                     var customTagsList = [];
                     for (var i = 1; i <= availableCustomTags; i++) {
-                        var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.label'));
-                        var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.action'));
+                        var itemLabel = unescape(bbcodextra.getUnicodePref('custom' + i + '.label'));
+                        var itemAction = unescape(bbcodextra.getUnicodePref('custom' + i + '.action'));
 
                         customTagsList.push({
                             name:         itemLabel,
@@ -153,8 +176,8 @@ if ('undefined' == typeof(bbcodextra)) {
                     });
 
                     for (i = 1; i <= availableCustomTags; i++) {
-                        bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i + '.label', customTagsList[i - 1].name);
-                        bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i + '.action', customTagsList[i - 1].action);
+                        bbcodextra.setUnicodePref('custom' + i + '.label', customTagsList[i - 1].name);
+                        bbcodextra.setUnicodePref('custom' + i + '.action', customTagsList[i - 1].action);
                     }
                 }
                 bbcodextra.prefWindowRefreshCustomPane();
@@ -165,25 +188,21 @@ if ('undefined' == typeof(bbcodextra)) {
             var jsonData = [];
             var prefList = [];
 
-            var extPrefs = Components.classes['@mozilla.org/preferences-service;1']
-                            .getService(Components.interfaces.nsIPrefService);
-            extPrefs = extPrefs.getBranch('extensions.bbcodextra.');
-
-            prefList = extPrefs.getChildList('', []);
+            prefList = bbcodextraPrefs.getChildList('', []);
             for (var prefIndex in prefList) {
                 var prefName = prefList[prefIndex];
-                var prefType = extPrefs.getPrefType(prefName);
+                var prefType = bbcodextraPrefs.getPrefType(prefName);
                 var prefValue;
 
                 switch (prefType) {
                     case 32: // PREF_STRING
-                        prefValue = extPrefs.getComplexValue(prefName, Components.interfaces.nsISupportsString).data;
+                        prefValue = bbcodextra.getUnicodePref(prefName);
                         break;
                     case 64: // PREF_INT
-                        prefValue = extPrefs.getIntPref(prefName);
+                        prefValue = bbcodextraPrefs.getIntPref(prefName);
                         break;
                     case 128: // PREF_BOOL
-                        prefValue = extPrefs.getBoolPref(prefName);
+                        prefValue = bbcodextraPrefs.getBoolPref(prefName);
                         break;
                     default:
                         prefValue = '';
@@ -212,7 +231,7 @@ if ('undefined' == typeof(bbcodextra)) {
                 // Reference: https://developer.mozilla.org/en-US/Add-ons/Code_snippets/File_I_O
                 var foStream = Components.classes['@mozilla.org/network/file-output-stream;1'].
                                     createInstance(Components.interfaces.nsIFileOutputStream);
-                foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0);
+                foStream.init(file, 0x02 | 0x08 | 0x20, 0o666, 0);
                 var converter = Components.classes['@mozilla.org/intl/converter-output-stream;1'].
                                     createInstance(Components.interfaces.nsIConverterOutputStream);
                 converter.init(foStream, 'UTF-8', 0, 0);
@@ -265,26 +284,19 @@ if ('undefined' == typeof(bbcodextra)) {
                     var jsonData = {};
                     try {
                         jsonData = JSON.parse(data);
-                        var extPrefs = Components.classes['@mozilla.org/preferences-service;1']
-                                        .getService(Components.interfaces.nsIPrefService);
-                        extPrefs = extPrefs.getBranch('extensions.bbcodextra.');
-
                         for (var prefIndex in jsonData) {
                             var prefType = jsonData[prefIndex].type;
                             var prefName = jsonData[prefIndex].name;
                             var prefValue = jsonData[prefIndex].value;
                             switch (prefType) {
                                 case 32: // PREF_STRING
-                                    var strValue = Components.classes['@mozilla.org/supports-string;1']
-                                                    .createInstance(Components.interfaces.nsISupportsString);
-                                    strValue.data = prefValue;
-                                    extPrefs.setComplexValue(prefName, Components.interfaces.nsISupportsString, strValue);
+                                    bbcodextraPrefs.setUnicodePref(prefName, strValue);
                                     break;
                                 case 64: // PREF_INT
-                                    extPrefs.setIntPref(prefName, prefValue);
+                                    bbcodextraPrefs.setIntPref(prefName, prefValue);
                                     break;
                                 case 128: // PREF_BOOL
-                                    extPrefs.setBoolPref(prefName, prefValue);
+                                    bbcodextraPrefs.setBoolPref(prefName, prefValue);
                                     break;
                                 default:
                                     prefValue = '';
@@ -306,8 +318,8 @@ if ('undefined' == typeof(bbcodextra)) {
         prefWindowEditTag: function () {
             // I need to read pref values for this custom tag
             var currentTag = document.getElementById('listAvailableCustomTags').currentIndex + 1;
-            var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label'));
-            var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action'));
+            var itemLabel = unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.label'));
+            var itemAction = unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.action'));
 
             var params = {
                 inn: {
@@ -325,8 +337,8 @@ if ('undefined' == typeof(bbcodextra)) {
 
             if (params.out) {
                 // Change existing pref using values passed for dialog
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', params.out.tagLabel);
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', params.out.tagAction);
+                bbcodextra.setUnicodePref('custom' + currentTag + '.label', params.out.tagLabel);
+                bbcodextra.setUnicodePref('custom' + currentTag + '.action', params.out.tagAction);
 
                 // Update displayed information
                 bbcodextra.prefWindowRefreshCustomPane();
@@ -344,10 +356,7 @@ if ('undefined' == typeof(bbcodextra)) {
                 // Remove two preferences about selected tag
                 var currentTag = document.getElementById('listAvailableCustomTags').currentIndex + 1;
 
-                var prefsToDelete = Components.classes['@mozilla.org/preferences-service;1'].
-                getService(Components.interfaces.nsIPrefService).
-                getBranch('extensions.bbcodextra.');
-                prefsToDelete.deleteBranch('custom'+currentTag);
+                bbcodextraPrefs.deleteBranch('custom'+currentTag);
 
                 // Reorder existing tags, starting from the removed tag to avoid extra work. If I removed the last one, no need to reorder
                 var availableCustomTags = document.getElementById('pref-numcustomtags').value;
@@ -356,7 +365,7 @@ if ('undefined' == typeof(bbcodextra)) {
                 }
 
                 // Decrease available customtags. No need to update the label, since I will call prefWindowRefreshCustomPane() at the end
-                bbcodextraPrefs.setIntPref('extensions.bbcodextra.customtags', availableCustomTags - 1);
+                bbcodextraPrefs.setIntPref('customtags', availableCustomTags - 1);
 
                 // Update info displayed
                 bbcodextra.prefWindowRefreshCustomPane();
@@ -369,16 +378,11 @@ if ('undefined' == typeof(bbcodextra)) {
             for (var i = startingPoint; i < availableCustomTags; i++) {
                 // Moving up preferences ==> pref[n]=pref[n+1]
                 nextTagIndex = i + 1;
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i + '.label',
-                                                unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.label')));
-                bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + i + '.action',
-                                                unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTagIndex + '.action')));
+                bbcodextra.setUnicodePref('custom' + i + '.label', unescape(bbcodextra.getUnicodePref('custom' + nextTagIndex + '.label')));
+                bbcodextra.setUnicodePref('custom' + i + '.action', unescape(bbcodextra.getUnicodePref('custom' + nextTagIndex + '.action')));
             }
             // Still need to remove the last one (i)
-            var prefsToDelete = Components.classes['@mozilla.org/preferences-service;1'].
-            getService(Components.interfaces.nsIPrefService).
-            getBranch('extensions.bbcodextra.');
-            prefsToDelete.deleteBranch('custom' + i);
+            bbcodextraPrefs.deleteBranch('custom' + i);
         },
 
         prefWindowMoveUp: function () {
@@ -388,18 +392,16 @@ if ('undefined' == typeof(bbcodextra)) {
             var previousTag = currentTag - 1;
 
             //  Store tag[n] before overwriting
-            var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + previousTag + '.label'));
-            var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + previousTag + '.action'));
+            var existingLabel = unescape(bbcodextra.getUnicodePref('custom' + previousTag + '.label'));
+            var existingAction = unescape(bbcodextra.getUnicodePref('custom' + previousTag + '.action'));
 
             // tag[n-1]=tag[n]
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + previousTag + '.label',
-                                            unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label')));
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + previousTag + '.action',
-                                            unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action')));
+            bbcodextra.setUnicodePref('custom' + previousTag + '.label', unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.label')));
+            bbcodextra.setUnicodePref('custom' + previousTag + '.action', unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.action')));
 
             // tag[n]=stored values
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', existingLabel);
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', existingAction);
+            bbcodextra.setUnicodePref('custom' + currentTag + '.label', existingLabel);
+            bbcodextra.setUnicodePref('custom' + currentTag + '.action', existingAction);
 
             // Update displayed info
             bbcodextra.prefWindowRefreshCustomPane();
@@ -412,18 +414,18 @@ if ('undefined' == typeof(bbcodextra)) {
             var nextTag = currentTag + 1;
 
             // Store tag[n] before overwriting
-            var existingLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTag + '.label'));
-            var existingAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + nextTag + '.action'));
+            var existingLabel = unescape(bbcodextra.getUnicodePref('custom' + nextTag + '.label'));
+            var existingAction = unescape(bbcodextra.getUnicodePref('custom' + nextTag + '.action'));
 
             // tag[n+1]=tag[n]
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTag + '.label',
-                                            unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label')));
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + nextTag + '.action',
-                                            unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action')));
+            bbcodextra.setUnicodePref('custom' + nextTag + '.label',
+                                            unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.label')));
+            bbcodextra.setUnicodePref('custom' + nextTag + '.action',
+                                            unescape(bbcodextra.getUnicodePref('custom' + currentTag + '.action')));
 
             // tag[n]=stored values
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.label', existingLabel);
-            bbcodextraPrefs.setUnicharPref('extensions.bbcodextra.custom' + currentTag + '.action', existingAction);
+            bbcodextra.setUnicodePref('custom' + currentTag + '.label', existingLabel);
+            bbcodextra.setUnicodePref('custom' + currentTag + '.action', existingAction);
 
             // Update displayed info
             bbcodextra.prefWindowRefreshCustomPane();
@@ -431,23 +433,29 @@ if ('undefined' == typeof(bbcodextra)) {
 
         prefWindowRefreshCustomPane: function () {
             // Updating the label displaying the number of available custom tags
-            var availableCustomTags = document.getElementById('pref-numcustomtags').value;
+            let availableCustomTags = document.getElementById('pref-numcustomtags').value;
             document.getElementById('availableCustomTags').setAttribute('value', availableCustomTags);
 
-            var listAvailableCustomTags = document.getElementById('listAvailableCustomTags');
+            let listAvailableCustomTags = document.getElementById('listAvailableCustomTags');
 
             // Empty list
             while (listAvailableCustomTags.hasChildNodes()) {
                 listAvailableCustomTags.removeChild(listAvailableCustomTags.firstChild);
             }
 
+            let prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                            .getService(Components.interfaces.nsIPrefService)
+                            .getBranch('extensions.bbcodextra.');
+
             if (availableCustomTags > 0) {
                 // Add custom tags to the listbox
-                for (var i = 1; i <= availableCustomTags; i++) {
-                    var itemLabel = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.label'));
-                    var itemAction = unescape(nsPreferences.copyUnicharPref('extensions.bbcodextra.custom' + i + '.action'));
+                for (let i = 1; i <= availableCustomTags; i++) {
+                    let itemLabel = unescape(prefs.getComplexValue('custom' + i + '.label',
+                                        Components.interfaces.nsISupportsString).data);
+                    let itemAction = unescape(prefs.getComplexValue('custom' + i + '.action',
+                                        Components.interfaces.nsISupportsString).data);
 
-                    var listItem = document.createElement('listitem');
+                    let listItem = document.createElement('listitem');
                     listItem.setAttribute('label', itemLabel);
                     listAvailableCustomTags.appendChild(listItem);
                 }
@@ -493,12 +501,12 @@ if ('undefined' == typeof(bbcodextra)) {
 
         showHide: function () {
             // Read pref values to determine which menus are enabled and should be displayed
-            var enableBBCodeMenu    = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.bbcodemenu');
-            var enableHtmlMenu      = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.htmlmenu');
-            var enableXhtmlMenu     = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.xhtmlmenu');
-            var enableVBulletinMenu = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.bbcodevbulletinmenu');
-            var enableMarkdownMenu  = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.markdownmenu');
-            var enableCustomMenu    = bbcodextraPrefs.getBoolPref('extensions.bbcodextra.custommenu');
+            var enableBBCodeMenu    = bbcodextraPrefs.getBoolPref('bbcodemenu');
+            var enableHtmlMenu      = bbcodextraPrefs.getBoolPref('htmlmenu');
+            var enableXhtmlMenu     = bbcodextraPrefs.getBoolPref('xhtmlmenu');
+            var enableVBulletinMenu = bbcodextraPrefs.getBoolPref('bbcodevbulletinmenu');
+            var enableMarkdownMenu  = bbcodextraPrefs.getBoolPref('markdownmenu');
+            var enableCustomMenu    = bbcodextraPrefs.getBoolPref('custommenu');
 
             var displayMenu = document.getElementById('context-undo').hidden;
 
@@ -542,11 +550,11 @@ if ('undefined' == typeof(bbcodextra)) {
 
         disableMenu: function (idPref) {
             // Set idPref to false
-            bbcodextraPrefs.setBoolPref('extensions.bbcodextra.' + idPref, false);
+            bbcodextraPrefs.setBoolPref(idPref, false);
         },
 
         displayCustomMenu: function () {
-            var availableCustomTags = bbcodextraPrefs.getIntPref('extensions.bbcodextra.customtags');
+            var availableCustomTags = bbcodextraPrefs.getIntPref('customtags');
             var containerMenu = document.getElementById('context-bbcodextra-custom-container');
 
             // Remove existing elements in the menu
@@ -561,8 +569,8 @@ if ('undefined' == typeof(bbcodextra)) {
                 for (i = 1; i <= availableCustomTags; i++) {
                     (function (i) {
                         // Need to avoid scope problems with menuAction in event listener
-                        var menuLabel = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + i + '.label'));
-                        var menuAction = unescape(bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.custom' + i + '.action'));
+                        var menuLabel = unescape(bbcodextra.getUnicodePref('custom' + i + '.label'));
+                        var menuAction = unescape(bbcodextra.getUnicodePref('custom' + i + '.action'));
                         menuItem = document.createElement('menuitem');
                         menuItem.setAttribute('label', menuLabel);
                         menuItem.setAttribute('id', 'bbcodextra-custom-item' + i);
@@ -610,6 +618,7 @@ if ('undefined' == typeof(bbcodextra)) {
         },
 
         showPreferences: function () {
+            bbcodextra.init;
             window.openDialog('chrome://bbcodextra/content/bbcodextraPrefs.xul',
                 'modifyheadersDialog',
                 'chrome=yes,resizable=yes,toolbar=yes,centerscreen=yes,modal=no,dependent=no,dialog=no');
@@ -620,7 +629,7 @@ if ('undefined' == typeof(bbcodextra)) {
             var returnValues = { selectedColor: null};
             window.openDialog('chrome://bbcodextra/content/bbcodextraPickColor.xul', '_blank', 'chrome,dialog,modal,centerscreen', returnValues);
             if (returnValues.selectedColor == 'ok') {
-                color = bbcodextraPrefs.copyUnicharPref('extensions.bbcodextra.bbcodecolor');
+                color = bbcodextraPrefs.getCharPref('bbcodecolor');
                 bbcodextra.bbcodextra('color', color);
             }
         },
